@@ -107,7 +107,7 @@
 
 ---
 
-## 9. Autonomous Orchestration, Agentic Action & Application Layer Security  
+## 9. Autonomous Orchestration & Agentic Action Security  
 **Goal:** Secure the glue code—agents, planners, tool delegates—that chains model calls into complex workflows, often with real‑world impact.
 
 | Focus area | Purpose |
