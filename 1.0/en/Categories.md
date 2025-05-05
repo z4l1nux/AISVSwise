@@ -1,138 +1,206 @@
-# OWASP AISVS – AI Security Verification Standard
+# OWASP AISVS – AI Security Verification Standard  
 ### Core Category List (v3)
 
-## 1. Model Input Validation and Data Ingestion Security
-Protect AI systems from malicious, adversarial, or malformed input.
+---
 
-- Prompt injection prevention
-- Adversarial input resistance
-- Format and length validation
-- Data poisoning detection
-- Pre-deployment data vetting and classification
+## 1. Model Input Validation & Data Ingestion Security
+**Goal:** Shield an AI system from malicious, malformed, or adversarial inputs **before** those inputs ever reach model inference or training pipelines. This category covers every entry point—from user‑facing prompts to back‑end batch uploads—to ensure only well‑formed, trustworthy data is processed.
 
-## 2. Model Behavior, Output Control, and Safety Assurance
-Ensure model outputs are safe, reliable, and aligned with intended behavior.
+| Focus area | Purpose |
+| --- | --- |
+| **Prompt‑injection prevention** | Detect and neutralize attempts to override system instructions or jailbreak guardrails. |
+| **Adversarial‑input resistance** | Identify perturbations crafted to trigger misclassification or toxic output. |
+| **Format & length validation** | Enforce strict syntactic, semantic, and size constraints on all incoming data. |
+| **Data‑poisoning detection** | Flag contributions that could corrupt fine‑tuning or drift model weights. |
+| **Pre‑deployment data vetting & classification** | Perform offline screening, de‑duplication, and content labeling before data is admitted to training sets. |
 
-- Output format enforcement
-- Hallucination detection and mitigation
-- Output safety filters and allowlists
-- Sensitive data leakage prevention
-- Autonomy bounding mechanisms
+---
 
-## 3. Training Data Governance and Bias Management
-Secure and govern training data with attention to ethics, provenance, and user rights.
+## 2. Model Behavior, Output Control & Safety Assurance
+**Goal:** Guarantee that generated content is accurate, safe, and aligned with policy—even under adversarial pressure—while giving operators levers to stop or shape responses.
 
-- Dataset provenance and licensing validation
-- Bias detection and correction
-- Representation completeness and fairness
-- Fine-tuning data integrity
-- User data deletion and consent enforcement post-training
+| Focus area | Purpose |
+| --- | --- |
+| **Output‑format enforcement** | Constrain responses to required schemas, types, or token budgets. |
+| **Hallucination detection & mitigation** | Identify low‑confidence or fabricated answers and provide fallback strategies (e.g., citations, refusal). |
+| **Output‑safety filters & allowlists** | Apply layered policy checks (toxicity, PII, disallowed topics) both pre‑ and post‑generation. |
+| **Sensitive‑data‑leakage prevention** | Stop the model from echoing training secrets or user‑supplied confidential data. |
+| **Autonomy‑bounding mechanisms** | Rate‑limit, throttle, or require approvals when the model initiates external actions (e.g., API calls, file writes). |
 
-## 4. Model Lifecycle Management and Change Control
-Secure the full lifecycle of models from development through retirement.
+---
 
-- Model versioning and signing
-- Secure patching and rollback mechanisms
-- Controlled fine-tuning and retraining workflows
-- Formal decommissioning process
-- Change auditing and approval workflows
+## 3. Training Data Governance & Bias Management
+**Goal:** Provide an ethical, traceable, and legally compliant foundation for model behavior by securing data provenance, minimizing bias, and honoring user rights throughout the data lifecycle.
 
-## 5. Infrastructure, Configuration, and Deployment Security
-Harden infrastructure and secure configurations of AI runtime environments.
+| Focus area | Purpose |
+| --- | --- |
+| **Dataset provenance & licensing validation** | Confirm origin, copyright status, and usage terms for all assets. |
+| **Bias detection & correction** | Quantitatively surface and reduce demographic, topical, or distributional bias. |
+| **Representation completeness & fairness** | Ensure under‑represented groups or edge cases have sufficient coverage. |
+| **Fine‑tuning data integrity** | Protect small, high‑impact data sets from tampering or unintentional drift. |
+| **User‑data deletion & consent enforcement post‑training** | Prove that subject requests propagate through checkpoints, checkpoints, and derivatives. |
 
-- Container and serverless runtime isolation
-- Secure deployment pipelines
-- Exposure surface minimization
-- Configuration protection and validation
-- Secrets management and environment hardening
+---
 
-## 6. Access Control and Identity for AI Components and Users
-Enforce strict, context-aware access control for all AI system components and outputs.
+## 4. Model Lifecycle Management & Change Control
+**Goal:** Treat models like critical software artifacts—versioned, signed, reviewed, and reversible—so every change is deliberate, traceable, and recoverable.
 
-- User- and role-based access enforcement
-- Authorization-aware output filtering
-- Tenant and session isolation
-- API key and token protection
-- Agent and tool permission scoping
+| Focus area | Purpose |
+| --- | --- |
+| **Model versioning & signing** | Provide cryptographic integrity, dependency graphs, and SBOMs for each release. |
+| **Secure patching & rollback mechanisms** | Enable hot‑fixes or downgrades without compromising security assurances. |
+| **Controlled fine‑tuning & retraining workflows** | Gate data ingestion, hyper‑parameter tweaks, and pipeline configs behind approvals. |
+| **Formal decommissioning process** | Define archival, sanitization, and revocation steps when retiring a model. |
+| **Change auditing & approval workflows** | Log, review, and attest to all modifications—including prompt templates and system messages. |
 
-## 7. Monitoring, Logging, and Anomaly Detection
-Enable visibility and response capabilities across the AI system.
+---
 
-- Prompt and output logging
-- Abuse and jailbreak detection
-- Hallucination drift detection
-- Performance and behavior telemetry
-- Alerting and SIEM integration
+## 5. Infrastructure, Configuration & Deployment Security
+**Goal:** Harden every layer—from build server to GPU runtime—against exploitation, misconfiguration, or lateral movement.
 
-## 8. Memory, Embeddings, and Vector Database Security
-Secure persistent AI memory, embeddings, and retrieval-augmented components.
+| Focus area | Purpose |
+| --- | --- |
+| **Container & serverless runtime isolation** | Enforce least‑privilege kernels, seccomp profiles, and eBPF rules. |
+| **Secure deployment pipelines** | Use IaC scanning, reproducible builds, and programmable policy gates (e.g., OPA). |
+| **Exposure‑surface minimization** | Close default ports, disable unused endpoints, and restrict egress. |
+| **Configuration protection & validation** | Store configs in encrypted secrets managers and validate against policy baselines. |
+| **Secrets management & environment hardening** | Rotate API keys, employ TPM/HSM roots, and audit environment variables. |
 
-- Embedding sanitization and validation
-- Access controls on memory and RAG indices
-- Memory expiry, revocation, and deletion
-- Prevent embedding inversion or leakage
-- Scope enforcement for user-specific memory
+---
 
-## 9. AI Application Layer and Autonomous Orchestration Security
-Secure the code-level orchestration of tools, agents, and autonomous behaviors.
+## 6. Access Control & Identity for AI Components & Users
+**Goal:** Enforce context‑aware, least‑privilege access to models, data, and derived content—whether human, service, or agent.
 
-- Agent task planning and reentrancy control
-- Tool plugin sandboxing
-- Autonomous loop bounding
-- Protocol-level misuse protection
-- Multi-agent swarm risk reduction
+| Focus area | Purpose |
+| --- | --- |
+| **User‑ and role‑based access enforcement** | Map personas to granular permissions on endpoints and datasets. |
+| **Authorization‑aware output filtering** | Strip or redact responses that a caller’s clearance cannot view. |
+| **Tenant & session isolation** | Prevent cross‑customer data bleed in shared SaaS deployments. |
+| **API key & token protection** | Bind tokens to device fingerprints, expiry windows, and scopes. |
+| **Agent & tool permission scoping** | Limit autonomous or plugin‑based actions to approved capability sets. |
 
-## 10. Privacy Protection and Personal Data Management
-Ensure ethical and lawful handling of personal data across the AI pipeline.
+---
 
-- Anonymization and data minimization
-- Right to be forgotten and deletion enforcement
-- Differential privacy
-- Purpose limitation and scope creep protection
-- Consent management and documentation
+## 7. Monitoring, Logging & Anomaly Detection
+**Goal:** Provide real‑time and forensic visibility into what the model sees, does, and returns—so threats can be detected, triaged, and learned from.
 
-## 11. Supply Chain Security for Models, Frameworks, and Data
-Secure all third-party components in the AI pipeline.
+| Focus area | Purpose |
+| --- | --- |
+| **Prompt & output logging** | Capture inputs, outputs, and policy decisions with privacy‑preserving redaction. |
+| **Abuse & jailbreak detection** | Alert when queries resemble known jailbreak patterns or circumvent safeguards. |
+| **Hallucination drift detection** | Track novelty, confidence, and divergence metrics across versions. |
+| **Performance & behavior telemetry** | Instrument latency, token counts, resource utilization, and success rates. |
+| **Alerting & SIEM integration** | Export enriched events for SOC correlation and incident response. |
 
-- Pretrained model vetting and provenance
-- Framework/library CVE scanning
-- Dependency pinning and verification
-- Licensing compliance
-- Trusted source enforcement
+---
 
-## 12. Adversarial Robustness and Attack Resistance
-Protect against targeted attacks on models and learning systems.
+## 8. Memory, Embeddings & Vector Database Security
+**Goal:** Safeguard long‑term AI memory and RAG (retrieval‑augmented generation) stores from inversion, leakage, or unauthorized reuse.
 
-- Adversarial example hardening
-- Membership inference mitigation
-- Model inversion resistance
-- Model extraction defense
-- Poisoned data detection
+| Focus area | Purpose |
+| --- | --- |
+| **Embedding sanitization & validation** | Remove PII or malicious artifacts before vectorization. |
+| **Access controls on memory & RAG indices** | Apply row‑level, namespace, or ABAC controls to stored vectors. |
+| **Memory expiry, revocation & deletion** | Honor TTLs, user deletion requests, and dynamic scope reductions. |
+| **Prevent embedding inversion or leakage** | Employ noise addition, dimensionality reduction, and encryption schemes. |
+| **Scope enforcement for user‑specific memory** | Ensure one user’s context cannot seed completions for another. |
 
-## 13. Human Oversight, Accountability, and Governance
-Maintain meaningful human control and clearly defined responsibilities.
+---
 
-- Kill switch and override mechanisms
-- Human-in-the-loop decision checkpoints
-- Operational governance documentation
-- Chain of responsibility and auditability
+## 9. AI Application Layer & Autonomous Orchestration Security
+**Goal:** Secure the glue code—agents, planners, tool delegates—that chains model calls into complex workflows, often with real‑world impact.
 
-## 14. Explainability, Interpretability, and Transparency
-Support understanding, traceability, and justified model behavior.
+| Focus area | Purpose |
+| --- | --- |
+| **Agent task planning & re‑entrancy control** | Throttle recursive plans and require human checkpoints for privileged actions. |
+| **Tool plugin sandboxing** | Isolate third‑party functions with syscall, network, and filesystem jails. |
+| **Autonomous loop bounding** | Enforce max iterations, cost quotas, or resource ceilings. |
+| **Protocol‑level misuse protection** | Validate structured messages (e.g., function‑call JSON) against schemas. |
+| **Multi‑agent swarm risk reduction** | Detect collusion, echo‑chambers, or emergent unsafe behavior across agents. |
 
-- Explainable AI techniques (e.g., SHAP, LIME)
-- Model cards and usage disclosures
-- Uncertainty quantification
-- User-facing transparency reports
+---
 
-## 15. Compliance, Ethics, and Regulatory Alignment
-Align AI systems with legal frameworks and responsible innovation norms.
+## 10. Privacy Protection & Personal Data Management
+**Goal:** Uphold individual rights and minimize the collection, retention, and exposure of personal data at every phase of the AI pipeline.
 
-- GDPR, EU AI Act, and sectoral compliance
-- Risk classification and documentation
-- AI system registration and auditing
-- Policy templates and deployment guidance
-- Responsible innovation reviews and governance boards
+| Focus area | Purpose |
+| --- | --- |
+| **Anonymization & data minimization** | Strip or hash identifiers; collect only what is strictly necessary. |
+| **Right‑to‑be‑forgotten & deletion enforcement** | Propagate erasure across checkpoints, embeddings, and backups. |
+| **Differential privacy** | Apply noise or clipping during training and query time. |
+| **Purpose limitation & scope‑creep protection** | Detect secondary uses that diverge from original consent. |
+| **Consent management & documentation** | Track lawful bases, opt‑in status, and data‑subject agreements. |
 
-## Appendix A. AI System Attribute Glossary *(Planned)*
-Establish consistent language for describing AI system properties.
+---
+
+## 11. Supply Chain Security for Models, Frameworks & Data
+**Goal:** Treat upstream artifacts—pretrained models, ML frameworks, datasets—like code packages subject to tampering, licensing, and vulnerability risk.
+
+| Focus area | Purpose |
+| --- | --- |
+| **Pretrained model vetting & provenance** | Verify source, checksums, and embedded malicious payloads. |
+| **Framework/library CVE scanning** | Continuously assess TF/PyTorch/Hugging Face and their transitive deps. |
+| **Dependency pinning & verification** | Employ SBOMs, hermetic builds, and sigstore attestations. |
+| **Licensing compliance** | Respect model weights’ usage clauses and dataset copyright. |
+| **Trusted source enforcement** | Restrict downloads to signed registries, mirrors, or private artifacts. |
+
+---
+
+## 12. Adversarial Robustness & Attack Resistance
+**Goal:** Design models that degrade gracefully—or fail closed—when confronted with sophisticated attacks targeting the learning process or inference surface.
+
+| Focus area | Purpose |
+| --- | --- |
+| **Adversarial example hardening** | Employ defensive distillation, randomized smoothing, or certified bounds. |
+| **Membership inference mitigation** | Reduce confidence gaps and add noise to protect training inclusion privacy. |
+| **Model inversion resistance** | Limit exposure of embeddings, logits, or internal attention maps. |
+| **Model extraction defense** | Rate‑limit queries, watermark outputs, and detect anomalous scraping. |
+| **Poisoned data detection** | Use clustering, entropy, and trigger search to flag back‑doored samples. |
+
+---
+
+## 13. Human Oversight, Accountability & Governance
+**Goal:** Keep a human “captain of the ship” with clear lines of responsibility, escalation, and ethical stewardship.
+
+| Focus area | Purpose |
+| --- | --- |
+| **Kill‑switch & override mechanisms** | Provide immediate shutdown or rollback paths for runaway behavior. |
+| **Human‑in‑the‑loop decision checkpoints** | Require approvals when stakes surpass predefined risk thresholds. |
+| **Operational governance documentation** | Maintain SOPs, playbooks, and RACI matrices for AI operations. |
+| **Chain of responsibility & auditability** | Log operator actions and model decisions for postmortem reviews. |
+
+---
+
+## 14. Explainability, Interpretability & Transparency
+**Goal:** Make model reasoning and limitations legible to developers, auditors, and end‑users—building trust and diagnosability.
+
+| Focus area | Purpose |
+| --- | --- |
+| **Explainable‑AI techniques (SHAP, LIME, etc.)** | Surface feature importance, counter‑factuals, and local explanations. |
+| **Model cards & usage disclosures** | Document intended use, performance metrics, and ethical considerations. |
+| **Uncertainty quantification** | Propagate confidence scores or entropy measures in responses. |
+| **User‑facing transparency reports** | Provide periodic disclosures on incidents, drift, and data usage. |
+
+---
+
+## 15. Compliance, Ethics & Regulatory Alignment
+**Goal:** Satisfy statutory requirements and align with evolving norms of responsible innovation across jurisdictions and industries.
+
+| Focus area | Purpose |
+| --- | --- |
+| **GDPR, EU AI Act, sectoral compliance** | Map AISVS controls to regulatory articles and industry mandates. |
+| **Risk classification & documentation** | Assign risk tiers, impact assessments, and required controls. |
+| **AI system registration & auditing** | Prepare records for notified bodies, regulators, or independent auditors. |
+| **Policy templates & deployment guidance** | Provide reusable SOPs, DPAs, DPIAs, and algorithmic impact assessments. |
+| **Responsible innovation reviews & governance boards** | Convene cross‑functional panels to vet use cases and monitor societal impact. |
+
+---
+
+### Next steps for reviewers
+
+1. **Scope accuracy** – Does each category cover the right threat surfaces?  
+2. **Clarity & granularity** – Are the descriptions and bullets detailed enough to drive concrete requirements?  
+3. **Overlap & gaps** – Where can we consolidate or expand?  
+4. **Terminology** – Any jargon needing definitions or refinement?
+
+Please leave inline comments, propose rewrites, or suggest additional focus areas. Your feedback will shape the next iteration of AISVS!
