@@ -117,7 +117,7 @@
 | **Autonomous loop bounding** | Enforce max iterations, cost quotas, or resource ceilings. |
 | **Protocol‑level misuse protection** | Validate structured messages (e.g., function‑call JSON) against schemas. |
 | **Multi‑agent swarm risk reduction** | Detect collusion, echo‑chambers, or emergent unsafe behavior across agents. |
-| **User & Tool Authn/Authz** | Ensure any agent is operating in the correct permissioning paradigm, either using the permissions for a user it is operating on behalf of, or controlling application layer calls with additional authn/authz methods. |
+| **User & Tool Authn/Authz** | Ensure any agent is operating in the correct permissioning paradigm, assuming permissions for a user it is operating on behalf of, or controlling tool calls with traditional authn/authz methods. |
 
 ---
 
