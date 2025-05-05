@@ -11,7 +11,6 @@
 | **Prompt‑injection prevention** | Detect and neutralize attempts to override system instructions or jailbreak guardrails. |
 | **Adversarial‑input resistance** | Identify perturbations crafted to trigger misclassification or toxic output. |
 | **Format & length validation** | Enforce strict syntactic, semantic, and size constraints on all incoming data. |
-| **Data‑poisoning detection** | Flag contributions that could corrupt fine‑tuning or drift model weights. |
 | **Pre‑deployment data vetting & classification** | Perform offline screening, de‑duplication, and content labeling before data is admitted to training sets. |
 
 ---
@@ -39,6 +38,7 @@
 | **Representation completeness & fairness** | Ensure under‑represented groups or edge cases have sufficient coverage. |
 | **Fine‑tuning data integrity** | Protect small, high‑impact data sets from tampering or unintentional drift. |
 | **User‑data deletion & consent enforcement post‑training** | Prove that subject requests propagate through checkpoints, checkpoints, and derivatives. |
+| **Data‑poisoning detection** | Flag contributions that could corrupt fine‑tuning or drift model weights. |
 
 ---
 
@@ -180,19 +180,6 @@
 | **Model cards & usage disclosures** | Document intended use, performance metrics, and ethical considerations. |
 | **Uncertainty quantification** | Propagate confidence scores or entropy measures in responses. |
 | **User‑facing transparency reports** | Provide periodic disclosures on incidents, drift, and data usage. |
-
----
-
-## 15. Compliance, Ethics & Regulatory Alignment
-**Goal:** Satisfy statutory requirements and align with evolving norms of responsible innovation across jurisdictions and industries.
-
-| Focus area | Purpose |
-| --- | --- |
-| **GDPR, EU AI Act, sectoral compliance** | Map AISVS controls to regulatory articles and industry mandates. |
-| **Risk classification & documentation** | Assign risk tiers, impact assessments, and required controls. |
-| **AI system registration & auditing** | Prepare records for notified bodies, regulators, or independent auditors. |
-| **Policy templates & deployment guidance** | Provide reusable SOPs, DPAs, DPIAs, and algorithmic impact assessments. |
-| **Responsible innovation reviews & governance boards** | Convene cross‑functional panels to vet use cases and monitor societal impact. |
 
 ---
 
