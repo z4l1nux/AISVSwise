@@ -1,5 +1,5 @@
-# OWASP AISVS – AI Security Verification Standard  
-### Core Category List (v3)
+# OWASP Artificial Intelligence Security Verification Standard (AISVS)
+### Core Category List - Work In Progress
 
 ---
 
