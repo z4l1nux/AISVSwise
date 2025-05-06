@@ -69,15 +69,18 @@
 ---
 
 ## 6. Access Control & Identity for AI Components & Users
-**Goal:** Enforce context‑aware, least‑privilege access to models, data, and derived content—whether human, service, or agent.
+**Goal:** Enforce identity propigation and context‑aware, least‑privilege access to models, data, and derived content—whether human, service, or agent.
 
 | Focus area | Purpose |
 | --- | --- |
-| **User‑ and role‑based access enforcement** | Map personas to granular permissions on endpoints and datasets. |
-| **Authorization‑aware output filtering** | Strip or redact responses that a caller’s clearance cannot view. |
-| **Tenant & session isolation** | Prevent cross‑customer data bleed in shared SaaS deployments. |
-| **API key & token protection** | Bind tokens to device fingerprints, expiry windows, and scopes. |
-| **Agent & tool permission scoping** | Limit autonomous or plugin‑based actions to approved capability sets. |
+| **Identity proofing & federation**                      | Establish and verify principal identity; integrate with enterprise IdP (OIDC/SAML) and support progressive trust elevation (MFA, step‑up).                                  |
+| **User & data access mapping**                          | Bind personas/roles to fine‑grained permissions on endpoints, collections, embeddings, and vector indices.                                                                  |
+| **Attribute‑Based Access Control (ABAC) service layer** | Externalize policy decisions (e.g., OPA, Cedar) that evaluate dynamic attributes—user, resource tags, environmental context—at query time, independent of application code. |
+| **Query‑time policy evaluation**                        | Before retrieval, filter search vectors / SQL rows so only objects the caller is entitled to ever leave storage.                                                            |
+| **Post‑retrieval response filtering**                   | After model inference or search, redact or transform content (RLS, RLHF, policy‑based transformers) to strip data the caller’s clearance cannot view.                       |
+| **Authorization‑aware output filtering**                | Enforce least‑privilege in generated text, images, or actions; ensure prompts, embeddings, and citations respect caller entitlements.                                       |
+| **Tenant & session isolation**                          | Segregate memory, embeddings, and cache per tenant; verify session context on every request to prevent cross‑customer data bleed in multi‑tenant SaaS.                      |
+| **Agent & tool permission scoping**                     | Constrain autonomous agents, plugins, or tool calls to explicit capability sets (e.g., read‑only S3, no shell access), enforced by the ABAC layer.                          |
 
 ---
 
