@@ -91,7 +91,7 @@
 | --- | --- |
 | **Prompt & output logging** | Capture inputs, outputs, and policy decisions with privacy‑preserving redaction. |
 | **Abuse & jailbreak detection** | Alert when queries resemble known jailbreak patterns or circumvent safeguards. |
-| **Hallucination drift detection** | Track novelty, confidence, and divergence metrics across versions. |
+| **Model drift detection** | Track  novelty, confidence, hallucinations, and divergence metrics across versions. |
 | **Performance & behavior telemetry** | Instrument latency, token counts, resource utilization, and success rates. |
 | **Alerting & SIEM integration** | Export enriched events for SOC correlation and incident response. |
 
