@@ -110,7 +110,7 @@
 
 ---
 
-## 9. AI Application Layer & Autonomous Orchestration Security
+## 9. Autonomous Orchestration & Agentic Action Security  
 **Goal:** Secure the glue code—agents, planners, tool delegates—that chains model calls into complex workflows, often with real‑world impact.
 
 | Focus area | Purpose |
@@ -120,6 +120,7 @@
 | **Autonomous loop bounding** | Enforce max iterations, cost quotas, or resource ceilings. |
 | **Protocol‑level misuse protection** | Validate structured messages (e.g., function‑call JSON) against schemas. |
 | **Multi‑agent swarm risk reduction** | Detect collusion, echo‑chambers, or emergent unsafe behavior across agents. |
+| **User & Tool Authn/Authz** | Ensure any agent is operating in the correct permissioning paradigm, assuming permissions for a user it is operating on behalf of, or controlling tool calls with traditional authn/authz methods. |
 
 ---
 
