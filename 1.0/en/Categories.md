@@ -33,7 +33,7 @@
 
 | Focus area | Purpose |
 | --- | --- |
-| **Dataset provenance & licensing validation** | Confirm origin, copyright status, and usage terms for all assets. |
+| **Dataset provenance & lineage** | Confirm and track origin of data used for training and fine-tuning. |
 | **Bias detection & correction** | Quantitatively surface and reduce demographic, topical, or distributional bias. |
 | **Representation completeness & fairness** | Ensure under‑represented groups or edge cases have sufficient coverage. |
 | **Fine‑tuning data integrity** | Protect small, high‑impact data sets from tampering or unintentional drift. |
@@ -145,7 +145,7 @@
 | **Pretrained model vetting & provenance** | Verify source, checksums, and embedded malicious payloads. |
 | **Framework/library CVE scanning** | Continuously assess TF/PyTorch/Hugging Face and their transitive deps. |
 | **Dependency pinning & verification** | Employ SBOMs, hermetic builds, and sigstore attestations. |
-| **Licensing compliance** | Respect model weights’ usage clauses and dataset copyright. |
+| **Licensing compliance** | Respect model and data license requirements. |
 | **Trusted source enforcement** | Restrict downloads to signed registries, mirrors, or private artifacts. |
 
 ---
