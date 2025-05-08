@@ -91,16 +91,16 @@ This section provides requirements to secure upstream artifacts (pretrained mode
 ---
 
 ## 7. Model Behavior, Output Control & Safety Assurance
-**Goal:** Guarantee that generated content is accurate, safe, and aligned with policy—even under adversarial pressure—while giving operators levers to stop or shape responses.
+This section provides requirements to ensure model outputs are accurate, safe, and policy-compliant during runtime, to control and mitigate risks in generated content.
 
 | Focus area | Purpose |
 | --- | --- |
-| **Output‑format enforcement** | Constrain responses to required schemas, types, or token budgets. |
-| **Hallucination detection & mitigation** | Identify low‑confidence or fabricated answers and provide fallback strategies (e.g., citations, refusal). |
-| **Output‑safety filters & allowlists** | Apply layered policy checks (toxicity, PII, disallowed topics) both pre‑ and post‑generation. |
-| **Sensitive‑data‑leakage prevention** | Stop the model from echoing training secrets or user‑supplied confidential data. |
-| **Autonomy‑bounding mechanisms** | Rate‑limit, throttle, or require approvals when the model initiates external actions (e.g., API calls, file writes). |
-| **Enforcing response throttling for output abuse** | Prevent system overload and mitigate abuse or attacks. |                      |
+| **Output format enforcement** | Enforce constraints on response schemas, data types, or token limits to ensure structured and predictable outputs. |
+| **Hallucination detection & mitigation** | Detect low-confidence or fabricated outputs and apply fallback strategies to maintain response reliability. |
+| **Output safety & privacy filtering** | Block harmful content, PII, or confidential data in outputs using pre- and post-generation policy checks. |
+| **Output & action limiting** | Restrict model-initiated actions and response rates through throttling or approval requirements to prevent abuse or overload. |
+| **Output explainability** | Provide transparency in outputs through confidence scores or reasoning traces to enhance user trust. |
+| **Monitoring integration** | Feed output safety and quality metrics into monitoring systems to enable real-time risk detection and response. |
 
 ---
 
@@ -109,8 +109,8 @@ This section provides requirements to secure upstream artifacts (pretrained mode
 
 | Focus area | Purpose |
 | --- | --- |
-| **Embedding sanitization & validation** | Remove PII or malicious artifacts before vectorization. |
 | **Access controls on memory & RAG indices** | Apply row‑level, namespace, or ABAC controls to stored vectors. |
+| **Embedding sanitization & validation** | Remove PII or malicious artifacts before vectorization. |
 | **Memory expiry, revocation & deletion** | Honor TTLs, user deletion requests, and dynamic scope reductions. |
 | **Prevent embedding inversion or leakage** | Employ noise addition, dimensionality reduction, and encryption schemes. |
 | **Scope enforcement for user‑specific memory** | Ensure one user’s context cannot seed completions for another. |
@@ -140,7 +140,7 @@ This section provides requirements to secure upstream artifacts (pretrained mode
 | **Membership inference mitigation** | Reduce confidence gaps and add noise to protect training inclusion privacy. |
 | **Model inversion resistance** | Limit exposure of embeddings, logits, or internal attention maps. |
 | **Model extraction defense** | Rate‑limit queries, watermark outputs, and detect anomalous scraping. |
-| **Poisoned data detection** | Use clustering, entropy, and trigger search to flag back‑doored samples. |
+| **Poisoned data detection** | At inference time, Use clustering, entropy, and trigger search to flag back‑doored samples. |
 | **Regular Red Team Simulation** | Proactively identify and address security weaknesses by emulating real-world attacker behaviors in a controlled environment. |
 
 ---
