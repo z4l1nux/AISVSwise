@@ -4,18 +4,18 @@
 ---
 
 ## 1. Training Data Governance & Bias Management
-**Goal:** Provide an ethical, traceable, and legally compliant foundation for model behavior by securing data provenance, minimizing bias, and honoring user rights throughout the data lifecycle.
+This section provides requirements to ensure training data is ethical, secure, and compliant by managing its provenance, quality, and bias during data collection and preparation for model training.
 
 | Focus area | Purpose |
 | --- | --- |
-| **Dataset provenance & lineage** | Confirm and track origin of data used for training and fine-tuning. |
-| **Bias detection & correction** | Quantitatively surface and reduce demographic, topical, or distributional bias. |
-| **Representation completeness & fairness** | Ensure under‑represented groups or edge cases have sufficient coverage. |
-| **Fine‑tuning data integrity** | Protect small, high‑impact data sets from tampering or unintentional drift. |
-| **User‑data deletion & consent enforcement post‑training** | Prove that subject requests propagate through checkpoints, checkpoints, and derivatives. |
-| **Data‑poisoning detection** | Flag contributions that could corrupt fine‑tuning or drift model weights. |
-| **Model Data Labeling** | To prevent data poisoning, ensure label integrity, protect sensitive information, maintain accountability, defend against inference attacks, and comply with regulatory standards. |
-| **Model Provenance Tracking** | Capturing, recording, and storing information about a model's origin, how it was created, and its history of modifications.
+| **Training Data Provenance** | Track and audit origins of training datasets to ensure traceability and detect unauthorized or unverified sources. |
+| **Bias Detection & Correction** | Identify and mitigate demographic or distributional biases in training data to promote equitable model outcomes. |
+| **Representation Completeness & Fairness** | Ensure training data includes balanced coverage of under-represented groups and edge cases through targeted collection or augmentation to enhance model robustness. |
+| **Training Data Integrity & Labeling** | Safeguard training datasets and labels from tampering or poisoning using cryptographic integrity, secure annotation pipelines and other methods to maintain data quality. |
+| **Data Poisoning Detection** | Detect and filter malicious or corrupted data in training datasets using anomaly detection or statistical analysis to prevent model corruption. |
+| **Training Data Quality Assurance** | Validate training data for accuracy, completeness, and consistency to ensure reliable model training. |
+| **User Data Deletion & Consent Enforcement** | Implement mechanisms to honor user deletion requests and consent withdrawals in training datasets, compliant with privacy law. |
+| **Regulatory Compliance Management** | Align training data practices with privacy laws and AI regulations by documenting consent, purpose, and retention policies. |
 
 ---
 
