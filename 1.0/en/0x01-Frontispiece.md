@@ -6,7 +6,7 @@ The **Artificial Intelligence Security Verification Standard (AISVS)** is a comm
 
 ## Copyright and License  
 
-Version 0.1 (First Public Draft), 2025  
+Version 0.1 (First Public Draft - Work In Progress), 2025  
 
 ![license](../images/license.png)
 
