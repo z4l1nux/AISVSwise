@@ -3,16 +3,15 @@
 
 ---
 
-## 1. Model Input Validation & Data Ingestion Security
-**Goal:** Shield an AI system from malicious, malformed, or adversarial inputs **before** those inputs ever reach model inference or training pipelines. This category covers every entry point—from user‑facing prompts to back‑end batch uploads—to ensure only well‑formed, trustworthy data is processed.
+## 1. User Input Validation & Security
+This section outlines defenses against user input attacks, ensuring all runtime inputs (e.g., interactive prompts, API requests, or streaming feeds) are well-formed, policy-compliant, and free from malicious or adversarial content, such as prompt injection. This section focuses solely on securing user inputs during model inference.
 
 | Focus area | Purpose |
 | --- | --- |
-| **Prompt‑injection prevention** | Detect and neutralize attempts to override system instructions or jailbreak guardrails. |
-| **Adversarial‑input resistance** | Identify perturbations crafted to trigger misclassification or toxic output. |
-| **Format & length validation** | Enforce strict syntactic, semantic, and size constraints on all incoming data. |
-| **Pre‑deployment data vetting & classification** | Perform offline screening, de‑duplication, and content labeling before data is admitted to training sets. |
-| **Model Provenance Tracking** | Capturing, recording, and storing information about a model's origin, how it was created, and its history of modifications.
+| Prompt-Injection Defense | Detect & block attempts to override instructions or jailbreak guardrails |
+| Adversarial-Example Resistance | Detect & block perturbed inputs to mislead model during inference |
+| Schema, Type & Length Validation | Enforce strict syntactic, semantic, & size constraints on user inputs |
+| Content & Policy Screening | Apply filters to ensure compliance with safety policies |
 
 ---
 
@@ -42,6 +41,7 @@
 | **User‑data deletion & consent enforcement post‑training** | Prove that subject requests propagate through checkpoints, checkpoints, and derivatives. |
 | **Data‑poisoning detection** | Flag contributions that could corrupt fine‑tuning or drift model weights. |
 | **Model Data Labeling** | To prevent data poisoning, ensure label integrity, protect sensitive information, maintain accountability, defend against inference attacks, and comply with regulatory standards. |
+| **Model Provenance Tracking** | Capturing, recording, and storing information about a model's origin, how it was created, and its history of modifications.
 
 ---
 
