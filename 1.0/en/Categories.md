@@ -35,16 +35,17 @@ This section provides requirements to secure upstream artifacts (pretrained mode
 ---
 
 ## 3. Model Lifecycle Management & Change Control
-**Goal:** Treat models like critical software artifacts—versioned, signed, reviewed, and reversible—so every change is deliberate, traceable, and recoverable.
+This section provides requirements to manage model development, fine-tuning, and maintenance securely, ensuring all changes are versioned, traceable, and reversible.
 
 | Focus area | Purpose |
 | --- | --- |
-| **Model versioning & signing** | Provide cryptographic integrity, dependency graphs, and SBOMs for each release. |
-| **Secure patching & rollback mechanisms** | Enable hot‑fixes or downgrades without compromising security assurances. |
-| **Controlled fine‑tuning & retraining workflows** | Gate data ingestion, hyper‑parameter tweaks, and pipeline configs behind approvals. |
-| **Formal decommissioning process** | Define archival, sanitization, and revocation steps when retiring a model. |
-| **Change auditing & approval workflows** | Log, review, and attest to all modifications—including prompt templates and system messages. |
-| **SBOM (Software Bill of Materials) for model artifacts**| Detailed inventory of all components, dependencies, and metadata used in building and deploying machine learning models to enhance transparency, traceability, and security. |
+| **Model versioning & transparency** | Track model releases with cryptographic signing, dependency graphs, and SBOMs to ensure integrity and transparency. |
+| **Secure patching & rollback** | Enable hotfixes and downgrades with validated rollback mechanisms to maintain security and functionality without vulnerabilities. |
+| **Controlled fine-tuning & retraining** | Restrict data ingestion, hyperparameter changes, and pipeline configurations to approved workflows. |
+| **Change auditing** | Log and review all modifications, including prompt templates and system messages, to ensure traceability and accountability. |
+| **Model testing & validation** | Conduct performance, robustness, and security tests before deployment to verify model reliability and compliance. |
+| **Model change documentation** | Maintain changelogs and model cards to document updates, configurations, and dependencies for compliance and auditing. |
+| **Formal decommissioning process** | Define steps for archiving, sanitizing, and revoking retired models to prevent unauthorized reuse or data leakage. |
 
 ---
 
