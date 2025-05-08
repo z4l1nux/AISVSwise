@@ -20,15 +20,17 @@
 ---
 
 ## 2. Supply Chain Security for Models, Frameworks & Data
-**Goal:** Treat upstream artifacts—pretrained models, ML frameworks, datasets—like code packages subject to tampering, licensing, and vulnerability risk.
+This section provides requirements to secure upstream artifacts (pretrained models, ML frameworks, libraries, and datasets) against tampering, vulnerabilities, and licensing risks to ensure integrity and trustworthiness.
 
 | Focus area | Purpose |
 | --- | --- |
-| **Pretrained model vetting & provenance** | Verify source, checksums, and embedded malicious payloads. |
-| **Framework/library CVE scanning** | Continuously assess TF/PyTorch/Hugging Face and their transitive deps. |
-| **Dependency pinning & verification** | Employ SBOMs, hermetic builds, and sigstore attestations. |
-| **Licensing compliance** | Respect model and data license requirements. |
-| **Trusted source enforcement** | Restrict downloads to signed registries, mirrors, or private artifacts. |
+| **Pretrained model vetting & provenance** | Verify model sources, integrity, and metadata using frameworks that detect embedded malicious payloads or backdoors. |
+| **Framework & library vulnerability scanning** | Continuously assess dependencies for CVEs using tools like Dependabot or Trivy. |
+| **Dependency pinning & verification** | Enforce SBOMs, hermetic builds, and cryptographic attestations to prevent unauthorized or tampered dependencies. |
+| **Trusted source enforcement** | Restrict artifact downloads to signed registries or private repositories, blocking unverified mirrors or public sources. |
+| **Third-party dataset risk assessment** | Evaluate external datasets for bias, legal issues, or poisoning risks, ensuring alignment with ethical and regulatory standards. |
+| **Supply chain attack monitoring** | Monitor for compromised repositories or malicious updates. |
+| **Licensing compliance** | Validate compliance with model and dataset licenses to mitigate legal and ethical risks. |
 
 ---
 
