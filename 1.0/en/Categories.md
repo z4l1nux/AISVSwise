@@ -14,7 +14,7 @@ This section provides requirements to ensure training data is ethical, secure, a
 | **Training Data Integrity & Labeling** | Safeguard training datasets and labels from tampering or poisoning using cryptographic integrity, secure annotation pipelines and other methods to maintain data quality. |
 | **Training Data Quality Assurance** | Validate training data for accuracy, completeness, and consistency to ensure reliable model training. |
 | **Data Poisoning Detection** | Detect and filter malicious or corrupted data in training datasets using anomaly detection or statistical analysis to prevent model corruption. |
-| **User Data Deletion & Consent Enforcement** | Implement mechanisms to honor user deletion requests and consent withdrawals in training datasets, compliant with privacy law. |
+| **User Data Deletion & Consent Enforcement** | Implement mechanisms to honor user deletion requests and consent withdrawals in training datasets and backups, compliant with privacy law. |
 | **Regulatory Compliance Management** | Align training data practices with privacy laws and AI regulations by documenting consent, purpose, and retention policies. |
 
 ---
@@ -47,16 +47,16 @@ This section provides requirements to manage model development, fine-tuning, and
 ---
 
 ## 4. Infrastructure, Configuration & Deployment Security
-**Goal:** Harden every layer—from build server to GPU runtime—against exploitation, misconfiguration, or lateral movement.
+This section provides requirements to secure build, deployment, and runtime environments for AI systems, protecting against exploitation, misconfiguration, and lateral movement.
 
 | Focus area | Purpose |
 | --- | --- |
-| **Container & serverless runtime isolation** | Enforce least‑privilege kernels, seccomp profiles, and eBPF rules. |
-| **Secure deployment pipelines** | Use IaC scanning, reproducible builds, and programmable policy gates (e.g., OPA). |
-| **Exposure‑surface minimization** | Close default ports, disable unused endpoints, and restrict egress. |
-| **Configuration protection & validation** | Store configs in encrypted secrets managers and validate against policy baselines. |
-| **Secrets management & environment hardening** | Rotate API keys, employ TPM/HSM roots, and audit environment variables. |
-| **Model Sanboxing**| To safely evaluate and monitor ML models for vulnerabilities or malicious behavior without risking exposure to the production environment, ensuring containment and early detection of threats. |
+| **Container & serverless runtime isolation** | Enforce least privilege using Kubernetes namespaces, seccomp profiles, and eBPF rules to prevent privilege escalation. |
+| **Secure deployment pipelines** | Implement IaC scanning, reproducible builds, and policy gates to ensure trusted deployments. |
+| **Attack surface reduction** | Restrict default ports, disable unused endpoints, and limit egress traffic to minimize external attack vectors. |
+| **Secrets management & environment hardening** | Rotate API keys, use TPM/HSM for key storage, and audit environment variables to prevent unauthorized access. |
+| **Model sandboxing** | Isolate model evaluation in sandboxed environments to detect vulnerabilities or malicious behavior. |
+| **Infrastructure vulnerability monitoring** | Scan containers and hosts for CVEs and misconfigurations. |
 
 ---
 
@@ -82,7 +82,7 @@ This section provides requirements to secure upstream artifacts (pretrained mode
 | Focus area | Purpose |
 | --- | --- |
 | **Pretrained model vetting & provenance** | Verify model sources, integrity, and metadata using frameworks that detect embedded malicious payloads or backdoors. |
-| **Framework & library vulnerability scanning** | Continuously assess dependencies for CVEs using tools like Dependabot or Trivy. |
+| **Framework & library scanning** | Continuously assess dependencies for CVEs. |
 | **Dependency pinning & verification** | Enforce SBOMs, hermetic builds, and cryptographic attestations to prevent unauthorized or tampered dependencies. |
 | **Trusted source enforcement** | Restrict artifact downloads to signed registries or private repositories, blocking unverified mirrors or public sources. |
 | **Third-party dataset risk assessment** | Evaluate external datasets for bias, legal issues, or poisoning risks, ensuring alignment with ethical and regulatory standards. |
