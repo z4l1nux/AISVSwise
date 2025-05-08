@@ -19,7 +19,7 @@ This section provides requirements to ensure training data is ethical, secure, a
 
 ---
 
-## 2. User Input Validation & Security
+## 2. User Input Validation
 This section outlines defenses against user input attacks, ensuring all runtime inputs (e.g., interactive prompts, API requests, or streaming feeds) are well-formed, policy-compliant, and free from malicious or adversarial content, such as prompt injection. This section focuses solely on securing user inputs during model inference.
 
 | Focus area | Purpose |
