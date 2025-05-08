@@ -12,6 +12,7 @@
 | **Adversarial‑input resistance** | Identify perturbations crafted to trigger misclassification or toxic output. |
 | **Format & length validation** | Enforce strict syntactic, semantic, and size constraints on all incoming data. |
 | **Pre‑deployment data vetting & classification** | Perform offline screening, de‑duplication, and content labeling before data is admitted to training sets. |
+| **Model Provenance Tracking** | Capturing, recording, and storing information about a model's origin, how it was created, and its history of modifications.
 
 ---
 
@@ -25,6 +26,7 @@
 | **Output‑safety filters & allowlists** | Apply layered policy checks (toxicity, PII, disallowed topics) both pre‑ and post‑generation. |
 | **Sensitive‑data‑leakage prevention** | Stop the model from echoing training secrets or user‑supplied confidential data. |
 | **Autonomy‑bounding mechanisms** | Rate‑limit, throttle, or require approvals when the model initiates external actions (e.g., API calls, file writes). |
+| **Enforcing response throttling for output abuse** | Prevent system overload and mitigate abuse or attacks. |
 
 ---
 
@@ -39,6 +41,7 @@
 | **Fine‑tuning data integrity** | Protect small, high‑impact data sets from tampering or unintentional drift. |
 | **User‑data deletion & consent enforcement post‑training** | Prove that subject requests propagate through checkpoints, checkpoints, and derivatives. |
 | **Data‑poisoning detection** | Flag contributions that could corrupt fine‑tuning or drift model weights. |
+| **Model Data Labeling** | To prevent data poisoning, ensure label integrity, protect sensitive information, maintain accountability, defend against inference attacks, and comply with regulatory standards. |
 
 ---
 
@@ -52,6 +55,7 @@
 | **Controlled fine‑tuning & retraining workflows** | Gate data ingestion, hyper‑parameter tweaks, and pipeline configs behind approvals. |
 | **Formal decommissioning process** | Define archival, sanitization, and revocation steps when retiring a model. |
 | **Change auditing & approval workflows** | Log, review, and attest to all modifications—including prompt templates and system messages. |
+| **SBOM (Software Bill of Materials) for model artifacts**| Detailed inventory of all components, dependencies, and metadata used in building and deploying machine learning models to enhance transparency, traceability, and security. |
 
 ---
 
@@ -65,6 +69,7 @@
 | **Exposure‑surface minimization** | Close default ports, disable unused endpoints, and restrict egress. |
 | **Configuration protection & validation** | Store configs in encrypted secrets managers and validate against policy baselines. |
 | **Secrets management & environment hardening** | Rotate API keys, employ TPM/HSM roots, and audit environment variables. |
+| **Model Sanboxing**| To safely evaluate and monitor ML models for vulnerabilities or malicious behavior without risking exposure to the production environment, ensuring containment and early detection of threats. |
 
 ---
 
@@ -94,6 +99,7 @@
 | **Model drift detection** | Track  novelty, confidence, hallucinations, and divergence metrics across versions. |
 | **Performance & behavior telemetry** | Instrument latency, token counts, resource utilization, and success rates. |
 | **Alerting & SIEM integration** | Export enriched events for SOC correlation and incident response. |
+| **Secure log storage** | To track and identify any potential security issues, investigations and audits. |
 
 ---
 
@@ -134,6 +140,7 @@
 | **Differential privacy** | Apply noise or clipping during training and query time. |
 | **Purpose limitation & scope‑creep protection** | Detect secondary uses that diverge from original consent. |
 | **Consent management & documentation** | Track lawful bases, opt‑in status, and data‑subject agreements. |
+| **Federated learning with privacy controls** | Offers privacy advantages by training models on distributed devices without sharing raw data. |
 
 ---
 
@@ -160,6 +167,7 @@
 | **Model inversion resistance** | Limit exposure of embeddings, logits, or internal attention maps. |
 | **Model extraction defense** | Rate‑limit queries, watermark outputs, and detect anomalous scraping. |
 | **Poisoned data detection** | Use clustering, entropy, and trigger search to flag back‑doored samples. |
+| **Regular Red Team Simulation** | Proactively identify and address security weaknesses by emulating real-world attacker behaviors in a controlled environment. |
 
 ---
 
