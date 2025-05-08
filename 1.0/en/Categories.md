@@ -24,10 +24,10 @@ This section outlines defenses against user input attacks, ensuring all runtime 
 
 | Focus area | Purpose |
 | --- | --- |
-| Prompt-Injection Defense | Detect & block attempts to override instructions or jailbreak guardrails |
-| Adversarial-Example Resistance | Detect & block perturbed inputs to mislead model during inference |
-| Schema, Type & Length Validation | Enforce strict syntactic, semantic, & size constraints on user inputs |
-| Content & Policy Screening | Apply filters to ensure compliance with safety policies |
+| **Prompt-Injection Defense** | Detect & block attempts to override instructions or jailbreak guardrails |
+| **Adversarial-Example Resistance** | Detect & block perturbed inputs to mislead model during inference |
+| **Schema, Type & Length Validation** | Enforce strict syntactic, semantic, & size constraints on user inputs |
+| **Content & Policy Screening** | Apply filters to ensure compliance with safety policies |
 
 ---
 
