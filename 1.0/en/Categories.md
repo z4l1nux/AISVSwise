@@ -105,7 +105,7 @@ This section provides requirements to ensure model outputs are accurate, safe, a
 ---
 
 ## 8. Memory, Embeddings & Vector Database Security
-**Goal:** Safeguard long‑term AI memory and RAG (retrieval‑augmented generation) stores from inversion, leakage, or unauthorized reuse.
+This section provides requirements to secure AI memory and retrieval-augmented generation (RAG) stores during runtime, protecting against inversion, leakage, and unauthorized reuse.
 
 | Focus area | Purpose |
 | --- | --- |
