@@ -12,25 +12,22 @@ This section provides requirements to ensure training data is ethical, secure, a
 | **Bias Detection & Correction** | Identify and mitigate demographic or distributional biases in training data to promote equitable model outcomes. |
 | **Representation Completeness & Fairness** | Ensure training data includes balanced coverage of under-represented groups and edge cases through targeted collection or augmentation to enhance model robustness. |
 | **Training Data Integrity & Labeling** | Safeguard training datasets and labels from tampering or poisoning using cryptographic integrity, secure annotation pipelines and other methods to maintain data quality. |
-| **Data Poisoning Detection** | Detect and filter malicious or corrupted data in training datasets using anomaly detection or statistical analysis to prevent model corruption. |
 | **Training Data Quality Assurance** | Validate training data for accuracy, completeness, and consistency to ensure reliable model training. |
+| **Data Poisoning Detection** | Detect and filter malicious or corrupted data in training datasets using anomaly detection or statistical analysis to prevent model corruption. |
 | **User Data Deletion & Consent Enforcement** | Implement mechanisms to honor user deletion requests and consent withdrawals in training datasets, compliant with privacy law. |
 | **Regulatory Compliance Management** | Align training data practices with privacy laws and AI regulations by documenting consent, purpose, and retention policies. |
 
 ---
 
-## 2. Supply Chain Security for Models, Frameworks & Data
-This section provides requirements to secure upstream artifacts (pretrained models, ML frameworks, libraries, and datasets) against tampering, vulnerabilities, and licensing risks to ensure integrity and trustworthiness.
+## 2. User Input Validation & Security
+This section outlines defenses against user input attacks, ensuring all runtime inputs (e.g., interactive prompts, API requests, or streaming feeds) are well-formed, policy-compliant, and free from malicious or adversarial content, such as prompt injection. This section focuses solely on securing user inputs during model inference.
 
 | Focus area | Purpose |
 | --- | --- |
-| **Pretrained model vetting & provenance** | Verify model sources, integrity, and metadata using frameworks that detect embedded malicious payloads or backdoors. |
-| **Framework & library vulnerability scanning** | Continuously assess dependencies for CVEs using tools like Dependabot or Trivy. |
-| **Dependency pinning & verification** | Enforce SBOMs, hermetic builds, and cryptographic attestations to prevent unauthorized or tampered dependencies. |
-| **Trusted source enforcement** | Restrict artifact downloads to signed registries or private repositories, blocking unverified mirrors or public sources. |
-| **Third-party dataset risk assessment** | Evaluate external datasets for bias, legal issues, or poisoning risks, ensuring alignment with ethical and regulatory standards. |
-| **Supply chain attack monitoring** | Monitor for compromised repositories or malicious updates. |
-| **Licensing compliance** | Validate compliance with model and dataset licenses to mitigate legal and ethical risks. |
+| Prompt-Injection Defense | Detect & block attempts to override instructions or jailbreak guardrails |
+| Adversarial-Example Resistance | Detect & block perturbed inputs to mislead model during inference |
+| Schema, Type & Length Validation | Enforce strict syntactic, semantic, & size constraints on user inputs |
+| Content & Policy Screening | Apply filters to ensure compliance with safety policies |
 
 ---
 
@@ -79,15 +76,18 @@ This section provides requirements to manage model development, fine-tuning, and
 
 ---
 
-## 6. User Input Validation & Security
-This section outlines defenses against user input attacks, ensuring all runtime inputs (e.g., interactive prompts, API requests, or streaming feeds) are well-formed, policy-compliant, and free from malicious or adversarial content, such as prompt injection. This section focuses solely on securing user inputs during model inference.
+## 6. Supply Chain Security for Models, Frameworks & Data
+This section provides requirements to secure upstream artifacts (pretrained models, ML frameworks, libraries, and datasets) against tampering, vulnerabilities, and licensing risks to ensure integrity and trustworthiness.
 
 | Focus area | Purpose |
 | --- | --- |
-| Prompt-Injection Defense | Detect & block attempts to override instructions or jailbreak guardrails |
-| Adversarial-Example Resistance | Detect & block perturbed inputs to mislead model during inference |
-| Schema, Type & Length Validation | Enforce strict syntactic, semantic, & size constraints on user inputs |
-| Content & Policy Screening | Apply filters to ensure compliance with safety policies |
+| **Pretrained model vetting & provenance** | Verify model sources, integrity, and metadata using frameworks that detect embedded malicious payloads or backdoors. |
+| **Framework & library vulnerability scanning** | Continuously assess dependencies for CVEs using tools like Dependabot or Trivy. |
+| **Dependency pinning & verification** | Enforce SBOMs, hermetic builds, and cryptographic attestations to prevent unauthorized or tampered dependencies. |
+| **Trusted source enforcement** | Restrict artifact downloads to signed registries or private repositories, blocking unverified mirrors or public sources. |
+| **Third-party dataset risk assessment** | Evaluate external datasets for bias, legal issues, or poisoning risks, ensuring alignment with ethical and regulatory standards. |
+| **Supply chain attack monitoring** | Monitor for compromised repositories or malicious updates. |
+| **Licensing compliance** | Validate compliance with model and dataset licenses to mitigate legal and ethical risks. |
 
 ---
 
