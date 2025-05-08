@@ -3,33 +3,7 @@
 
 ---
 
-## 1. User Input Validation & Security
-This section outlines defenses against user input attacks, ensuring all runtime inputs (e.g., interactive prompts, API requests, or streaming feeds) are well-formed, policy-compliant, and free from malicious or adversarial content, such as prompt injection. This section focuses solely on securing user inputs during model inference.
-
-| Focus area | Purpose |
-| --- | --- |
-| Prompt-Injection Defense | Detect & block attempts to override instructions or jailbreak guardrails |
-| Adversarial-Example Resistance | Detect & block perturbed inputs to mislead model during inference |
-| Schema, Type & Length Validation | Enforce strict syntactic, semantic, & size constraints on user inputs |
-| Content & Policy Screening | Apply filters to ensure compliance with safety policies |
-
----
-
-## 2. Model Behavior, Output Control & Safety Assurance
-**Goal:** Guarantee that generated content is accurate, safe, and aligned with policy—even under adversarial pressure—while giving operators levers to stop or shape responses.
-
-| Focus area | Purpose |
-| --- | --- |
-| **Output‑format enforcement** | Constrain responses to required schemas, types, or token budgets. |
-| **Hallucination detection & mitigation** | Identify low‑confidence or fabricated answers and provide fallback strategies (e.g., citations, refusal). |
-| **Output‑safety filters & allowlists** | Apply layered policy checks (toxicity, PII, disallowed topics) both pre‑ and post‑generation. |
-| **Sensitive‑data‑leakage prevention** | Stop the model from echoing training secrets or user‑supplied confidential data. |
-| **Autonomy‑bounding mechanisms** | Rate‑limit, throttle, or require approvals when the model initiates external actions (e.g., API calls, file writes). |
-| **Enforcing response throttling for output abuse** | Prevent system overload and mitigate abuse or attacks. |
-
----
-
-## 3. Training Data Governance & Bias Management
+## 1. Training Data Governance & Bias Management
 **Goal:** Provide an ethical, traceable, and legally compliant foundation for model behavior by securing data provenance, minimizing bias, and honoring user rights throughout the data lifecycle.
 
 | Focus area | Purpose |
@@ -45,7 +19,20 @@ This section outlines defenses against user input attacks, ensuring all runtime 
 
 ---
 
-## 4. Model Lifecycle Management & Change Control
+## 2. Supply Chain Security for Models, Frameworks & Data
+**Goal:** Treat upstream artifacts—pretrained models, ML frameworks, datasets—like code packages subject to tampering, licensing, and vulnerability risk.
+
+| Focus area | Purpose |
+| --- | --- |
+| **Pretrained model vetting & provenance** | Verify source, checksums, and embedded malicious payloads. |
+| **Framework/library CVE scanning** | Continuously assess TF/PyTorch/Hugging Face and their transitive deps. |
+| **Dependency pinning & verification** | Employ SBOMs, hermetic builds, and sigstore attestations. |
+| **Licensing compliance** | Respect model and data license requirements. |
+| **Trusted source enforcement** | Restrict downloads to signed registries, mirrors, or private artifacts. |
+
+---
+
+## 3. Model Lifecycle Management & Change Control
 **Goal:** Treat models like critical software artifacts—versioned, signed, reviewed, and reversible—so every change is deliberate, traceable, and recoverable.
 
 | Focus area | Purpose |
@@ -59,7 +46,7 @@ This section outlines defenses against user input attacks, ensuring all runtime 
 
 ---
 
-## 5. Infrastructure, Configuration & Deployment Security
+## 4. Infrastructure, Configuration & Deployment Security
 **Goal:** Harden every layer—from build server to GPU runtime—against exploitation, misconfiguration, or lateral movement.
 
 | Focus area | Purpose |
@@ -73,7 +60,7 @@ This section outlines defenses against user input attacks, ensuring all runtime 
 
 ---
 
-## 6. Access Control & Identity for AI Components & Users
+## 5. Access Control & Identity for AI Components & Users
 **Goal:** Enforce identity propigation and context‑aware, least‑privilege access to models, data, and derived content—whether human, service, or agent.
 
 | Focus area | Purpose |
@@ -85,21 +72,33 @@ This section outlines defenses against user input attacks, ensuring all runtime 
 | **Post‑retrieval response filtering**                   | After model inference or search, redact or transform content (RLS, RLHF, policy‑based transformers) to strip data the caller’s clearance cannot view.                       |
 | **Authorization‑aware output filtering**                | Enforce least‑privilege in generated text, images, or actions; ensure prompts, embeddings, and citations respect caller entitlements.                                       |
 | **Tenant & session isolation**                          | Segregate memory, embeddings, and cache per tenant; verify session context on every request to prevent cross‑customer data bleed in multi‑tenant SaaS.                      |
-| **Agent & tool permission scoping**                     | Constrain autonomous agents, plugins, or tool calls to explicit capability sets (e.g., read‑only S3, no shell access), enforced by the ABAC layer.                          |
+| **Agent & tool permission scoping**                     | Constrain autonomous agents, plugins, or tool calls to explicit capability sets (e.g., read‑only S3, no shell access), enforced by the ABAC layer.    
 
 ---
 
-## 7. Monitoring, Logging & Anomaly Detection
-**Goal:** Provide real‑time and forensic visibility into what the model sees, does, and returns—so threats can be detected, triaged, and learned from.
+## 6. User Input Validation & Security
+This section outlines defenses against user input attacks, ensuring all runtime inputs (e.g., interactive prompts, API requests, or streaming feeds) are well-formed, policy-compliant, and free from malicious or adversarial content, such as prompt injection. This section focuses solely on securing user inputs during model inference.
 
 | Focus area | Purpose |
 | --- | --- |
-| **Prompt & output logging** | Capture inputs, outputs, and policy decisions with privacy‑preserving redaction. |
-| **Abuse & jailbreak detection** | Alert when queries resemble known jailbreak patterns or circumvent safeguards. |
-| **Model drift detection** | Track  novelty, confidence, hallucinations, and divergence metrics across versions. |
-| **Performance & behavior telemetry** | Instrument latency, token counts, resource utilization, and success rates. |
-| **Alerting & SIEM integration** | Export enriched events for SOC correlation and incident response. |
-| **Secure log storage** | To track and identify any potential security issues, investigations and audits. |
+| Prompt-Injection Defense | Detect & block attempts to override instructions or jailbreak guardrails |
+| Adversarial-Example Resistance | Detect & block perturbed inputs to mislead model during inference |
+| Schema, Type & Length Validation | Enforce strict syntactic, semantic, & size constraints on user inputs |
+| Content & Policy Screening | Apply filters to ensure compliance with safety policies |
+
+---
+
+## 7. Model Behavior, Output Control & Safety Assurance
+**Goal:** Guarantee that generated content is accurate, safe, and aligned with policy—even under adversarial pressure—while giving operators levers to stop or shape responses.
+
+| Focus area | Purpose |
+| --- | --- |
+| **Output‑format enforcement** | Constrain responses to required schemas, types, or token budgets. |
+| **Hallucination detection & mitigation** | Identify low‑confidence or fabricated answers and provide fallback strategies (e.g., citations, refusal). |
+| **Output‑safety filters & allowlists** | Apply layered policy checks (toxicity, PII, disallowed topics) both pre‑ and post‑generation. |
+| **Sensitive‑data‑leakage prevention** | Stop the model from echoing training secrets or user‑supplied confidential data. |
+| **Autonomy‑bounding mechanisms** | Rate‑limit, throttle, or require approvals when the model initiates external actions (e.g., API calls, file writes). |
+| **Enforcing response throttling for output abuse** | Prevent system overload and mitigate abuse or attacks. |                      |
 
 ---
 
@@ -130,7 +129,21 @@ This section outlines defenses against user input attacks, ensuring all runtime 
 
 ---
 
-## 10. Privacy Protection & Personal Data Management
+## 10. Adversarial Robustness & Attack Resistance
+**Goal:** Design models that degrade gracefully—or fail closed—when confronted with sophisticated attacks targeting the learning process or inference surface.
+
+| Focus area | Purpose |
+| --- | --- |
+| **Adversarial example hardening** | Employ defensive distillation, randomized smoothing, or certified bounds. |
+| **Membership inference mitigation** | Reduce confidence gaps and add noise to protect training inclusion privacy. |
+| **Model inversion resistance** | Limit exposure of embeddings, logits, or internal attention maps. |
+| **Model extraction defense** | Rate‑limit queries, watermark outputs, and detect anomalous scraping. |
+| **Poisoned data detection** | Use clustering, entropy, and trigger search to flag back‑doored samples. |
+| **Regular Red Team Simulation** | Proactively identify and address security weaknesses by emulating real-world attacker behaviors in a controlled environment. |
+
+---
+
+## 11. Privacy Protection & Personal Data Management
 **Goal:** Uphold individual rights and minimize the collection, retention, and exposure of personal data at every phase of the AI pipeline.
 
 | Focus area | Purpose |
@@ -144,30 +157,17 @@ This section outlines defenses against user input attacks, ensuring all runtime 
 
 ---
 
-## 11. Supply Chain Security for Models, Frameworks & Data
-**Goal:** Treat upstream artifacts—pretrained models, ML frameworks, datasets—like code packages subject to tampering, licensing, and vulnerability risk.
+## 12. Monitoring, Logging & Anomaly Detection
+**Goal:** Provide real‑time and forensic visibility into what the model sees, does, and returns—so threats can be detected, triaged, and learned from.
 
 | Focus area | Purpose |
 | --- | --- |
-| **Pretrained model vetting & provenance** | Verify source, checksums, and embedded malicious payloads. |
-| **Framework/library CVE scanning** | Continuously assess TF/PyTorch/Hugging Face and their transitive deps. |
-| **Dependency pinning & verification** | Employ SBOMs, hermetic builds, and sigstore attestations. |
-| **Licensing compliance** | Respect model and data license requirements. |
-| **Trusted source enforcement** | Restrict downloads to signed registries, mirrors, or private artifacts. |
-
----
-
-## 12. Adversarial Robustness & Attack Resistance
-**Goal:** Design models that degrade gracefully—or fail closed—when confronted with sophisticated attacks targeting the learning process or inference surface.
-
-| Focus area | Purpose |
-| --- | --- |
-| **Adversarial example hardening** | Employ defensive distillation, randomized smoothing, or certified bounds. |
-| **Membership inference mitigation** | Reduce confidence gaps and add noise to protect training inclusion privacy. |
-| **Model inversion resistance** | Limit exposure of embeddings, logits, or internal attention maps. |
-| **Model extraction defense** | Rate‑limit queries, watermark outputs, and detect anomalous scraping. |
-| **Poisoned data detection** | Use clustering, entropy, and trigger search to flag back‑doored samples. |
-| **Regular Red Team Simulation** | Proactively identify and address security weaknesses by emulating real-world attacker behaviors in a controlled environment. |
+| **Prompt & output logging** | Capture inputs, outputs, and policy decisions with privacy‑preserving redaction. |
+| **Abuse & jailbreak detection** | Alert when queries resemble known jailbreak patterns or circumvent safeguards. |
+| **Model drift detection** | Track  novelty, confidence, hallucinations, and divergence metrics across versions. |
+| **Performance & behavior telemetry** | Instrument latency, token counts, resource utilization, and success rates. |
+| **Alerting & SIEM integration** | Export enriched events for SOC correlation and incident response. |
+| **Secure log storage** | To track and identify any potential security issues, investigations and audits. |
 
 ---
 
