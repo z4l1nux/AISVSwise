@@ -45,7 +45,6 @@ This section provides requirements to manage model development, fine-tuning, and
 | **Model change documentation** | Maintain changelogs and model cards to document updates, configurations, and dependencies for compliance and auditing. |
 | **Formal decommissioning process** | Define steps for archiving, sanitizing, and revoking retired models to prevent unauthorized reuse or data leakage. |
 | **Model Provenance Tracking** | Capturing, recording, and storing information about a model's origin, how it was created, and its history of modifications. |
-| **SBOM (Software Bill of Materials) for model artifacts**| Detailed inventory of all components, dependencies, and metadata used in building and deploying machine learning models to enhance transparency, traceability, and security. |
 
 ---
 
@@ -90,6 +89,7 @@ This section provides requirements to secure upstream artifacts (pretrained mode
 | **Third-party dataset risk assessment** | Evaluate external datasets for bias, legal issues, or poisoning risks, ensuring alignment with ethical and regulatory standards. |
 | **Supply chain attack monitoring** | Monitor for compromised repositories or malicious updates. |
 | **Licensing compliance** | Validate compliance with model and dataset licenses to mitigate legal and ethical risks. |
+| **SBOM (Software Bill of Materials) for model artifacts**| Detailed inventory of all components, dependencies, and metadata used in building and deploying machine learning models to enhance transparency, traceability, and security. |
 
 ---
 
