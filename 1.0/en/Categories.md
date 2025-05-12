@@ -142,12 +142,12 @@ This section provides requirements for designing models that degrade gracefully�
 | **Membership inference mitigation** | Reduce confidence gaps and add noise to protect training inclusion privacy. |
 | **Model inversion resistance** | Limit exposure of embeddings, logits, or internal attention maps. |
 | **Model extraction defense** | Rate‑limit queries, watermark outputs, and detect anomalous scraping. |
-| **Poisoned data detection** | At inference time, Use clustering, entropy, and trigger search to flag back‑doored samples. |
+| **Poisoned data detection** | At inference time, use clustering, entropy, and trigger search to flag back‑doored samples. |
 
 ---
 
 ## 11. Privacy Protection & Personal Data Management
-**Goal:** Uphold individual rights and minimize the collection, retention, and exposure of personal data at every phase of the AI pipeline.
+This section provides requirements for upholding individual rights and minimizing the collection, retention, and exposure of personal data at every phase of the AI pipeline.
 
 | Focus area | Purpose |
 | --- | --- |
@@ -156,7 +156,7 @@ This section provides requirements for designing models that degrade gracefully�
 | **Differential privacy** | Apply noise or clipping during training and query time. |
 | **Purpose limitation & scope‑creep protection** | Detect secondary uses that diverge from original consent. |
 | **Consent management & documentation** | Track lawful bases, opt‑in status, and data‑subject agreements. |
-| **Federated learning with privacy controls** | Offers privacy advantages by training models on distributed devices without sharing raw data. |
+| **Federated learning with privacy controls** | Apply privacy advantages by training models on distributed devices without sharing raw data. |
 
 ---
 
