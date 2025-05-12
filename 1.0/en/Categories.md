@@ -118,17 +118,19 @@ This section provides requirements to secure AI memory and retrieval-augmented g
 
 ---
 
-## 9. Autonomous Orchestration & Agentic Action Security  
-**Goal:** Secure the glue code—agents, planners, tool delegates—that chains model calls into complex workflows, often with real‑world impact.
+## 9. Autonomous Orchestration & Agentic Action Security
+
+This section provides requirements to secure the glue code agents, planners, and tool delegates that chain model calls into complex, potentially real‑world‑impacting workflows.
 
 | Focus area | Purpose |
 | --- | --- |
-| **Agent task planning & re‑entrancy control** | Throttle recursive plans and require human checkpoints for privileged actions. |
+| **Agent task‑planning & recursion budgets** | Throttle recursive plans and require human checkpoints for privileged actions. |
 | **Tool plugin sandboxing** | Isolate third‑party functions with syscall, network, and filesystem jails. |
-| **Autonomous loop bounding** | Enforce max iterations, cost quotas, or resource ceilings. |
+| **Autonomous loop & cost bounding** | Enforce iteration, spend, and API‑call ceilings. |
 | **Protocol‑level misuse protection** | Validate structured messages (e.g., function‑call JSON) against schemas. |
-| **Multi‑agent swarm risk reduction** | Detect collusion, echo‑chambers, or emergent unsafe behavior across agents. |
-| **User & Tool Authn/Authz** | Ensure any agent is operating in the correct permissioning paradigm, assuming permissions for a user it is operating on behalf of, or controlling tool calls with traditional authn/authz methods. |
+| **Agent identity & tamper‑evidence** | Add immutable audit stamps for every thought/action. |
+| **Multi‑agent swarm risk reduction** | Use sentinel agents, diversity injection, and collusion heuristics. | 
+| **User & Tool Authn/Authz** | Ensure any agent is operating in the correct permissioning paradigm, assuming permissions for a user it is operating on behalf of, or controlling tool calls with traditional authn/authz methods. | 
 
 ---
 
