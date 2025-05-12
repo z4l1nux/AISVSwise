@@ -119,7 +119,6 @@ This section provides requirements to secure AI memory and retrieval-augmented g
 ---
 
 ## 9. Autonomous Orchestration & Agentic Action Security
-
 This section provides requirements to secure the glue code agents, planners, and tool delegates that chain model calls into complex, potentially real‑world‑impacting workflows.
 
 | Focus area | Purpose |
@@ -135,7 +134,7 @@ This section provides requirements to secure the glue code agents, planners, and
 ---
 
 ## 10. Adversarial Robustness & Attack Resistance
-**Goal:** Design models that degrade gracefully—or fail closed—when confronted with sophisticated attacks targeting the learning process or inference surface.
+This section provides requirements for designing models that degrade gracefully—or fail closed—when confronted with sophisticated attacks targeting the learning process or inference surface.
 
 | Focus area | Purpose |
 | --- | --- |
@@ -144,7 +143,6 @@ This section provides requirements to secure the glue code agents, planners, and
 | **Model inversion resistance** | Limit exposure of embeddings, logits, or internal attention maps. |
 | **Model extraction defense** | Rate‑limit queries, watermark outputs, and detect anomalous scraping. |
 | **Poisoned data detection** | At inference time, Use clustering, entropy, and trigger search to flag back‑doored samples. |
-| **Regular Red Team Simulation** | Proactively identify and address security weaknesses by emulating real-world attacker behaviors in a controlled environment. |
 
 ---
 
