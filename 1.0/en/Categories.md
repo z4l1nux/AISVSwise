@@ -161,7 +161,7 @@ This section provides requirements for upholding individual rights and minimizin
 ---
 
 ## 12. Monitoring, Logging & Anomaly Detection
-**Goal:** Provide real‑time and forensic visibility into what the model sees, does, and returns—so threats can be detected, triaged, and learned from.
+This section provides requirements for delivering real‑time and forensic visibility into what the model and other AI components sees, does, and returns, so threats can be detected, triaged, and learned from.
 
 | Focus area | Purpose |
 | --- | --- |
@@ -175,19 +175,18 @@ This section provides requirements for upholding individual rights and minimizin
 ---
 
 ## 13. Human Oversight, Accountability & Governance
-**Goal:** Keep a human “captain of the ship” with clear lines of responsibility, escalation, and ethical stewardship.
+This section provides requirements for keeping a human “captain of the ship” with clear lines of responsibility, escalation, and ethical stewardship.
 
 | Focus area | Purpose |
 | --- | --- |
 | **Kill‑switch & override mechanisms** | Provide immediate shutdown or rollback paths for runaway behavior. |
 | **Human‑in‑the‑loop decision checkpoints** | Require approvals when stakes surpass predefined risk thresholds. |
-| **Operational governance documentation** | Maintain SOPs, playbooks, and RACI matrices for AI operations. |
 | **Chain of responsibility & auditability** | Log operator actions and model decisions for postmortem reviews. |
 
 ---
 
 ## 14. Explainability, Interpretability & Transparency
-**Goal:** Make model reasoning and limitations legible to developers, auditors, and end‑users—building trust and diagnosability.
+This section provides requirements for making model reasoning and limitations legible to developers, auditors, and end‑users—building trust and diagnosability.
 
 | Focus area | Purpose |
 | --- | --- |
