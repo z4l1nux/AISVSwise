@@ -138,6 +138,7 @@ This section provides requirements for designing models that degrade gracefullyâ
 
 | Focus area | Purpose |
 | --- | --- |
+| **Model alignment and safety** | Model is trained and tested to have alignment suitable for its use case. |
 | **Adversarial example hardening** | Employ defensive distillation, randomized smoothing, or certified bounds. |
 | **Membership inference mitigation** | Reduce confidence gaps and add noise to protect training inclusion privacy. |
 | **Model inversion resistance** | Limit exposure of embeddings, logits, or internal attention maps. |
