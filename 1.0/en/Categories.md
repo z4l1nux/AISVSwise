@@ -1,5 +1,5 @@
 # OWASP Artificial Intelligence Security Verification Standard (AISVS)
-### Core Category List - Work In Progress
+### Core Category List - This Category list is to help the AISVS team plan the structure of the document. It will be deleted before the standard is released.
 
 ---
 
@@ -19,7 +19,7 @@ This section provides foundational requirements for establishing organizational 
 
 ## 1. Training Data Governance & Bias Management
 
-This section provides requirements to ensure training data is ethical, secure, and compliant by managing its provenance, quality, and bias during data collection and preparation for model training.
+This section provides requirements to ensure training data is ethical, secure, and compliant by managing its provenance, quality, and bias during data collection and preparation for model training. And intial version of this section has been built to demonstrate the structure of the requirements for discussion here [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C1-Training-Data-Governance.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C1-Training-Data-Governance.md)
 
 | Focus area | Purpose | Verification Requirements | MITRE ATLAS Mapping |
 | --- | --- | --- | --- |
