@@ -13,7 +13,7 @@ This work is licensed under a
 
 ## Introduction
 
-The Artificial Intelligence Security Verification Standard (AISVS) focuses on providing developers, architects, and security professionals with a structured framework to evaluate and verify the security and ethical considerations of AI-driven applications. Modeled after existing OWASP standards (such as the ASVS for web applications), AISVS will define categories of requirements for areas including:
+The Artificial Intelligence Security Verification Standard (AISVS) focuses on providing developers, architects, and security professionals with a structured security checklist to evaluate and verify the security and ethical considerations of AI-driven applications. Modeled after existing OWASP standards (such as the ASVS for web applications), AISVS will define categories of requirements for areas including:
 
 * Data Integrity and Privacy: Ensuring the integrity of training data, verifying minimal and privacy-respecting data collection, and monitoring for data poisoning or bias.
 * Model Security: Guidance on tampering resistance, distribution of models, and policy enforcement.
