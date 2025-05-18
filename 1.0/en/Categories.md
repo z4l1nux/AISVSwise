@@ -145,7 +145,7 @@ This section provides requirements to secure the interactions and operations of 
 This section provides requirements to enhance models' resilience against various adversarial attacks, including evasion, inference, and extraction attacks.
 
 | Focus area | Purpose | MITRE ATLAS Mapping |
-| --- | --- | --- | --- |
+| --- | --- | --- | 
 | **Model alignment and safety** | Ensure models behave as intended and do not produce harmful outputs. This includes basic alignment testing, guard rails for harmful outputs and a comprehensive alignment verification methodology. | ML05.005 Safety Constraint Bypass |
 | **Adversarial example hardening** | Enhance model resilience against manipulated inputs during inference including implementation of defensive techniques and formal robustness guarantees where applicable. | ML05.001 Model Evasion |
 | **Membership inference mitigation** | Prevent attacks that determine if specific data was used in training. This includes awareness of membership inference risks, implementation of confidence score controls and comprehensive defenses such as differential privacy. | ML03.001 Membership Inference |
