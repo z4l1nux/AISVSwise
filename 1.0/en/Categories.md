@@ -85,7 +85,7 @@ This section provides requirements to ensure the integrity and security of all c
 
 | Focus area | Purpose | MITRE ATLAS Mapping |
 | --- | --- | --- |
-| **Pretrained model vetting & provenance** | Verify the origin, integrity, and security posture of third-party models before integration. | [L1] Verify basic validation of model sources. This includes security assessment of pretrained models.<br>[L3] Verify comprehensive vetting including hidden behavior testing. | ML00.002 Transfer Learning |
+| **Pretrained model vetting & provenance** | Verify the origin, integrity, and security posture of third-party models before integration. This includes basic validation of model sources, security assessment of pretrained models and comprehensive vetting including hidden behavior testing. | ML00.002 Transfer Learning |
 | **Framework & library scanning** | Identify and remediate vulnerabilities in AI frameworks and supporting libraries. This includes dependency scanning in build pipelines, automated vulnerability monitoring and code analysis of critical dependencies. | ML00.004 Supply Chain Compromise |
 | **Dependency pinning & verification** | Lock dependencies to specific verified versions and validate integrity. This includes version pinning for all dependencies, integrity verification of dependencies and reproducible builds with identical outputs. | ML00.004 Supply Chain Compromise |
 | **Trusted source enforcement** | Ensure all AI components are obtained from authorized and verified sources. This includes approved sources for all components, enforcement of trusted source policies and cryptographic verification of component origins. | ML00.004 Supply Chain Compromise |
