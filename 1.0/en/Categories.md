@@ -24,12 +24,12 @@ This section provides requirements to ensure training data is ethical, secure, a
 
 This section outlines defenses against user input attacks, ensuring all runtime inputs (e.g., interactive prompts, API requests, or streaming feeds) are well-formed, policy-compliant, and free from malicious or adversarial content, such as prompt injection. This section focuses solely on securing user inputs during model inference.
 
-| Focus area | Purpose | Verification Requirements | MITRE ATLAS Mapping |
+| Focus area | Purpose | MITRE ATLAS Mapping |
 | --- | --- | --- | --- |
-| **Prompt-Injection Defense** | Detect & block attempts to override instructions or jailbreak guardrails | [L1] Verify input screening for known prompt injection patterns.<br>[L2] Verify detection and blocking of instruction override attempts.<br>[L3] Verify adaptive defenses against novel prompt injection techniques. | ML05.002 Input Manipulation |
-| **Adversarial-Example Resistance** | Detect & block perturbed inputs designed to mislead model during inference | [L1] Verify basic input sanitization to prevent obvious manipulations.<br>[L2] Verify detection mechanisms for known adversarial patterns.<br>[L3] Verify robust defenses against sophisticated adversarial examples. | ML05.001 Model Evasion |
-| **Schema, Type & Length Validation** | Enforce strict syntactic, semantic, & size constraints on user inputs | [L1] Verify input validation against defined schemas.<br>[L2] Verify type checking and length constraints enforcement.<br>[L3] Verify semantic validation of complex inputs. | ML05.002 Input Manipulation |
-| **Content & Policy Screening** | Apply filters to ensure compliance with safety policies | [L1] Verify content screening for prohibited material.<br>[L2] Verify policy enforcement based on context and user.<br>[L3] Verify comprehensive coverage of content policies with regular updates. | ML05.003 Prompt Injection |
+| **Prompt-Injection Defense** | Detect & block attempts to override instructions or jailbreak guardrails. This includes input screening for known prompt injection patterns, detection and blocking of instruction override attempts, and adaptive defenses against novel prompt injection techniques. | ML05.002 Input Manipulation |
+| **Adversarial-Example Resistance** | Detect & block perturbed inputs designed to mislead model during inference. This includes basic input sanitization to prevent obvious manipulations, detection mechanisms for known adversarial patterns, and robust defenses against sophisticated adversarial examples. | ML05.001 Model Evasion |
+| **Schema, Type & Length Validation** | Enforce strict syntactic, semantic, & size constraints on user inputs. This includes input validation against defined schemas, type checking and length constraints enforcement, and semantic validation of complex inputs. | ML05.002 Input Manipulation |
+| **Content & Policy Screening** | Apply filters to ensure compliance with safety policies. This includes content screening for prohibited material, policy enforcement based on context and user, and comprehensive coverage of content policies with regular updates. | ML05.003 Prompt Injection |
 
 ---
 
