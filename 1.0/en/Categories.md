@@ -8,7 +8,7 @@
 This section provides requirements to ensure training data is ethical, secure, and compliant by managing its provenance, quality, and bias during data collection and preparation for model training. And intial version of this section has been built to demonstrate the structure of the requirements for discussion here [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C1-Training-Data-Governance.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C1-Training-Data-Governance.md)
 
 | Focus area | Purpose | MITRE ATLAS Mapping |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | **Training Data Provenance** | Track and audit origins of training datasets to ensure traceability and detect unauthorized or unverified sources. This includes data sources being documented and their origins can be traced, that data acquisition processes include verification of source legitimacy, and cryptographic validation of data source integrity. | ML04.001 Data Poisoning |
 | **Bias Detection & Correction** | Identify and mitigate demographic or distributional biases in training data to promote equitable model outcomes. This includes bias assessment on training datasets, documented mitigation strategies for identified biases, and tracking of bias metrics across model versions. | ML07.001 Bias Exploitation |
 | **Representation Completeness & Fairness** | Ensure training data includes balanced coverage of under-represented groups and edge cases through targeted collection or augmentation to enhance model robustness. This includes analysis of demographic distribution in training data, procedures for augmenting underrepresented classes, and edge case testing against fairness criteria. | ML07.001 Bias Exploitation |
