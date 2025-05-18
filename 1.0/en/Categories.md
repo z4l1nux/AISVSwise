@@ -3,47 +3,64 @@
 
 ---
 
+## 0. AI Security Governance & Risk Management
+
+This section provides foundational requirements for establishing organizational structures, policies, and processes to govern AI security throughout the system lifecycle.
+
+| Focus area | Purpose | Verification Requirements |
+| --- | --- | --- |
+| **AI Risk Management Framework Adoption** | Establish a formal framework to identify, assess, and mitigate AI-specific risks throughout the system lifecycle. | [L1] Verify that an AI-specific risk assessment methodology is documented and implemented.<br>[L2] Verify that risk assessments are conducted at key points in the AI lifecycle and prior to significant changes.<br>[L3] Verify that the risk management framework aligns with established standards (e.g., NIST AI RMF). |
+| **AI Security Policy & Procedures** | Define and enforce organizational standards for secure AI development, deployment, and operation. | [L1] Verify the existence of documented AI security policies.<br>[L2] Verify policies are reviewed and updated at least annually and after significant changes to the threat landscape.<br>[L3] Verify that policies address all AISVS categories and regulatory requirements. |
+| **Roles & Responsibilities for AI Security** | Establish clear accountability for AI security across the organization. | [L1] Verify that AI security roles and responsibilities are documented.<br>[L2] Verify that responsible individuals possess appropriate security expertise.<br>[L3] Verify the establishment of an AI ethics committee or governance board for high-risk AI systems. |
+| **Ethical AI Guidelines Enforcement** | Ensure AI systems operate according to established ethical principles. | [L1] Verify that ethical guidelines for AI development and deployment exist.<br>[L2] Verify mechanisms to detect and report ethical violations.<br>[L3] Verify regular ethical reviews of deployed AI systems. |
+| **AI Regulatory Compliance Monitoring** | Maintain awareness of and compliance with evolving AI regulations. | [L1] Verify processes to identify applicable regulations.<br>[L2] Verify compliance is assessed for all regulatory requirements.<br>[L3] Verify regulatory changes trigger timely reviews and updates to AI systems. |
+
+---
+
 ## 1. Training Data Governance & Bias Management
+
 This section provides requirements to ensure training data is ethical, secure, and compliant by managing its provenance, quality, and bias during data collection and preparation for model training.
 
-| Focus area | Purpose |
-| --- | --- |
-| **Training Data Provenance** | Track and audit origins of training datasets to ensure traceability and detect unauthorized or unverified sources. |
-| **Bias Detection & Correction** | Identify and mitigate demographic or distributional biases in training data to promote equitable model outcomes. |
-| **Representation Completeness & Fairness** | Ensure training data includes balanced coverage of under-represented groups and edge cases through targeted collection or augmentation to enhance model robustness. |
-| **Training Data Integrity & Labeling** | Safeguard training datasets and labels from tampering or poisoning using cryptographic integrity, secure annotation pipelines and other methods to maintain data quality. |
-| **Training Data Quality Assurance** | Validate training data for accuracy, completeness, and consistency to ensure reliable model training. |
-| **Data Poisoning Detection** | Detect and filter malicious or corrupted data in training datasets using anomaly detection or statistical analysis to prevent model corruption. |
-| **User Data Deletion & Consent Enforcement** | Implement mechanisms to honor user deletion requests and consent withdrawals in training datasets and backups, compliant with privacy law. |
-| **Model Data Labeling** | To prevent data poisoning, ensure label integrity, protect sensitive information, maintain accountability, defend against inference attacks, and comply with regulatory standards. |
+| Focus area | Purpose | Verification Requirements | MITRE ATLAS Mapping |
+| --- | --- | --- | --- |
+| **Training Data Provenance** | Track and audit origins of training datasets to ensure traceability and detect unauthorized or unverified sources. | [L1] Verify that data sources are documented and their origins can be traced.<br>[L2] Verify that data acquisition processes include verification of source legitimacy.<br>[L3] Verify cryptographic validation of data source integrity. | ML04.001 Data Poisoning |
+| **Bias Detection & Correction** | Identify and mitigate demographic or distributional biases in training data to promote equitable model outcomes. | [L1] Verify bias assessment is performed on training datasets.<br>[L2] Verify documented mitigation strategies for identified biases.<br>[L3] Verify bias metrics are tracked across model versions. | ML07.001 Bias Exploitation |
+| **Representation Completeness & Fairness** | Ensure training data includes balanced coverage of under-represented groups and edge cases through targeted collection or augmentation to enhance model robustness. | [L1] Verify analysis of demographic distribution in training data.<br>[L2] Verify procedures for augmenting underrepresented classes.<br>[L3] Verify edge case testing against fairness criteria. | ML07.001 Bias Exploitation |
+| **Pre-Training Data Poisoning Detection & Mitigation** | Detect and filter malicious or corrupted data in training datasets using anomaly detection or statistical analysis to prevent model corruption. | [L1] Verify basic data validation checks before training.<br>[L2] Verify statistical outlier detection in training data.<br>[L3] Verify advanced poisoning detection techniques implementation. | ML04.001 Data Poisoning |
+| **Training Data Integrity & Labeling** | Safeguard training datasets and labels from tampering or poisoning using cryptographic integrity, secure annotation pipelines and other methods. | [L1] Verify data integrity checks are implemented.<br>[L2] Verify secure annotation workflows with access controls.<br>[L3] Verify cryptographic validation of data and label integrity. | ML04.001 Data Poisoning |
+| **Training Data Quality Assurance** | Validate training data for accuracy, completeness, and consistency to ensure reliable model training. | [L1] Verify basic data quality checks (missing values, formats).<br>[L2] Verify consistency and distribution checks.<br>[L3] Verify formal data quality metrics monitored for drift. | ML04.003 Data Manipulation |
+| **User Data Deletion & Consent Enforcement** | Implement mechanisms to honor user deletion requests and consent withdrawals in training datasets and backups, compliant with privacy law. | [L1] Verify procedures for handling deletion requests.<br>[L2] Verify audit trails of deletion requests and actions.<br>[L3] Verify deletion across all systems including backups. | ML08.001 Data Leakage |
+| **Model Metadata Integrity** | Ensure accurate documentation of model characteristics, training parameters, and dataset information. | [L1] Verify metadata is captured for all models.<br>[L2] Verify tamper-resistant storage of metadata.<br>[L3] Verify cryptographic signing of metadata. | ML01.002 Model Tampering |
 
 ---
 
 ## 2. User Input Validation
+
 This section outlines defenses against user input attacks, ensuring all runtime inputs (e.g., interactive prompts, API requests, or streaming feeds) are well-formed, policy-compliant, and free from malicious or adversarial content, such as prompt injection. This section focuses solely on securing user inputs during model inference.
 
-| Focus area | Purpose |
-| --- | --- |
-| **Prompt-Injection Defense** | Detect & block attempts to override instructions or jailbreak guardrails |
-| **Adversarial-Example Resistance** | Detect & block perturbed inputs to mislead model during inference |
-| **Schema, Type & Length Validation** | Enforce strict syntactic, semantic, & size constraints on user inputs |
-| **Content & Policy Screening** | Apply filters to ensure compliance with safety policies |
+| Focus area | Purpose | Verification Requirements | MITRE ATLAS Mapping |
+| --- | --- | --- | --- |
+| **Prompt-Injection Defense** | Detect & block attempts to override instructions or jailbreak guardrails | [L1] Verify input screening for known prompt injection patterns.<br>[L2] Verify detection and blocking of instruction override attempts.<br>[L3] Verify adaptive defenses against novel prompt injection techniques. | ML05.002 Input Manipulation |
+| **Adversarial-Example Resistance** | Detect & block perturbed inputs designed to mislead model during inference | [L1] Verify basic input sanitization to prevent obvious manipulations.<br>[L2] Verify detection mechanisms for known adversarial patterns.<br>[L3] Verify robust defenses against sophisticated adversarial examples. | ML05.001 Model Evasion |
+| **Schema, Type & Length Validation** | Enforce strict syntactic, semantic, & size constraints on user inputs | [L1] Verify input validation against defined schemas.<br>[L2] Verify type checking and length constraints enforcement.<br>[L3] Verify semantic validation of complex inputs. | ML05.002 Input Manipulation |
+| **Content & Policy Screening** | Apply filters to ensure compliance with safety policies | [L1] Verify content screening for prohibited material.<br>[L2] Verify policy enforcement based on context and user.<br>[L3] Verify comprehensive coverage of content policies with regular updates. | ML05.003 Prompt Injection |
 
 ---
 
 ## 3. Model Lifecycle Management & Change Control
+
 This section provides requirements to manage model development, fine-tuning, and maintenance securely, ensuring all changes are versioned, traceable, and reversible.
 
-| Focus area | Purpose |
-| --- | --- |
-| **Model versioning & transparency** | Track model releases with cryptographic signing, dependency graphs, and SBOMs to ensure integrity and transparency. |
-| **Secure patching & rollback** | Enable hotfixes and downgrades with validated rollback mechanisms to maintain security and functionality without vulnerabilities. |
-| **Controlled fine-tuning & retraining** | Restrict data ingestion, hyperparameter changes, and pipeline configurations to approved workflows. |
-| **Change auditing** | Log and review all modifications, including prompt templates and system messages, to ensure traceability and accountability. |
-| **Model testing & validation** | Conduct performance, robustness, and security tests before deployment to verify model reliability and compliance. |
-| **Model change documentation** | Maintain changelogs and model cards to document updates, configurations, and dependencies for compliance and auditing. |
-| **Formal decommissioning process** | Define steps for archiving, sanitizing, and revoking retired models to prevent unauthorized reuse or data leakage. |
-| **Model Provenance Tracking** | Capturing, recording, and storing information about a model's origin, how it was created, and its history of modifications. |
+| Focus area | Purpose | Verification Requirements | MITRE ATLAS Mapping |
+| --- | --- | --- | --- |
+| **Model versioning & transparency** | Track model releases with cryptographic signing, dependency graphs, and documentation to ensure integrity and transparency. | [L1] Verify unique versioning for all model releases.<br>[L2] Verify cryptographic signing of model artifacts.<br>[L3] Verify complete dependency tracking with detailed documentation. | ML01.002 Model Tampering |
+| **Secure patching & rollback** | Enable hotfixes and downgrades with validated rollback mechanisms to maintain security and functionality without vulnerabilities. | [L1] Verify documented procedures for model updates.<br>[L2] Verify testing of rollback functionality.<br>[L3] Verify automated rollback triggers for detected issues. | ML01.004 Model Poisoning |
+| **Controlled fine-tuning & retraining** | Restrict data ingestion, hyperparameter changes, and pipeline configurations to approved workflows. | [L1] Verify restricted access to fine-tuning operations.<br>[L2] Verify validation of all data used in fine-tuning.<br>[L3] Verify audit trail of all parameter modifications. | ML01.004 Model Poisoning |
+| **Change auditing** | Log and review all modifications, including prompt templates and system messages, to ensure traceability and accountability. | [L1] Verify logging of all model changes.<br>[L2] Verify regular review of change logs.<br>[L3] Verify tamper-proof audit trails with integrity verification. | ML01.001 Model Replication |
+| **Model testing & validation** | Conduct performance, robustness, and security tests before deployment to verify model reliability and compliance. | [L1] Verify pre-deployment testing protocols.<br>[L2] Verify security-focused test cases.<br>[L3] Verify comprehensive adversarial testing. | ML01.005 Model Manipulation |
+| **Model change documentation** | Maintain changelogs and model cards to document updates, configurations, and dependencies for compliance and auditing. | [L1] Verify documentation of all model changes.<br>[L2] Verify detailed model cards with usage guidelines.<br>[L3] Verify documentation meets regulatory requirements. | ML01.002 Model Tampering |
+| **Formal decommissioning process** | Define steps for archiving, sanitizing, and revoking retired models to prevent unauthorized reuse or data leakage. | [L1] Verify documented decommissioning procedures.<br>[L2] Verify secure data sanitization processes.<br>[L3] Verify complete dependency analysis and notification for interconnected systems. | ML08.001 Data Leakage |
+| **Model Provenance Tracking** | Capturing, recording, and storing information about a model's origin, how it was created, and its history of modifications. | [L1] Verify model origin documentation.<br>[L2] Verify cryptographic verification of provenance.<br>[L3] Verify complete chain of custody for model artifacts. | ML01.002 Model Tampering |
 
 ---
 
@@ -77,17 +94,18 @@ This section provides requirements to enforce context-aware, least-privilege acc
 ---
 
 ## 6. Supply Chain Security for Models, Frameworks & Data
-This section provides requirements to secure upstream artifacts (pretrained models, ML frameworks, libraries, and datasets) against tampering and vulnerabilities to ensure integrity and trustworthiness.
 
-| Focus area | Purpose |
-| --- | --- |
-| **Pretrained model vetting & provenance** | Verify model sources, integrity, and metadata using frameworks that detect embedded malicious payloads or backdoors. |
-| **Framework & library scanning** | Continuously assess dependencies for CVEs. |
-| **Dependency pinning & verification** | Enforce SBOMs, hermetic builds, and cryptographic attestations to prevent unauthorized or tampered dependencies. |
-| **Trusted source enforcement** | Restrict artifact downloads to signed registries or private repositories, blocking unverified mirrors or public sources. |
-| **Third-party dataset risk assessment** | Evaluate external datasets for bias or poisoning risks. |
-| **Supply chain attack monitoring** | Monitor for compromised repositories or malicious updates. |
-| **SBOM (Software Bill of Materials) for model artifacts**| Detailed inventory of all components, dependencies, and metadata used in building and deploying machine learning models to enhance transparency, traceability, and security. |
+This section provides requirements to ensure the integrity and security of all components used in AI systems, including pre-trained models, frameworks, libraries, and third-party datasets.
+
+| Focus area | Purpose | Verification Requirements | MITRE ATLAS Mapping |
+| --- | --- | --- | --- |
+| **Pretrained model vetting & provenance** | Verify the origin, integrity, and security posture of third-party models before integration. | [L1] Verify basic validation of model sources.<br>[L2] Verify security assessment of pretrained models.<br>[L3] Verify comprehensive vetting including hidden behavior testing. | ML00.002 Transfer Learning |
+| **Framework & library scanning** | Identify and remediate vulnerabilities in AI frameworks and supporting libraries. | [L1] Verify dependency scanning in build pipelines.<br>[L2] Verify automated vulnerability monitoring.<br>[L3] Verify code analysis of critical dependencies. | ML00.004 Supply Chain Compromise |
+| **Dependency pinning & verification** | Lock dependencies to specific verified versions and validate integrity. | [L1] Verify version pinning for all dependencies.<br>[L2] Verify integrity verification of dependencies.<br>[L3] Verify reproducible builds with identical outputs. | ML00.004 Supply Chain Compromise |
+| **Trusted source enforcement** | Ensure all AI components are obtained from authorized and verified sources. | [L1] Verify approved sources for all components.<br>[L2] Verify enforcement of trusted source policies.<br>[L3] Verify cryptographic verification of component origins. | ML00.004 Supply Chain Compromise |
+| **Third-party dataset risk assessment** | Evaluate security, bias, and quality risks of external datasets. | [L1] Verify risk assessment for external datasets.<br>[L2] Verify vetting procedures aligned with internal standards.<br>[L3] Verify continuous monitoring of external data quality. | ML04.001 Data Poisoning |
+| **Supply chain attack monitoring** | Detect and respond to compromises in the AI supply chain. | [L1] Verify monitoring for published vulnerabilities.<br>[L2] Verify incident response plans for supply chain attacks.<br>[L3] Verify regular supply chain penetration testing. | ML00.004 Supply Chain Compromise |
+| **SBOM (Software Bill of Materials) for model artifacts** | Maintain comprehensive inventory of all components in AI models. | [L1] Verify SBOM creation for model artifacts.<br>[L2] Verify SBOM completeness and accuracy validation.<br>[L3] Verify automated SBOM generation and verification in CI/CD. | ML00.004 Supply Chain Compromise |
 
 ---
 
@@ -119,31 +137,35 @@ This section provides requirements to secure AI memory and retrieval-augmented g
 ---
 
 ## 9. Autonomous Orchestration & Agentic Action Security
-This section provides requirements to secure the glue code agents, planners, and tool delegates that chain model calls into complex, potentially real‑world‑impacting workflows.
 
-| Focus area | Purpose |
-| --- | --- |
-| **Agent task‑planning & recursion budgets** | Throttle recursive plans and require human checkpoints for privileged actions. |
-| **Tool plugin sandboxing** | Isolate third‑party functions with syscall, network, and filesystem jails. |
-| **Autonomous loop & cost bounding** | Enforce iteration, spend, and API‑call ceilings. |
-| **Protocol‑level misuse protection** | Validate structured messages (e.g., function‑call JSON) against schemas. |
-| **Agent identity & tamper‑evidence** | Add immutable audit stamps for every thought/action. |
-| **Multi‑agent swarm risk reduction** | Use sentinel agents, diversity injection, and collusion heuristics. | 
-| **User & Tool Authn/Authz** | Ensure any agent is operating in the correct permissioning paradigm, assuming permissions for a user it is operating on behalf of, or controlling tool calls with traditional authn/authz methods. | 
+This section provides requirements to secure the interactions and operations of autonomous and multi-agent AI systems, preventing unauthorized or harmful autonomous actions.
+
+| Focus area | Purpose | Verification Requirements | MITRE ATLAS Mapping |
+| --- | --- | --- | --- |
+| **Agent task-planning & recursion budgets** | Throttle recursive plans and require human checkpoints for privileged actions by limiting the scope, depth, and resource consumption of autonomous planning. | [L1] Verify implementation of task execution limits.<br>[L2] Verify monitoring of resource consumption.<br>[L3] Verify sophisticated circuit breakers for runaway processes. | ML09.001 Autonomous System Compromise |
+| **Tool plugin sandboxing** | Isolate tool interactions to prevent unauthorized system access. | [L1] Verify basic execution isolation for tools.<br>[L2] Verify privilege restriction for tool access.<br>[L3] Verify comprehensive sandbox with resource limitations. | ML09.002 Tool Misuse |
+| **Autonomous loop & cost bounding** | Prevent uncontrolled agent-to-agent or recursive operations. | [L1] Verify loop detection mechanisms.<br>[L2] Verify cost monitoring and threshold enforcement.<br>[L3] Verify formal verification of agent interaction protocols. | ML09.003 Agent Loop Detection |
+| **Protocol-level misuse protection** | Secure communication channels between agents and systems. | [L1] Verify validation of inter-agent communications.<br>[L2] Verify authentication of agent communications.<br>[L3] Verify cryptographic integrity of agent messages. | ML09.004 Agent Communication Hijacking |
+| **Agent identity & tamper-evidence** | Ensure agent actions are attributable and modifications detected. | [L1] Verify unique identification of agents.<br>[L2] Verify logging of agent actions with identity.<br>[L3] Verify cryptographic binding of actions to agent identity. | ML09.005 Agent Identity Spoofing |
+| **Multi-agent swarm risk reduction** | Mitigate risks from interacting autonomous systems. | [L1] Verify isolation between agent domains.<br>[L2] Verify coordination protocols with safety constraints.<br>[L3] Verify formal modeling of multi-agent interaction safety. | ML09.006 Swarm Manipulation |
+| **User & Tool Authentication/Authorization** | Implement robust access controls for agent operations. | [L1] Verify authentication for all agent-triggered actions.<br>[L2] Verify fine-grained authorization for tool access.<br>[L3] Verify continuous validation of agent privileges. | ML09.002 Tool Misuse |
+| **Agent-to-agent communication security** | Secure information exchange between autonomous components. | [L1] Verify encryption of agent communications.<br>[L2] Verify validation of message integrity and origin.<br>[L3] Verify formal verification of communication protocols. | ML09.004 Agent Communication Hijacking |
+| **Intent verification & constraint enforcement** | Validate that agent actions align with user intent and system constraints. | [L1] Verify basic constraint checking before actions.<br>[L2] Verify intent confirmation for high-impact actions.<br>[L3] Verify formal verification of constraint satisfaction. | ML09.007 Intent Manipulation |
 
 ---
 
 ## 10. Adversarial Robustness & Attack Resistance
-This section provides requirements for designing models that degrade gracefully—or fail closed—when confronted with sophisticated attacks targeting the learning process or inference surface.
 
-| Focus area | Purpose |
-| --- | --- |
-| **Model alignment and safety** | Model is trained and tested to have alignment suitable for its use case. |
-| **Adversarial example hardening** | Employ defensive distillation, randomized smoothing, or certified bounds. |
-| **Membership inference mitigation** | Reduce confidence gaps and add noise to protect training inclusion privacy. |
-| **Model inversion resistance** | Limit exposure of embeddings, logits, or internal attention maps. |
-| **Model extraction defense** | Rate‑limit queries, watermark outputs, and detect anomalous scraping. |
-| **Poisoned data detection** | At inference time, use clustering, entropy, and trigger search to flag back‑doored samples. |
+This section provides requirements to enhance models' resilience against various adversarial attacks, including evasion, inference, and extraction attacks.
+
+| Focus area | Purpose | Verification Requirements | MITRE ATLAS Mapping |
+| --- | --- | --- | --- |
+| **Model alignment and safety** | Ensure models behave as intended and do not produce harmful outputs. | [L1] Verify basic alignment testing.<br>[L2] Verify guard rails for harmful outputs.<br>[L3] Verify comprehensive alignment verification methodology. | ML05.005 Safety Constraint Bypass |
+| **Adversarial example hardening** | Enhance model resilience against manipulated inputs during inference. | [L1] Verify basic adversarial testing.<br>[L2] Verify implementation of defensive techniques.<br>[L3] Verify formal robustness guarantees where applicable. | ML05.001 Model Evasion |
+| **Membership inference mitigation** | Prevent attacks that determine if specific data was used in training. | [L1] Verify awareness of membership inference risks.<br>[L2] Verify implementation of confidence score controls.<br>[L3] Verify comprehensive defenses such as differential privacy. | ML03.001 Membership Inference |
+| **Model inversion resistance** | Prevent reconstruction of training data from model behavior. | [L1] Verify output restrictions to prevent excessive disclosure.<br>[L2] Verify implementation of anti-inversion techniques.<br>[L3] Verify formal guarantees against inversion attacks. | ML03.002 Model Inversion |
+| **Model extraction defense** | Prevent unauthorized duplication of model functionality. | [L1] Verify rate limiting on model APIs.<br>[L2] Verify detection of systematic querying patterns.<br>[L3] Verify watermarking or fingerprinting of model outputs. | ML02.001 Model Theft |
+| **Inference-time poisoned data detection** | Identify and mitigate backdoored or poisoned inputs during model operation. | [L1] Verify anomaly detection for inputs.<br>[L2] Verify filtering of suspicious input patterns.<br>[L3] Verify advanced detection for sophisticated poisoned inputs. | ML04.001 Data Poisoning |
 
 ---
 
@@ -162,16 +184,18 @@ This section provides requirements for upholding individual rights and minimizin
 ---
 
 ## 12. Monitoring, Logging & Anomaly Detection
-This section provides requirements for delivering real‑time and forensic visibility into what the model and other AI components sees, does, and returns, so threats can be detected, triaged, and learned from.
 
-| Focus area | Purpose |
-| --- | --- |
-| **Prompt & output logging** | Capture inputs, outputs, and policy decisions with privacy‑preserving redaction. |
-| **Abuse & jailbreak detection** | Alert when queries resemble known jailbreak patterns or circumvent safeguards. |
-| **Model drift detection** | Track  novelty, confidence, hallucinations, and divergence metrics across versions. |
-| **Performance & behavior telemetry** | Instrument latency, token counts, resource utilization, and success rates. |
-| **Alerting & SIEM integration** | Export enriched events for SOC correlation and incident response. |
-| **Secure log storage** | To track and identify any potential security issues, investigations and audits. |
+This section provides requirements for delivering real-time and forensic visibility into what the model and other AI components see, do, and return, so threats can be detected, triaged, and learned from.
+
+| Focus area | Purpose | Verification Requirements | MITRE ATLAS Mapping |
+| --- | --- | --- | --- |
+| **Prompt & output logging** | Capture inputs, outputs, and policy decisions with privacy-preserving redaction. | [L1] Verify basic logging of model interactions.<br>[L2] Verify privacy-preserving redaction in logs.<br>[L3] Verify tamper-proof logging with integrity guarantees. | ML03.003 Data Leakage |
+| **Abuse & jailbreak detection** | Alert when queries resemble known jailbreak patterns or circumvent safeguards. | [L1] Verify detection of basic attack patterns.<br>[L2] Verify alerting on potential policy violations.<br>[L3] Verify sophisticated detection with behavioral analysis. | ML05.003 Prompt Injection |
+| **Model drift detection** | Track novelty, confidence, hallucinations, and divergence metrics across versions. | [L1] Verify tracking of basic performance metrics.<br>[L2] Verify automated alerting on drift thresholds.<br>[L3] Verify comprehensive behavioral change detection. | ML06.001 Performance Degradation |
+| **Performance & behavior telemetry** | Instrument latency, token counts, resource utilization, and success rates. | [L1] Verify collection of basic operational metrics.<br>[L2] Verify threshold alerting on resource utilization.<br>[L3] Verify correlation between metrics for advanced pattern detection. | ML06.002 Resource Exhaustion |
+| **Alerting & SIEM integration** | Export enriched events for SOC correlation and incident response. | [L1] Verify basic alerting mechanisms.<br>[L2] Verify integration with security monitoring systems.<br>[L3] Verify custom correlation rules for AI-specific threats. | ML06.003 Denial of Service |
+| **Secure log storage** | To track and identify any potential security issues, investigations and audits. | [L1] Verify secure storage of logs.<br>[L2] Verify access controls on log data.<br>[L3] Verify tamper-evident log storage with cryptographic guarantees. | ML03.004 Data Access |
+| **AI Incident Response Planning & Execution** | Prepare for and respond to AI-specific security incidents. | [L1] Verify documented AI incident response procedures.<br>[L2] Verify regular testing of incident response plans.<br>[L3] Verify automated containment procedures for critical AI incidents. | ML06.004 System Compromise |
 
 ---
 
