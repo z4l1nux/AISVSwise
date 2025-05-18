@@ -173,15 +173,15 @@ This section provides requirements for upholding individual rights and minimizin
 
 This section provides requirements for delivering real-time and forensic visibility into what the model and other AI components see, do, and return, so threats can be detected, triaged, and learned from.
 
-| Focus area | Purpose | Verification Requirements | MITRE ATLAS Mapping |
-| --- | --- | --- | --- |
-| **Prompt & output logging** | Capture inputs, outputs, and policy decisions with privacy-preserving redaction. | [L1] Verify basic logging of model interactions.<br>[L2] Verify privacy-preserving redaction in logs.<br>[L3] Verify tamper-proof logging with integrity guarantees. | ML03.003 Data Leakage |
-| **Abuse & jailbreak detection** | Alert when queries resemble known jailbreak patterns or circumvent safeguards. | [L1] Verify detection of basic attack patterns.<br>[L2] Verify alerting on potential policy violations.<br>[L3] Verify sophisticated detection with behavioral analysis. | ML05.003 Prompt Injection |
-| **Model drift detection** | Track novelty, confidence, hallucinations, and divergence metrics across versions. | [L1] Verify tracking of basic performance metrics.<br>[L2] Verify automated alerting on drift thresholds.<br>[L3] Verify comprehensive behavioral change detection. | ML06.001 Performance Degradation |
-| **Performance & behavior telemetry** | Instrument latency, token counts, resource utilization, and success rates. | [L1] Verify collection of basic operational metrics.<br>[L2] Verify threshold alerting on resource utilization.<br>[L3] Verify correlation between metrics for advanced pattern detection. | ML06.002 Resource Exhaustion |
-| **Alerting & SIEM integration** | Export enriched events for SOC correlation and incident response. | [L1] Verify basic alerting mechanisms.<br>[L2] Verify integration with security monitoring systems.<br>[L3] Verify custom correlation rules for AI-specific threats. | ML06.003 Denial of Service |
-| **Secure log storage** | To track and identify any potential security issues, investigations and audits. | [L1] Verify secure storage of logs.<br>[L2] Verify access controls on log data.<br>[L3] Verify tamper-evident log storage with cryptographic guarantees. | ML03.004 Data Access |
-| **AI Incident Response Planning & Execution** | Prepare for and respond to AI-specific security incidents. | [L1] Verify documented AI incident response procedures.<br>[L2] Verify regular testing of incident response plans.<br>[L3] Verify automated containment procedures for critical AI incidents. | ML06.004 System Compromise |
+| Focus area | Purpose | MITRE ATLAS Mapping |
+| --- | --- | --- | 
+| **Prompt & output logging** | Capture inputs, outputs, and policy decisions with privacy-preserving redaction including basic logging of model interactions, privacy-preserving redaction in logs and tamper-proof logging with integrity guarantees. | ML03.003 Data Leakage |
+| **Abuse & jailbreak detection** | Alert when queries resemble known jailbreak patterns or circumvent safeguards including detection of basic attack patterns, alerting on potential policy violations and sophisticated detection with behavioral analysis. | ML05.003 Prompt Injection |
+| **Model drift detection** | Track novelty, confidence, hallucinations, and divergence metrics across versions including tracking of basic performance metrics, automated alerting on drift thresholds and comprehensive behavioral change detection. | ML06.001 Performance Degradation |
+| **Performance & behavior telemetry** | Instrument latency, token counts, resource utilization, and success rates including collection of basic operational metrics, threshold alerting on resource utilization and correlation between metrics for advanced pattern detection. | ML06.002 Resource Exhaustion |
+| **Alerting & SIEM integration** | Export enriched events for SOC correlation and incident response including integration with security monitoring systems and custom correlation of rules for AI-specific threats. | ML06.003 Denial of Service |
+| **Secure log storage** | To track and identify any potential security issues, investigations and audits with secure storage of logs, access controls on log data and tamper-evident log storage with cryptographic guarantees. | ML03.004 Data Access |
+| **AI Incident Response Planning & Execution** | Prepare for and respond to AI-specific security incidents.  | ML06.004 System Compromise |
 
 ---
 
