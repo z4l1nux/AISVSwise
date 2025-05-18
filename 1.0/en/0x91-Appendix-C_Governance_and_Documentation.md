@@ -1,4 +1,4 @@
-# Appendix B: AI Security Governance & Documentation
+# Appendix C: AI Security Governance & Documentation
 
 This section provides foundational requirements for establishing organizational structures, policies, and processes to govern AI security throughout the system lifecycle.
 
