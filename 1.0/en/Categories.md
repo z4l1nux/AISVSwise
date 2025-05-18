@@ -3,20 +3,6 @@
 
 ---
 
-## 0. AI Security Governance & Risk Management
-
-This section provides foundational requirements for establishing organizational structures, policies, and processes to govern AI security throughout the system lifecycle.
-
-| Focus area | Purpose | Verification Requirements |
-| --- | --- | --- |
-| **AI Risk Management Framework Adoption** | Establish a formal framework to identify, assess, and mitigate AI-specific risks throughout the system lifecycle. | [L1] Verify that an AI-specific risk assessment methodology is documented and implemented.<br>[L2] Verify that risk assessments are conducted at key points in the AI lifecycle and prior to significant changes.<br>[L3] Verify that the risk management framework aligns with established standards (e.g., NIST AI RMF). |
-| **AI Security Policy & Procedures** | Define and enforce organizational standards for secure AI development, deployment, and operation. | [L1] Verify the existence of documented AI security policies.<br>[L2] Verify policies are reviewed and updated at least annually and after significant changes to the threat landscape.<br>[L3] Verify that policies address all AISVS categories and regulatory requirements. |
-| **Roles & Responsibilities for AI Security** | Establish clear accountability for AI security across the organization. | [L1] Verify that AI security roles and responsibilities are documented.<br>[L2] Verify that responsible individuals possess appropriate security expertise.<br>[L3] Verify the establishment of an AI ethics committee or governance board for high-risk AI systems. |
-| **Ethical AI Guidelines Enforcement** | Ensure AI systems operate according to established ethical principles. | [L1] Verify that ethical guidelines for AI development and deployment exist.<br>[L2] Verify mechanisms to detect and report ethical violations.<br>[L3] Verify regular ethical reviews of deployed AI systems. |
-| **AI Regulatory Compliance Monitoring** | Maintain awareness of and compliance with evolving AI regulations. | [L1] Verify processes to identify applicable regulations.<br>[L2] Verify compliance is assessed for all regulatory requirements.<br>[L3] Verify regulatory changes trigger timely reviews and updates to AI systems. |
-
----
-
 ## 1. Training Data Governance & Bias Management
 
 This section provides requirements to ensure training data is ethical, secure, and compliant by managing its provenance, quality, and bias during data collection and preparation for model training. And intial version of this section has been built to demonstrate the structure of the requirements for discussion here [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C1-Training-Data-Governance.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C1-Training-Data-Governance.md)
