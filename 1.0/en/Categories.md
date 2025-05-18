@@ -1,5 +1,5 @@
 # OWASP Artificial Intelligence Security Verification Standard (AISVS)
-### Core Category List - This Category list is to help the AISVS team plan the structure of the document. It will be deleted before the standard is released.
+### This Category list is to help the AISVS team plan the structure of the document. It will be deleted before the standard is released.
 
 ---
 
