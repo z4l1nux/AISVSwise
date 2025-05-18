@@ -83,15 +83,15 @@ This section provides requirements to enforce context-aware, least-privilege acc
 
 This section provides requirements to ensure the integrity and security of all components used in AI systems, including pre-trained models, frameworks, libraries, and third-party datasets.
 
-| Focus area | Purpose | Verification Requirements | MITRE ATLAS Mapping |
-| --- | --- | --- | --- |
-| **Pretrained model vetting & provenance** | Verify the origin, integrity, and security posture of third-party models before integration. | [L1] Verify basic validation of model sources.<br>[L2] Verify security assessment of pretrained models.<br>[L3] Verify comprehensive vetting including hidden behavior testing. | ML00.002 Transfer Learning |
-| **Framework & library scanning** | Identify and remediate vulnerabilities in AI frameworks and supporting libraries. | [L1] Verify dependency scanning in build pipelines.<br>[L2] Verify automated vulnerability monitoring.<br>[L3] Verify code analysis of critical dependencies. | ML00.004 Supply Chain Compromise |
-| **Dependency pinning & verification** | Lock dependencies to specific verified versions and validate integrity. | [L1] Verify version pinning for all dependencies.<br>[L2] Verify integrity verification of dependencies.<br>[L3] Verify reproducible builds with identical outputs. | ML00.004 Supply Chain Compromise |
-| **Trusted source enforcement** | Ensure all AI components are obtained from authorized and verified sources. | [L1] Verify approved sources for all components.<br>[L2] Verify enforcement of trusted source policies.<br>[L3] Verify cryptographic verification of component origins. | ML00.004 Supply Chain Compromise |
-| **Third-party dataset risk assessment** | Evaluate security, bias, and quality risks of external datasets. | [L1] Verify risk assessment for external datasets.<br>[L2] Verify vetting procedures aligned with internal standards.<br>[L3] Verify continuous monitoring of external data quality. | ML04.001 Data Poisoning |
-| **Supply chain attack monitoring** | Detect and respond to compromises in the AI supply chain. | [L1] Verify monitoring for published vulnerabilities.<br>[L2] Verify incident response plans for supply chain attacks.<br>[L3] Verify regular supply chain penetration testing. | ML00.004 Supply Chain Compromise |
-| **SBOM (Software Bill of Materials) for model artifacts** | Maintain comprehensive inventory of all components in AI models. | [L1] Verify SBOM creation for model artifacts.<br>[L2] Verify SBOM completeness and accuracy validation.<br>[L3] Verify automated SBOM generation and verification in CI/CD. | ML00.004 Supply Chain Compromise |
+| Focus area | Purpose | MITRE ATLAS Mapping |
+| --- | --- | --- |
+| **Pretrained model vetting & provenance** | Verify the origin, integrity, and security posture of third-party models before integration. | [L1] Verify basic validation of model sources. This includes security assessment of pretrained models.<br>[L3] Verify comprehensive vetting including hidden behavior testing. | ML00.002 Transfer Learning |
+| **Framework & library scanning** | Identify and remediate vulnerabilities in AI frameworks and supporting libraries. This includes dependency scanning in build pipelines, automated vulnerability monitoring and code analysis of critical dependencies. | ML00.004 Supply Chain Compromise |
+| **Dependency pinning & verification** | Lock dependencies to specific verified versions and validate integrity. This includes version pinning for all dependencies, integrity verification of dependencies and reproducible builds with identical outputs. | ML00.004 Supply Chain Compromise |
+| **Trusted source enforcement** | Ensure all AI components are obtained from authorized and verified sources. This includes approved sources for all components, enforcement of trusted source policies and cryptographic verification of component origins. | ML00.004 Supply Chain Compromise |
+| **Third-party dataset risk assessment** | Evaluate security, bias, and quality risks of external datasets. This includes risk assessment for external datasets, vetting procedures aligned with internal standards and continuous monitoring of external data quality. | ML04.001 Data Poisoning |
+| **Supply chain attack monitoring** | Detect and respond to compromises in the AI supply chain. This includes monitoring for published vulnerabilities, incident response plans for supply chain attacks and regular supply chain penetration testing. | ML00.004 Supply Chain Compromise |
+| **SBOM (Software Bill of Materials) for model artifacts** | Maintain comprehensive inventory of all components in AI models. This includes SBOM creation for model artifacts, SBOM completeness and accuracy validation and automated SBOM generation and verification in CI/CD pipelines. | ML00.004 Supply Chain Compromise |
 
 ---
 
