@@ -73,7 +73,7 @@ This section provides requirements to enforce context-aware, least-privilege acc
 | **User & data access mapping** | Bind personas/roles to fine‑grained permissions on endpoints, collections, embeddings, and vector indices. |
 | **Attribute‑Based Access Control (ABAC) service layer** | Externalize policy decisions (e.g., OPA, Cedar) that evaluate dynamic attributes—user, resource tags, environmental context—at query time, independent of application code. |
 | **Query‑time policy evaluation** | Before retrieval, filter search vectors / SQL rows so only objects the caller is entitled to ever leave storage. |
-| **Output filtering & redaction** | After model inference or search, enforce least‑privilege by redacting, transforming, or refusing content so that all generated text, images, embeddings, and citations respect the caller’s entitlements. |
+| **Output filtering & redaction** | After model inference or search, enforce least‑privilege by redacting, transforming, or refusing content so that all generated text, images, embeddings, and citations respect the caller's entitlements. |
 | **Tenant & session isolation** | Segregate memory, embeddings, and cache per tenant; verify session context on every request to prevent cross‑customer data bleed in multi‑tenant SaaS. |
 | **Agent & tool permission scoping** | Constrain autonomous agents, plugins, or tool calls to explicit capability sets (e.g., read‑only S3, no shell access), enforced by the ABAC layer.    
 
@@ -118,7 +118,7 @@ This section provides requirements to secure AI memory and retrieval-augmented g
 | **Embedding sanitization & validation** | Remove PII or malicious artifacts before vectorization. |
 | **Memory expiry, revocation & deletion** | Honor TTLs, user deletion requests, and dynamic scope reductions. |
 | **Prevent embedding inversion or leakage** | Employ noise addition, dimensionality reduction, and encryption schemes. |
-| **Scope enforcement for user‑specific memory** | Ensure one user’s context cannot seed completions for another. |
+| **Scope enforcement for user‑specific memory** | Ensure one user's context cannot seed completions for another. |
 
 ---
 
@@ -186,7 +186,7 @@ This section provides requirements for delivering real-time and forensic visibil
 ---
 
 ## 13. Human Oversight, Accountability & Governance
-This section provides requirements for keeping a human “captain of the ship” with clear lines of responsibility, escalation, and ethical stewardship.
+This section provides requirements for keeping a human "captain of the ship" with clear lines of responsibility, escalation, and ethical stewardship.
 
 | Focus area | Purpose |
 | --- | --- |
@@ -205,6 +205,18 @@ This section provides requirements for making model reasoning and limitations le
 | **Model cards & usage disclosures** | Document intended use, performance metrics, and ethical considerations. |
 | **Uncertainty quantification** | Propagate confidence scores or entropy measures in responses. |
 | **User‑facing transparency reports** | Provide periodic disclosures on incidents, drift, and data usage. |
+
+---
+
+## 15. Multi-Modal AI Security
+This section provides requirements to address security concerns specific to AI systems that integrate multiple modalities (text, image, audio, video).
+
+| Focus area | Purpose | MITRE ATLAS Mapping |
+| --- | --- | --- |
+| **Cross-modal attack detection** | Identify attacks that exploit interactions between different modalities. | ML05.001 Model Evasion |
+| **Multi-modal input sanitization** | Apply appropriate sanitization for each modality type. | ML05.003 Prompt Injection |
+| **Modal coordination integrity** | Ensure that information between modalities remains consistent and can't be manipulated. | ML04.003 Data Manipulation |
+| **Modal privilege separation** | Apply different security controls based on modality risk levels. | ML03.004 Data Access |
 
 ---
 
