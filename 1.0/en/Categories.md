@@ -1,6 +1,13 @@
 # OWASP Artificial Intelligence Security Verification Standard (AISVS)
 ### This Category list is intended to help the AISVS team plan the structure of the document. It will be deleted before the standard is released.
 
+### Next steps for reviewers
+
+1. **Overlap** – Where can we consolidate?  
+2. **Scope accuracy** – Does each category cover the right threat surfaces?  
+3. **Clarity & granularity** – Are the descriptions and bullets detailed enough to drive concrete requirements?  
+4. **Documentation and GRC** - Are there any documentation, process or GRC subjects than can be moved to [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x91-Appendix-C_Governance_and_Documentation.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x91-Appendix-C_Governance_and_Documentation.md)
+
 ---
 
 ## 1. Training Data Governance & Bias Management
@@ -217,14 +224,3 @@ This section provides requirements to address security concerns specific to AI s
 | **Multi-modal input sanitization** | Apply appropriate sanitization for each modality type. | ML05.003 Prompt Injection |
 | **Modal coordination integrity** | Ensure that information between modalities remains consistent and can't be manipulated. | ML04.003 Data Manipulation |
 | **Modal privilege separation** | Apply different security controls based on modality risk levels. | ML03.004 Data Access |
-
----
-
-### Next steps for reviewers
-
-1. **Scope accuracy** – Does each category cover the right threat surfaces?  
-2. **Clarity & granularity** – Are the descriptions and bullets detailed enough to drive concrete requirements?  
-3. **Overlap & gaps** – Where can we consolidate or expand?  
-4. **Terminology** – Any jargon needing definitions or refinement?
-
-Please leave inline comments, propose rewrites, or suggest additional focus areas. Your feedback will shape the next iteration of AISVS!
