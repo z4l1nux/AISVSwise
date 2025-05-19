@@ -34,9 +34,9 @@ This section outlines defenses against user input attacks, ensuring all runtime 
 
 | Focus area | Purpose | MITRE ATLAS Mapping |
 | --- | --- | --- | 
-| **Prompt-Injection Defense** | Detect & block attempts to override instructions or jailbreak guardrails. This includes input screening for known prompt injection patterns, detection and blocking of instruction override attempts, and adaptive defenses against novel prompt injection techniques. | ML05.002 Input Manipulation |
+| **Prompt-Injection Defense** | Detect & block attempts to override instructions or jailbreak guardrails. This includes input screening for known prompt injection patterns, detection and blocking of instruction override attempts, and adaptive defenses against novel prompt injection techniques. Take into consideration risks if multi-modal inputs are used. | ML05.002 Input Manipulation |
 | **Adversarial-Example Resistance** | Detect & block perturbed inputs designed to mislead model during inference. This includes basic input sanitization to prevent obvious manipulations, detection mechanisms for known adversarial patterns, and robust defenses against sophisticated adversarial examples. | ML05.001 Model Evasion |
-| **Schema, Type & Length Validation** | Enforce strict syntactic, semantic, & size constraints on user inputs. This includes input validation against defined schemas, type checking and length constraints enforcement, and semantic validation of complex inputs. | ML05.002 Input Manipulation |
+| **Schema, Type & Length Validation** | Enforce strict syntactic, semantic, & size constraints on user inputs. This includes input validation against defined schemas, type checking and length constraints enforcement, and semantic validation of complex inputs for each used modality and type of data. | ML05.002 Input Manipulation |
 | **Content & Policy Screening** | Apply filters to ensure compliance with safety policies. This includes content screening for prohibited material, policy enforcement based on context and user, and comprehensive coverage of content policies with regular updates. | ML05.003 Prompt Injection |
 
 ---
@@ -63,7 +63,7 @@ This section provides requirements to secure build, deployment, and runtime envi
 
 | Focus area | Purpose |
 | --- | --- |
-| **Container & serverless runtime isolation** | Enforce least privilege using Kubernetes namespaces, seccomp profiles, and eBPF rules to prevent privilege escalation. |
+| **Container & serverless runtime isolation** | Enforce least privilege using suitable technologies such as Kubernetes namespaces, seccomp profiles, and eBPF rules to prevent privilege escalation. |
 | **Secure deployment pipelines** | Implement IaC scanning, reproducible builds, and policy gates to ensure trusted deployments. |
 | **Attack surface reduction** | Restrict default ports, disable unused endpoints, and limit egress traffic to minimize external attack vectors. |
 | **Secrets management & environment hardening** | Rotate API keys, use TPM/HSM for key storage, and audit environment variables to prevent unauthorized access. |
@@ -111,7 +111,7 @@ This section provides requirements to ensure model outputs are accurate, safe, a
 | **Output format enforcement** | Enforce constraints on response schemas, data types, or token limits to ensure structured and predictable outputs. |
 | **Hallucination detection & mitigation** | Detect low-confidence or fabricated outputs and apply fallback strategies to maintain response reliability. |
 | **Output safety & privacy filtering** | Block harmful content, PII, or confidential data in outputs using pre- and post-generation policy checks. |
-| **Output & action limiting** | Restrict model-initiated actions and response rates through throttling or approval requirements to prevent abuse or overload. |
+| **Output & action limiting** | Restrict model-initiated actions and response rates through throttling or approval requirements to prevent abuse or overload, and ensure that information between modalities remains consistent and can't be manipulated. |
 | **Output explainability** | Provide transparency in outputs through confidence scores or reasoning traces to enhance user trust. |
 | **Monitoring integration** | Feed output safety and quality metrics into monitoring systems to enable real-time risk detection and response. |
 
@@ -187,41 +187,21 @@ This section provides requirements for delivering real-time and forensic visibil
 | **Abuse & jailbreak detection** | Alert when queries resemble known jailbreak patterns or circumvent safeguards including detection of basic attack patterns, alerting on potential policy violations and sophisticated detection with behavioral analysis. | ML05.003 Prompt Injection |
 | **Model drift detection** | Track novelty, confidence, hallucinations, and divergence metrics across versions including tracking of basic performance metrics, automated alerting on drift thresholds and comprehensive behavioral change detection. | ML06.001 Performance Degradation |
 | **Performance & behavior telemetry** | Instrument latency, token counts, resource utilization, and success rates including collection of basic operational metrics, threshold alerting on resource utilization and correlation between metrics for advanced pattern detection. | ML06.002 Resource Exhaustion |
-| **Alerting & SIEM integration** | Export enriched events for SOC correlation and incident response including integration with security monitoring systems and custom correlation of rules for AI-specific threats. | ML06.003 Denial of Service |
+| **Alerting & SIEM integration** | Export enriched events for SOC correlation and incident response including integration with security monitoring systems and custom correlation of rules for AI-specific threats and scenarios (e.g., jailbreak, prompt injection, multi-modality). | ML06.003 Denial of Service |
 | **Secure log storage** | To track and identify any potential security issues, investigations and audits with secure storage of logs, access controls on log data and tamper-evident log storage with cryptographic guarantees. | ML03.004 Data Access |
 | **AI Incident Response Planning & Execution** | Prepare for and respond to AI-specific security incidents.  | ML06.004 System Compromise |
 
 ---
 
-## 13. Human Oversight, Accountability & Governance
-This section provides requirements for keeping a human "captain of the ship" with clear lines of responsibility, escalation, and ethical stewardship.
+## 13. Human Oversight and Trust
+This section provides requirements for keeping a human "captain of the ship" with clear lines of responsibility, escalation, and ethical stewardship, including explainability, interpretability, and transparency.
 
 | Focus area | Purpose |
 | --- | --- |
 | **Kill‑switch & override mechanisms** | Provide immediate shutdown or rollback paths for runaway behavior. |
 | **Human‑in‑the‑loop decision checkpoints** | Require approvals when stakes surpass predefined risk thresholds. |
 | **Chain of responsibility & auditability** | Log operator actions and model decisions for postmortem reviews. |
-
----
-
-## 14. Explainability, Interpretability & Transparency
-This section provides requirements for making model reasoning and limitations legible to developers, auditors, and end‑users—building trust and diagnosability.
-
-| Focus area | Purpose |
-| --- | --- |
 | **Explainable‑AI techniques (SHAP, LIME, etc.)** | Surface feature importance, counter‑factuals, and local explanations. |
 | **Model cards & usage disclosures** | Document intended use, performance metrics, and ethical considerations. |
 | **Uncertainty quantification** | Propagate confidence scores or entropy measures in responses. |
 | **User‑facing transparency reports** | Provide periodic disclosures on incidents, drift, and data usage. |
-
----
-
-## 15. Multi-Modal AI Security
-This section provides requirements to address security concerns specific to AI systems that integrate multiple modalities (text, image, audio, video).
-
-| Focus area | Purpose | MITRE ATLAS Mapping |
-| --- | --- | --- |
-| **Cross-modal attack detection** | Identify attacks that exploit interactions between different modalities. | ML05.001 Model Evasion |
-| **Multi-modal input sanitization** | Apply appropriate sanitization for each modality type. | ML05.003 Prompt Injection |
-| **Modal coordination integrity** | Ensure that information between modalities remains consistent and can't be manipulated. | ML04.003 Data Manipulation |
-| **Modal privilege separation** | Apply different security controls based on modality risk levels. | ML03.004 Data Access |
