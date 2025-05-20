@@ -2,7 +2,7 @@
 
 ## Control Objective
 
-This chapter provides requirements to manage data protections and privacy with AI system output and data.
+This chapter provides requirements to manage data protections and privacy for AI system outputs and training data.
 ## C11.1 PLACEHOLDER
 
 PLACEHOLDER
