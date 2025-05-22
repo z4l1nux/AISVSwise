@@ -17,14 +17,13 @@ This section provides requirements to ensure training data is ethical, secure, a
 
 | Focus area | Purpose | MITRE ATLAS Mapping |
 | --- | --- | --- |
-| **Training Data Provenance** | Track and audit origins of training datasets to ensure traceability and detect unauthorized or unverified sources. This includes data sources being documented and their origins can be traced, that data acquisition processes include verification of source legitimacy, and cryptographic validation of data source integrity. | ML04.001 Data Poisoning |
-| **Bias Detection & Correction** | Identify and mitigate demographic or distributional biases in training data to promote equitable model outcomes. This includes bias assessment on training datasets, documented mitigation strategies for identified biases, and tracking of bias metrics across model versions. | ML07.001 Bias Exploitation |
+| **Training Data Provenance** | Track and audit origins of training datasets to ensure traceability and detect unauthorized or unverified sources. This includes data sources origins that can be traced, that training data pipelines include verification of content legitimacy, and cryptographic validation of data source integrity. | ML04.001 Data Poisoning |
+| **Bias Detection & Correction** | Identify and mitigate demographic or distributional biases in training data to promote equitable model outcomes. This includes bias assessment on training datasets, and tracking of bias metrics across model versions. | ML07.001 Bias Exploitation |
 | **Representation Completeness & Fairness** | Ensure training data includes balanced coverage of under-represented groups and edge cases through targeted collection or augmentation to enhance model robustness. This includes analysis of demographic distribution in training data, procedures for augmenting underrepresented classes, and edge case testing against fairness criteria. | ML07.001 Bias Exploitation |
 | **Pre-Training Data Poisoning Detection & Mitigation** | Detect and filter malicious or corrupted data in training datasets using anomaly detection or statistical analysis to prevent model corruption. This includes basic data validation checks before training, statistical outlier detection in training data, and advanced poisoning detection techniques implementation. | ML04.001 Data Poisoning |
 | **Training Data Integrity & Labeling** | Safeguard training datasets and labels from tampering or poisoning using cryptographic integrity, secure annotation pipelines and other methods. This includes data integrity checks, secure annotation workflows with access controls, and cryptographic validation of data and label integrity. | ML04.001 Data Poisoning |
 | **Training Data Quality Assurance** | Validate training data for accuracy, completeness, and consistency to ensure reliable model training. This includes basic data quality checks (missing values, formats), consistency and distribution checks, and formal data quality metrics monitored for drift. | ML04.003 Data Manipulation |
 | **User Data Deletion & Consent Enforcement** | Implement mechanisms to honor user deletion requests and consent withdrawals in training datasets and backups, compliant with privacy law. This includes procedures for handling deletion requests, audit trails of deletion requests and actions, and deletion across all systems including backups. | ML08.001 Data Leakage |
-| **Model Metadata Integrity** | Ensure accurate documentation of model characteristics, training parameters, and dataset information. This includes metadata  captured for all models, tamper-resistant storage of metadata, and cryptographic signing of metadata. | ML01.002 Model Tampering |
 
 ---
 
@@ -47,14 +46,14 @@ This section provides requirements to manage model development, fine-tuning, and
 
 | Focus area | Purpose | MITRE ATLAS Mapping |
 | --- | --- | --- |
-| **Model versioning & transparency** | Track model releases with cryptographic signing, dependency graphs, and documentation to ensure integrity and transparency. This includes unique versioning for all model releases, cryptographic signing of model artifacts and complete dependency tracking with detailed documentation. | ML01.002 Model Tampering |
-| **Secure patching & rollback** | Enable hotfixes and downgrades with validated rollback mechanisms to maintain security and functionality without vulnerabilities. This includes documented procedures for model updates, testing of rollback functionality and automated rollback triggers for detected issues. | ML01.004 Model Poisoning |
+| **Model versioning & transparency** | Track model releases with cryptographic signing and dependency graphs to ensure integrity and transparency. This includes unique versioning for all model releases, cryptographic signing of model artifacts and complete dependency tracking. | ML01.002 Model Tampering |
+| **Secure patching & rollback** | Enable hotfixes and downgrades with validated rollback mechanisms to maintain security and functionality without vulnerabilities. | ML01.004 Model Poisoning |
 | **Controlled fine-tuning & retraining** | Restrict data ingestion, hyperparameter changes, and pipeline configurations to approved workflows. This includes restricted access to fine-tuning operations, validation of all data used in fine-tuning and audit trail of all parameter modifications. | ML01.004 Model Poisoning |
-| **Change auditing** | Log and review all modifications, including prompt templates and system messages, to ensure traceability and accountability. This includes logging of all model changes, regular review of change logs and tamper-proof audit trails with integrity verification. | ML01.001 Model Replication |
+| **Change auditing** | Log and review all modifications, including prompt templates and system messages, to ensure traceability and accountability. This includes logging of all model changes and tamper-proof audit trails with integrity verification. | ML01.001 Model Replication |
 | **Model testing & validation** | Conduct performance, robustness, and security tests before deployment to verify model reliability and compliance. This includes pre-deployment testing protocols, security-focused test cases, and comprehensive adversarial testing. | ML01.005 Model Manipulation |
-| **Model change documentation** | Maintain changelogs and model cards to document updates, configurations, and dependencies for compliance and auditing. This includes documentation of all model changes, detailed model cards with usage guidelines, and documentation meets regulatory requirements. | ML01.002 Model Tampering |
-| **Formal decommissioning process** | Define steps for archiving, sanitizing, and revoking retired models to prevent unauthorized reuse or data leakage. This includes documented decommissioning procedures, secure data sanitization processes, and complete dependency analysis and notification for interconnected systems. | ML08.001 Data Leakage |
-| **Model Provenance Tracking** | Capturing, recording, and storing information about a model's origin, how it was created, and its history of modifications. This includes model origin documentation, cryptographic verification of provenance, and complete chain of custody for model artifacts. | ML01.002 Model Tampering |
+| **Model change** | Maintain changelogs and model cards, configurations, and dependencies for compliance and auditing. This includes detailed model cards with usage guidelines. | ML01.002 Model Tampering |
+| **Formal decommissioning process** | Define steps for archiving, sanitizing, and revoking retired models to prevent unauthorized reuse or data leakage. This includes secure data sanitization features, and complete dependency analysis and notification for interconnected systems. | ML08.001 Data Leakage |
+| **Model Provenance Tracking** | Capturing, recording, and storing information about a model's origin, how it was created, and its history of modifications. This includes cryptographic verification of provenance, and complete chain of custody for model artifacts. | ML01.002 Model Tampering |
 
 ---
 
@@ -64,7 +63,7 @@ This section provides requirements to secure build, deployment, and runtime envi
 | Focus area | Purpose |
 | --- | --- |
 | **Container & serverless runtime isolation** | Enforce least privilege using suitable technologies such as Kubernetes namespaces, seccomp profiles, and eBPF rules to prevent privilege escalation. |
-| **Secure deployment pipelines** | Implement IaC scanning, reproducible builds, and policy gates to ensure trusted deployments. |
+| **Secure deployment pipelines** | Implement IaC scanning and reproducible builds to ensure trusted deployments. |
 | **Attack surface reduction** | Restrict default ports, disable unused endpoints, and limit egress traffic to minimize external attack vectors. |
 | **Secrets management & environment hardening** | Rotate API keys, use TPM/HSM for key storage, and audit environment variables to prevent unauthorized access. |
 | **Model sandboxing** | Isolate model evaluation in sandboxed environments to detect vulnerabilities or malicious behavior. |
@@ -104,7 +103,7 @@ This section provides requirements to ensure the integrity and security of all c
 ---
 
 ## 7. Model Behavior, Output Control & Safety Assurance
-This section provides requirements to ensure model outputs are accurate, safe, and policy-compliant during runtime, to control and mitigate risks in generated content.
+This section provides requirements to ensure model outputs are accurate and safe during runtime, to control and mitigate risks in generated content.
 
 | Focus area | Purpose |
 | --- | --- |
@@ -172,7 +171,7 @@ This section provides requirements for upholding individual rights and minimizin
 | **Right‑to‑be‑forgotten & deletion enforcement** | Propagate erasure across checkpoints, embeddings, and backups. |
 | **Differential privacy** | Apply noise or clipping during training and query time. |
 | **Purpose limitation & scope‑creep protection** | Detect secondary uses that diverge from original consent. |
-| **Consent management & documentation** | Track lawful bases, opt‑in status, and data‑subject agreements. |
+| **Consent management** | Track lawful bases, opt‑in status, and data‑subject agreements. |
 | **Federated learning with privacy controls** | Apply privacy advantages by training models on distributed devices without sharing raw data. |
 
 ---
@@ -202,6 +201,6 @@ This section provides requirements for keeping a human "captain of the ship" wit
 | **Human‑in‑the‑loop decision checkpoints** | Require approvals when stakes surpass predefined risk thresholds. |
 | **Chain of responsibility & auditability** | Log operator actions and model decisions for postmortem reviews. |
 | **Explainable‑AI techniques (SHAP, LIME, etc.)** | Surface feature importance, counter‑factuals, and local explanations. |
-| **Model cards & usage disclosures** | Document intended use, performance metrics, and ethical considerations. |
+| **Model cards & usage disclosures** | Maintain model cards for intended use, performance metrics, and ethical considerations. |
 | **Uncertainty quantification** | Propagate confidence scores or entropy measures in responses. |
 | **User‑facing transparency reports** | Provide periodic disclosures on incidents, drift, and data usage. |
