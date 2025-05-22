@@ -139,8 +139,6 @@ This section focuses on detecting and mitigating adversarial examples in trainin
 
 ## References
 
-For more information, see also:
-
 * [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
 * [MITRE ATLAS (Adversarial Threat Landscape for AI Systems)](https://atlas.mitre.org/)
 * [EU AI Act: Article 10: Data and Data Governance](https://artificialintelligenceact.eu/article/10/)

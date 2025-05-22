@@ -26,18 +26,7 @@ This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1
 
 ## 3. Model Lifecycle Management & Change Control
 
-This section provides requirements to manage model development, fine-tuning, and maintenance securely, ensuring all changes are versioned, traceable, and reversible.
-
-| Focus area | Purpose | MITRE ATLAS Mapping |
-| --- | --- | --- |
-| **Model versioning & transparency** | Track model releases with cryptographic signing and dependency graphs to ensure integrity and transparency. This includes unique versioning for all model releases, cryptographic signing of model artifacts and complete dependency tracking. | ML01.002 Model Tampering |
-| **Secure patching & rollback** | Enable hotfixes and downgrades with validated rollback mechanisms to maintain security and functionality without vulnerabilities. | ML01.004 Model Poisoning |
-| **Controlled fine-tuning & retraining** | Restrict data ingestion, hyperparameter changes, and pipeline configurations to approved workflows. This includes restricted access to fine-tuning operations, validation of all data used in fine-tuning and audit trail of all parameter modifications. | ML01.004 Model Poisoning |
-| **Change auditing** | Log and review all modifications, including prompt templates and system messages, to ensure traceability and accountability. This includes logging of all model changes and tamper-proof audit trails with integrity verification. | ML01.001 Model Replication |
-| **Model testing & validation** | Conduct performance, robustness, and security tests before deployment to verify model reliability and compliance. This includes pre-deployment testing protocols, security-focused test cases, and comprehensive adversarial testing. | ML01.005 Model Manipulation |
-| **Model change** | Maintain changelogs and model cards, configurations, and dependencies for compliance and auditing. This includes detailed model cards with usage guidelines. | ML01.002 Model Tampering |
-| **Formal decommissioning process** | Define steps for archiving, sanitizing, and revoking retired models to prevent unauthorized reuse or data leakage. This includes secure data sanitization features, and complete dependency analysis and notification for interconnected systems. | ML08.001 Data Leakage |
-| **Model Provenance Tracking** | Capturing, recording, and storing information about a model's origin, how it was created, and its history of modifications. This includes cryptographic verification of provenance, and complete chain of custody for model artifacts. | ML01.002 Model Tampering |
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C03-Model-Lifecycle-Management.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C03-Model-Lifecycle-Management.md) for this section.
 
 ---
 
