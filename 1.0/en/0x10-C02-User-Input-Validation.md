@@ -64,17 +64,17 @@ Even syntactically valid prompts may request disallowed content (illicit instruc
 
 ## References
 
-* https://genai.owasp.org/llmrisk/llm01-prompt-injection/ "LLM01:2025 Prompt Injection - OWASP Top 10 for LLM & Generative AI Security"
-* https://www.wired.com/story/generative-ai-prompt-injection-hacking?utm_source=chatgpt.com "Generative AI's Biggest Security Flaw Is Not Easy to Fix"
-* https://www.anthropic.com/research/many-shot-jailbreaking "Many-shot jailbreaking \ Anthropic"
-* https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf?utm_source=chatgpt.com "[PDF] OpenAI GPT-4.5 System Card"
-* https://ceur-ws.org/Vol-3740/paper-53.pdf "Notebook for the CheckThat Lab at CLEF 2024"
-* https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks "Mitigate jailbreaks and prompt injections - Anthropic"
-* https://ama.drwhy.ai/mitre-attck.html?utm_source=chatgpt.com "Chapter 3 MITRE ATT&CK - Adversarial Model Analysis"
-* https://wtit.com/blog/2025/04/17/owasp-top-10-for-llm-applications-2025/ "OWASP Top 10 for LLM Applications 2025 - WorldTech IT"
-* https://owasp.org/www-project-machine-learning-security-top-10/?utm_source=chatgpt.com "OWASP Machine Learning Security Top Ten"
-* https://www.jussimetso.com/index.php/2024/09/28/few-words-about-ai-security/?utm_source=chatgpt.com "Few words about AI Security - Jussi Metso"
-* https://modelmetry.com/blog/how-to-ensure-llm-output-adheres-to-a-json-schema "How To Ensure LLM Output Adheres to a JSON Schema | Modelmetry"
-* https://community.openai.com/t/feature-request-function-calling-easily-enforcing-valid-json-schema-following/263515?utm_source=chatgpt.com "Easily enforcing valid JSON schema following - API"
-* https://www.fairly.ai/blog/ai-cybersecurity-tracker?utm_source=chatgpt.com "AI Safety+Cybersecurity R&D Tracker - Fairly AI"
-* https://www.ft.com/content/cf11ebd8-aa0b-4ed4-945b-a5d4401d186e?utm_source=chatgpt.com "Anthropic makes 'jailbreak' advance to stop AI models producing harmful results"
+* [LLM01:2025 Prompt Injection – OWASP Top 10 for LLM & Generative AI Security](https://genai.owasp.org/llmrisk/llm01-prompt-injection/)
+* [Generative AI's Biggest Security Flaw Is Not Easy to Fix](https://www.wired.com/story/generative-ai-prompt-injection-hacking)
+* [Many-shot jailbreaking \ Anthropic](https://www.anthropic.com/research/many-shot-jailbreaking)
+* [$PDF$ OpenAI GPT-4.5 System Card](https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf)
+* [Notebook for the CheckThat Lab at CLEF 2024](https://ceur-ws.org/Vol-3740/paper-53.pdf)
+* [Mitigate jailbreaks and prompt injections – Anthropic](https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks)
+* [Chapter 3 MITRE ATT\&CK – Adversarial Model Analysis](https://ama.drwhy.ai/mitre-attck.html)
+* [OWASP Top 10 for LLM Applications 2025 – WorldTech IT](https://wtit.com/blog/2025/04/17/owasp-top-10-for-llm-applications-2025/)
+* [OWASP Machine Learning Security Top Ten](https://owasp.org/www-project-machine-learning-security-top-10/)
+* [Few words about AI Security – Jussi Metso](https://www.jussimetso.com/index.php/2024/09/28/few-words-about-ai-security/)
+* [How To Ensure LLM Output Adheres to a JSON Schema | Modelmetry](https://modelmetry.com/blog/how-to-ensure-llm-output-adheres-to-a-json-schema)
+* [Easily enforcing valid JSON schema following – API](https://community.openai.com/t/feature-request-function-calling-easily-enforcing-valid-json-schema-following/263515?utm_source)
+* [AI Safety + Cybersecurity R\&D Tracker – Fairly AI](https://www.fairly.ai/blog/ai-cybersecurity-tracker)
+* [Anthropic makes ‘jailbreak’ advance to stop AI models producing harmful results](https://www.ft.com/content/cf11ebd8-aa0b-4ed4-945b-a5d4401d186e)
