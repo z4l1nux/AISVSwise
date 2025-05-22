@@ -28,16 +28,8 @@ This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1
 ---
 
 ## 4. Infrastructure, Configuration & Deployment Security
-This section provides requirements to secure build, deployment, and runtime environments for AI systems, protecting against exploitation, misconfiguration, and lateral movement.
 
-| Focus area | Purpose |
-| --- | --- |
-| **Container & serverless runtime isolation** | Enforce least privilege using suitable technologies such as Kubernetes namespaces, seccomp profiles, and eBPF rules to prevent privilege escalation. |
-| **Secure deployment pipelines** | Implement IaC scanning and reproducible builds to ensure trusted deployments. |
-| **Attack surface reduction** | Restrict default ports, disable unused endpoints, and limit egress traffic to minimize external attack vectors. |
-| **Secrets management & environment hardening** | Rotate API keys, use TPM/HSM for key storage, and audit environment variables to prevent unauthorized access. |
-| **Model sandboxing** | Isolate model evaluation in sandboxed environments to detect vulnerabilities or malicious behavior. |
-| **Infrastructure vulnerability monitoring** | Scan containers and hosts for CVEs and misconfigurations. |
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C04-Infrastructure.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C04-Infrastructure.md) for this section.
 
 ---
 
