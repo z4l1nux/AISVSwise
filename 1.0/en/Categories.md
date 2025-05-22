@@ -13,30 +13,14 @@
 
 ## 1. Training Data Governance & Bias Management
 
-This section provides requirements to ensure training data is ethical, secure, and compliant by managing its provenance, quality, and bias during data collection and preparation for model training. And intial version of this section has been built to demonstrate the structure of the requirements for discussion here [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C1-Training-Data-Governance.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C1-Training-Data-Governance.md)
-
-| Focus area | Purpose | MITRE ATLAS Mapping |
-| --- | --- | --- |
-| **Training Data Provenance** | Track and audit origins of training datasets to ensure traceability and detect unauthorized or unverified sources. This includes data sources origins that can be traced, that training data pipelines include verification of content legitimacy, and cryptographic validation of data source integrity. | ML04.001 Data Poisoning |
-| **Bias Detection & Correction** | Identify and mitigate demographic or distributional biases in training data to promote equitable model outcomes. This includes bias assessment on training datasets, and tracking of bias metrics across model versions. | ML07.001 Bias Exploitation |
-| **Representation Completeness & Fairness** | Ensure training data includes balanced coverage of under-represented groups and edge cases through targeted collection or augmentation to enhance model robustness. This includes analysis of demographic distribution in training data, procedures for augmenting underrepresented classes, and edge case testing against fairness criteria. | ML07.001 Bias Exploitation |
-| **Pre-Training Data Poisoning Detection & Mitigation** | Detect and filter malicious or corrupted data in training datasets using anomaly detection or statistical analysis to prevent model corruption. This includes basic data validation checks before training, statistical outlier detection in training data, and advanced poisoning detection techniques implementation. | ML04.001 Data Poisoning |
-| **Training Data Integrity & Labeling** | Safeguard training datasets and labels from tampering or poisoning using cryptographic integrity, secure annotation pipelines and other methods. This includes data integrity checks, secure annotation workflows with access controls, and cryptographic validation of data and label integrity. | ML04.001 Data Poisoning |
-| **Training Data Quality Assurance** | Validate training data for accuracy, completeness, and consistency to ensure reliable model training. This includes basic data quality checks (missing values, formats), consistency and distribution checks, and formal data quality metrics monitored for drift. | ML04.003 Data Manipulation |
-| **User Data Deletion & Consent Enforcement** | Implement mechanisms to honor user deletion requests and consent withdrawals in training datasets and backups, compliant with privacy law. This includes procedures for handling deletion requests, audit trails of deletion requests and actions, and deletion across all systems including backups. | ML08.001 Data Leakage |
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C1-Training-Data-Governance.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C1-Training-Data-Governance.md) for this section.
 
 ---
 
 ## 2. User Input Validation
 
-This section outlines defenses against user input attacks, ensuring all runtime inputs (e.g., interactive prompts, API requests, or streaming feeds) are well-formed, policy-compliant, and free from malicious or adversarial content, such as prompt injection. This section focuses solely on securing user inputs during model inference.
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C02-User-Input-Validation.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C02-User-Input-Validation.md) for this section.
 
-| Focus area | Purpose | MITRE ATLAS Mapping |
-| --- | --- | --- | 
-| **Prompt-Injection Defense** | Detect & block attempts to override instructions or jailbreak guardrails. This includes input screening for known prompt injection patterns, detection and blocking of instruction override attempts, and adaptive defenses against novel prompt injection techniques. Take into consideration risks if multi-modal inputs are used. | ML05.002 Input Manipulation |
-| **Adversarial-Example Resistance** | Detect & block perturbed inputs designed to mislead model during inference. This includes basic input sanitization to prevent obvious manipulations, detection mechanisms for known adversarial patterns, and robust defenses against sophisticated adversarial examples. | ML05.001 Model Evasion |
-| **Schema, Type & Length Validation** | Enforce strict syntactic, semantic, & size constraints on user inputs. This includes input validation against defined schemas, type checking and length constraints enforcement, and semantic validation of complex inputs for each used modality and type of data. | ML05.002 Input Manipulation |
-| **Content & Policy Screening** | Apply filters to ensure compliance with safety policies. This includes content screening for prohibited material, policy enforcement based on context and user, and comprehensive coverage of content policies with regular updates. | ML05.003 Prompt Injection |
 
 ---
 
