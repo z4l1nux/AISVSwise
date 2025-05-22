@@ -10,11 +10,11 @@ This section focuses on inventory and control of training data sources, ensuring
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **1.1.1** | **Verify that** an up-to-date inventory of all training data sources is maintained, including details on provenance (origin, collection methods) and usage rights for each dataset. This ensures traceability and accountability for the data used in model development. | 1   | D/V |
-| **1.1.2** | **Verify that** only data from trusted and authorized sources is used for training. Any third-party or open-source datasets should be vetted for quality and appropriateness before inclusion to reduce the risk of data poisoning via malicious or low-quality data.  | 1   | D/V |
-| **1.1.3** | **Verify that** training datasets exclude any data that is not necessary for the intended AI task, especially sensitive personal information, following the principle of data minimization. Unnecessary or unrelated data should be omitted to reduce risk exposure and avoid introducing spurious bias.| 1   | D/V |
-| **1.1.4** | **Verify that** a formal process exists to approve and document any changes or additions to the training data. All modifications to the dataset are logged (including what changed, when, and by whom) to maintain data integrity and to detect any unauthorized or unexpected changes (tampering). | 2   | D/V |
-| **1.1.5** | **Verify that** if data labeling or annotation is performed, quality control measures are in place. For example, use reviewer cross-checks or consensus labeling to detect and correct errors or malicious mislabels that could inject bias or inaccuracies into the training data. | 2   | D/V |
+| **1.1.1** | **Verify that** an up-to-date inventory of all training data sources is maintained, including details on provenance (origin, collection methods) and usage rights for each dataset. This ensures traceability and accountability for the data used in model development. | 1 | D/V |
+| **1.1.2** | **Verify that** only data from trusted and authorized sources is used for training. Any third-party or open-source datasets should be vetted for quality and appropriateness before inclusion to reduce the risk of data poisoning via malicious or low-quality data.  | 1 | D/V |
+| **1.1.3** | **Verify that** training datasets exclude any data that is not necessary for the intended AI task, especially sensitive personal information, following the principle of data minimization. Unnecessary or unrelated data should be omitted to reduce risk exposure and avoid introducing spurious bias.| 1 | D/V |
+| **1.1.4** | **Verify that** a formal process exists to approve and document any changes or additions to the training data. All modifications to the dataset are logged (including what changed, when, and by whom) to maintain data integrity and to detect any unauthorized or unexpected changes (tampering). | 2 | D/V |
+| **1.1.5** | **Verify that** if data labeling or annotation is performed, quality control measures are in place. For example, use reviewer cross-checks or consensus labeling to detect and correct errors or malicious mislabels that could inject bias or inaccuracies into the training data. | 2 | D/V |
 
 ---
 

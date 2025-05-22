@@ -12,11 +12,11 @@ Prompt-injection tops every major LLM risk list for 2025. Defenses combine stati
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **2.1.1** | **Verify that** user inputs are screened against a continuously-updated library of known prompt-injection patterns (jailbreak keywords, “ignore previous”, role-play chains, indirect HTML/URL attacks).      |   1   |  D/V |
-| **2.1.2** | **Verify that** the system enforces an instruction hierarchy in which system or developer messages override user instructions, even after context window expansion or function-calling hand-offs.             |   1   |  D/V |
-| **2.1.3** | **Verify that** adversarial evaluation tests (e.g., red-team “many-shot” prompts) are run before every model or prompt-template release, with success-rate thresholds and automated blockers for regressions. |   2   |  D/V |
-| **2.1.4** | **Verify that** prompts originating from third-party content (web pages, PDFs, e-mails) are sanitized in an isolated parsing context before being concatenated into the main prompt.                          |   2   |   D  |
-| **2.1.5** | **Verify that** all prompt-filter rule updates, classifier model versions and block-list changes are version-controlled and auditable.                                                                        |   3   |  D/V |
+| **2.1.1** | **Verify that** user inputs are screened against a continuously-updated library of known prompt-injection patterns (jailbreak keywords, “ignore previous”, role-play chains, indirect HTML/URL attacks). | 1 |  D/V |
+| **2.1.2** | **Verify that** the system enforces an instruction hierarchy in which system or developer messages override user instructions, even after context window expansion or function-calling hand-offs. | 1 |  D/V |
+| **2.1.3** | **Verify that** adversarial evaluation tests (e.g., red-team “many-shot” prompts) are run before every model or prompt-template release, with success-rate thresholds and automated blockers for regressions. | 2 |  D/V |
+| **2.1.4** | **Verify that** prompts originating from third-party content (web pages, PDFs, e-mails) are sanitized in an isolated parsing context before being concatenated into the main prompt. | 2 | D |
+| **2.1.5** | **Verify that** all prompt-filter rule updates, classifier model versions and block-list changes are version-controlled and auditable. | 3 |  D/V |
 
 ---
 
@@ -26,11 +26,11 @@ NLP models remain vulnerable to subtle character- or word-level perturbations th
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **2.2.1** | **Verify that** basic input-normalization steps (Unicode NFC, homoglyph mapping, whitespace trimming) run before tokenization.                                                                 |   1   |   D  |
-| **2.2.2** | **Verify that** statistical anomaly detection flags inputs with unusually high edit distance to language norms, excessive repeated tokens, or abnormal embedding distances.                    |   2   |  D/V |
-| **2.2.3** | **Verify that** the inference pipeline supports optional adversarial-training–hardened model variants or defense layers (e.g., randomization, defensive distillation) for high-risk endpoints. |   2   |   D  |
-| **2.2.4** | **Verify that** suspected adversarial inputs are quarantined, logged with full payloads (after PII redaction) and routed to a human review SL-A.                                               |   2   |   V  |
-| **2.2.5** | **Verify that** robustness metrics (success rate of known attack suites) are tracked over time and regressions trigger a release blocker.                                                      |   3   |  D/V |
+| **2.2.1** | **Verify that** basic input-normalization steps (Unicode NFC, homoglyph mapping, whitespace trimming) run before tokenization. | 1 | D |
+| **2.2.2** | **Verify that** statistical anomaly detection flags inputs with unusually high edit distance to language norms, excessive repeated tokens, or abnormal embedding distances. | 2 |  D/V |
+| **2.2.3** | **Verify that** the inference pipeline supports optional adversarial-training–hardened model variants or defense layers (e.g., randomization, defensive distillation) for high-risk endpoints. | 2 | D |
+| **2.2.4** | **Verify that** suspected adversarial inputs are quarantined, logged with full payloads (after PII redaction) and routed to a human review SL-A.  | 2 | V |
+| **2.2.5** | **Verify that** robustness metrics (success rate of known attack suites) are tracked over time and regressions trigger a release blocker.  | 3 |  D/V |
 
 ---
 
@@ -40,11 +40,11 @@ Malformed or oversized inputs cause parsing errors, prompt spillage across field
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **2.3.1** | **Verify that** every API or function-call endpoint defines an explicit input schema (JSON Schema, Protobuf or multimodal equivalent) and that inputs are validated before prompt assembly. |   1   |   D  |
-| **2.3.2** | **Verify that** inputs exceeding maximum token or byte limits are rejected with a safe error and never silently truncated.                                                                  |   1   |  D/V |
-| **2.3.3** | **Verify that** type checks (e.g., numeric ranges, enum values, MIME types for images/audio) are enforced server-side, not only in client code.                                             |   2   |  D/V |
-| **2.3.4** | **Verify that** semantic validators (e.g., JSON Schema `$ref` dependencies, regex constraints) run in constant-time to prevent algorithmic DoS.                                             |   2   |   D  |
-| **2.3.5** | **Verify that** validation failures are logged with redacted payload snippets and unambiguous error codes to aid security triage.                                                           |   3   |   V  |
+| **2.3.1** | **Verify that** every API or function-call endpoint defines an explicit input schema (JSON Schema, Protobuf or multimodal equivalent) and that inputs are validated before prompt assembly. | 1 | D |
+| **2.3.2** | **Verify that** inputs exceeding maximum token or byte limits are rejected with a safe error and never silently truncated. | 1 |  D/V |
+| **2.3.3** | **Verify that** type checks (e.g., numeric ranges, enum values, MIME types for images/audio) are enforced server-side, not only in client code. | 2 |  D/V |
+| **2.3.4** | **Verify that** semantic validators (e.g., JSON Schema `$ref` dependencies, regex constraints) run in constant-time to prevent algorithmic DoS. | 2 | D |
+| **2.3.5** | **Verify that** validation failures are logged with redacted payload snippets and unambiguous error codes to aid security triage. | 3 | V |
 
 ---
 
@@ -54,11 +54,11 @@ Even syntactically valid prompts may request disallowed content (illicit instruc
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **2.4.1** | **Verify that** a content-classifier (zero-shot or fine-tuned) scores every input for violence, self-harm, hate, sexual content and illegal requests, with configurable thresholds. |   1   |   D  |
-| **2.4.2** | **Verify that** policy-violating inputs receive standardized refusals or safe-completions and do not propagate to downstream LLM calls.                                             |   1   |  D/V |
-| **2.4.3** | **Verify that** the screening model or rule-set is re-trained/updated at least quarterly, incorporating newly observed jailbreak or policy-bypass patterns.                         |   2   |   D  |
-| **2.4.4** | **Verify that** screening respects user-specific policies (age, regional legal constraints) via attribute-based rules resolved at request time.                                     |   2   |   D  |
-| **2.4.5** | **Verify that** screening logs include classifier confidence scores and policy category tags for SOC correlation and future red-team replay.                                        |   3   |   V  |
+| **2.4.1** | **Verify that** a content-classifier (zero-shot or fine-tuned) scores every input for violence, self-harm, hate, sexual content and illegal requests, with configurable thresholds. | 1 | D |
+| **2.4.2** | **Verify that** policy-violating inputs receive standardized refusals or safe-completions and do not propagate to downstream LLM calls. | 1 |  D/V |
+| **2.4.3** | **Verify that** the screening model or rule-set is re-trained/updated at least quarterly, incorporating newly observed jailbreak or policy-bypass patterns.  | 2 | D |
+| **2.4.4** | **Verify that** screening respects user-specific policies (age, regional legal constraints) via attribute-based rules resolved at request time.  | 2 | D |
+| **2.4.5** | **Verify that** screening logs include classifier confidence scores and policy category tags for SOC correlation and future red-team replay. | 3 | V |
 
 ---
 
