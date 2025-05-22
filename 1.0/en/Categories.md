@@ -3,10 +3,7 @@
 
 ### Next steps for reviewers
 
-1. **Overlap** – Where can we consolidate?  
-2. **Scope accuracy** – Does each category cover the right threat surfaces?  
-3. **Clarity & granularity** – Are the descriptions and bullets detailed enough to drive concrete requirements?  
-4. **Documentation and GRC** - Are there any documentation, process or GRC subjects than can be moved to [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x91-Appendix-C_Governance_and_Documentation.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x91-Appendix-C_Governance_and_Documentation.md)
+1. **Documentation and GRC** - Are there any documentation, process or GRC subjects than can be moved to [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x91-Appendix-C_Governance_and_Documentation.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x91-Appendix-C_Governance_and_Documentation.md)
 5. **Testability** - Are these categories testable? We want to make sure we have categories and sub-categories that are strictly testable by a seecurity tester or code reviewer.
 
 ---
