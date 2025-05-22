@@ -10,8 +10,8 @@ Robust user-input validation is a first-line defense against many of the most da
 
 Prompt-injection tops every major LLM risk list for 2025. Defenses combine static pattern filters, dynamic classifiers and instruction-hierarchy enforcement.
 
-|     #     | Description                                                                                                                                                                                                   | Level | Role |
-| :-------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---: | :--: |
+| # | Description | Level | Role |
+|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
 | **2.1.1** | **Verify that** user inputs are screened against a continuously-updated library of known prompt-injection patterns (jailbreak keywords, “ignore previous”, role-play chains, indirect HTML/URL attacks).      |   1   |  D/V |
 | **2.1.2** | **Verify that** the system enforces an instruction hierarchy in which system or developer messages override user instructions, even after context window expansion or function-calling hand-offs.             |   1   |  D/V |
 | **2.1.3** | **Verify that** adversarial evaluation tests (e.g., red-team “many-shot” prompts) are run before every model or prompt-template release, with success-rate thresholds and automated blockers for regressions. |   2   |  D/V |
@@ -24,8 +24,8 @@ Prompt-injection tops every major LLM risk list for 2025. Defenses combine stati
 
 NLP models remain vulnerable to subtle character- or word-level perturbations that humans miss but models misclassify.
 
-|     #     | Description                                                                                                                                                                                    | Level | Role |
-| :-------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---: | :--: |
+| # | Description | Level | Role |
+|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
 | **2.2.1** | **Verify that** basic input-normalization steps (Unicode NFC, homoglyph mapping, whitespace trimming) run before tokenization.                                                                 |   1   |   D  |
 | **2.2.2** | **Verify that** statistical anomaly detection flags inputs with unusually high edit distance to language norms, excessive repeated tokens, or abnormal embedding distances.                    |   2   |  D/V |
 | **2.2.3** | **Verify that** the inference pipeline supports optional adversarial-training–hardened model variants or defense layers (e.g., randomization, defensive distillation) for high-risk endpoints. |   2   |   D  |
@@ -38,8 +38,8 @@ NLP models remain vulnerable to subtle character- or word-level perturbations th
 
 Malformed or oversized inputs cause parsing errors, prompt spillage across fields and resource exhaustion.  Strict schema enforcement is also a prerequisite for deterministic tool-calling.
 
-|     #     | Description                                                                                                                                                                                 | Level | Role |
-| :-------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---: | :--: |
+| # | Description | Level | Role |
+|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
 | **2.3.1** | **Verify that** every API or function-call endpoint defines an explicit input schema (JSON Schema, Protobuf or multimodal equivalent) and that inputs are validated before prompt assembly. |   1   |   D  |
 | **2.3.2** | **Verify that** inputs exceeding maximum token or byte limits are rejected with a safe error and never silently truncated.                                                                  |   1   |  D/V |
 | **2.3.3** | **Verify that** type checks (e.g., numeric ranges, enum values, MIME types for images/audio) are enforced server-side, not only in client code.                                             |   2   |  D/V |
@@ -52,8 +52,8 @@ Malformed or oversized inputs cause parsing errors, prompt spillage across field
 
 Even syntactically valid prompts may request disallowed content (illicit instructions, hate speech, copyrighted text).  OWASP and Fairly-AI trackers rank real-time policy screening as critical, while Anthropic’s “constitutional classifier” shows 95 % block rates for harmful inputs.
 
-|     #     | Description                                                                                                                                                                         | Level | Role |
-| :-------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---: | :--: |
+| # | Description | Level | Role |
+|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
 | **2.4.1** | **Verify that** a content-classifier (zero-shot or fine-tuned) scores every input for violence, self-harm, hate, sexual content and illegal requests, with configurable thresholds. |   1   |   D  |
 | **2.4.2** | **Verify that** policy-violating inputs receive standardized refusals or safe-completions and do not propagate to downstream LLM calls.                                             |   1   |  D/V |
 | **2.4.3** | **Verify that** the screening model or rule-set is re-trained/updated at least quarterly, incorporating newly observed jailbreak or policy-bypass patterns.                         |   2   |   D  |
