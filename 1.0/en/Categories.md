@@ -52,15 +52,8 @@ This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1
 ---
 
 ## 8. Memory, Embeddings & Vector Database Security
-This section provides requirements to secure AI memory and retrieval-augmented generation (RAG) stores during runtime, protecting against inversion, leakage, and unauthorized reuse.
 
-| Focus area | Purpose |
-| --- | --- |
-| **Access controls on memory & RAG indices** | Apply row‑level, namespace, or ABAC controls to stored vectors. |
-| **Embedding sanitization & validation** | Remove PII or malicious artifacts before vectorization. |
-| **Memory expiry, revocation & deletion** | Honor TTLs, user deletion requests, and dynamic scope reductions. |
-| **Prevent embedding inversion or leakage** | Employ noise addition, dimensionality reduction, and encryption schemes. |
-| **Scope enforcement for user‑specific memory** | Ensure one user's context cannot seed completions for another. |
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C08-Memory-Embeddings-and-Vector-Database.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C08-Memory-Embeddings-and-Vector-Database.md).
 
 ---
 
