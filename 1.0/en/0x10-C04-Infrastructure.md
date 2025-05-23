@@ -2,7 +2,7 @@
 
 ## Control Objective
 
-Robust infrastructure hardening and secure configuration of build, deployment, and runtime environments are critical to prevent privilege‑escalation, supply‑chain tampering, and lateral movement in AI systems. Misconfigurations in Kubernetes, CI/CD tooling, and secrets handling have been exploited in recent attacks; therefore, these controls focus on runtime isolation, trusted release pipelines, attack‑surface minimization, key management, model sandboxing, and continuous vulnerability monitoring.
+Robust infrastructure hardening and secure configuration of build, deployment, and runtime environments are critical to prevent privilege‑escalation, supply‑chain tampering, and lateral movement in AI systems. These controls focus on runtime isolation, trusted release pipelines, attack‑surface minimization, key management, and model sandboxing.
 
 ---
 
@@ -13,10 +13,10 @@ Even a single container escape can grant an attacker control over GPUs loaded wi
 | # | Description | Level | Role |
 |:--------:|--------------------------------------------------------------------------------------------|:---:|:---:|
 | **4.1.1** | **Verify that** every Kubernetes Pod declares a seccomp profile that blocks all syscalls except those required by the workload. | 1 | D/V |
-| **4.1.2** | **Verify that** containers and serverless functions drop Linux capabilities beyond the minimal set (e.g., only *CAP\_NET\_BIND\_SERVICE* if binding ports <1024). | 1 | D/V |
+| **4.1.2** | **Verify that** containers and serverless functions drop Linux capabilities beyond the minimal set. | 1 | D/V |
 | **4.1.3** | **Verify that** namespaces, cgroups, and read‑only root filesystems are enabled for all workloads to prevent file‑system and memory escapes. | 2 | D/V |
-| **4.1.4** | **Verify that** eBPF‑based runtime policies (e.g., Cilium Tetragon) detect and block anomalous syscalls indicating privilege escalation. | 2 | D/V |
-| **4.1.5** | **Verify that** multi‑tenant serverless workloads execute inside microVM or gVisor sandboxes (e.g., Firecracker) to achieve VM‑grade isolation. | 3 | D/V |
+| **4.1.4** | **Verify that** eBPF‑based runtime policies detect and block anomalous syscalls indicating privilege escalation. | 2 | D/V |
+| **4.1.5** | **Verify that** multi‑tenant serverless workloads execute inside microVM or gVisor sandboxes to achieve VM‑grade isolation. | 3 | D/V |
 
 ---
 
@@ -26,10 +26,10 @@ Supply‑chain attacks increasingly target CI services. Reproducible builds, IaC
 
 | # | Description | Level | Role |
 |:--------:|--------------------------------------------------------------------------------------------|:---:|:---:|
-| **4.2.1** | **Verify that** Infrastructure‑as‑Code (Terraform, Helm) is scanned on every pull request using a static analyzer such as tfsec or Checkov. | 1 | D/V |
+| **4.2.1** | **Verify that** Infrastructure‑as‑Code is scanned on every pull request using a static analyzer such as tfsec or Checkov. | 1 | D/V |
 | **4.2.2** | **Verify that** container and model builds are reproducible and produce provenance meeting **SLSA Level 3** or higher. | 1 | D/V |
-| **4.2.3** | **Verify that** each container image embeds an SBOM (e.g., Syft) and is signed with Sigstore Cosign before pushing to any registry. | 2 | D/V |
-| **4.2.4** | **Verify that** pipeline secrets reside in a dedicated secrets backend (Vault, AWS Secrets Manager) and are injected as short‑lived tokens. | 2 | D/V |
+| **4.2.3** | **Verify that** each container image embeds an SBOM and is signed with Sigstore Cosign before pushing to any registry. | 2 | D/V |
+| **4.2.4** | **Verify that** pipeline secrets reside in a dedicated secrets backend and are injected as short‑lived tokens. | 2 | D/V |
 
 ---
 
@@ -39,7 +39,7 @@ Default‑deny networking and minimal service exposure limit the blast radius of
 
 | # | Description | Level | Role |
 |:--------:|--------------------------------------------------------------------------------------------|:---:|:---:|
-| **4.3.1** | **Verify that** each namespace enforces default‑deny **ingress** *and* **egress** NetworkPolicies, with explicit allow‑lists. | 1 | D/V |
+| **4.3.1** | **Verify that** each namespace enforces default‑deny **ingress** *and* **egress** network policies, with explicit allow‑lists. | 1 | D/V |
 | **4.3.2** | **Verify that** non‑essential ports, debug endpoints, and cloud metadata APIs are disabled or authenticated. | 1 | D/V |
 | **4.3.3** | **Verify that** outbound internet traffic from inference Pods is routed through egress proxies with domain allow‑lists to prevent exfiltration. | 2 | D |
 
@@ -51,7 +51,7 @@ Compromised API keys remain a top breach vector. Hardware‑backed storage and r
 
 | # | Description | Level | Role |
 |:--------:|--------------------------------------------------------------------------------------------|:---:|:---:|
-| **4.4.1** | **Verify that** all secrets (API keys, model decryption passphrases) are rotated at least every 90 days or immediately upon personnel change. | 1 | D/V |
+| **4.4.1** | **Verify that** all secrets are rotated at least every 90 days or immediately upon personnel change. | 1 | D/V |
 | **4.4.2** | **Verify that** encryption keys are stored in TPM, HSM, or cloud KMS with automatic rotation and audit logging enabled. | 1 | D/V |
 | **4.4.3** | **Verify that** container images and start‑up scripts audit environment variables for sensitive data and block builds on leakage. | 2 | D |
 | **4.4.4** | **Verify that** SSH access to production nodes requires MFA and is disabled for service accounts. | 2 | V |
@@ -64,8 +64,8 @@ Third‑party or fine‑tuned models can embed malicious payloads. Sandboxing en
 
 | # | Description | Level | Role |
 |:--------:|--------------------------------------------------------------------------------------------|:---:|:---:|
-| **4.5.1** | **Verify that** new or external models are evaluated inside an isolated sandbox (microVM, Wasm) with no outbound network until vetting completes. | 1 | D/V |
-| **4.5.2** | **Verify that** adversarial evaluation (prompt fuzzing, malicious weight scanning) is executed in the sandbox and blocks promotion on regression. | 2 | D/V |
+| **4.5.1** | **Verify that** new or external models are evaluated inside an isolated sandbox with no outbound network until vetting completes. | 1 | D/V |
+| **4.5.2** | **Verify that** adversarial evaluation is executed in the sandbox and blocks promotion on regression. | 2 | D/V |
 
 ---
 
