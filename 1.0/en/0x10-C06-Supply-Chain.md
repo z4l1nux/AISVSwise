@@ -12,9 +12,9 @@ Assess and authenticate third‑party model origins, licenses, and hidden behavi
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **6.1.1** | **Verify that** every third‑party model artifact includes a signed provenance record (e.g., in‑toto metadata) identifying source repository and commit hash. | 1 | D/V |
-| **6.1.2** | **Verify that** models are scanned for malicious layers or Trojan triggers using automated tools (e.g., TrojAI) before import. | 1 | D/V |
-| **6.1.3** | **Verify that** transfer‑learning fine‑tunes pass adversarial evaluation to detect hidden behaviors (MITRE ATLAS ML00.002). | 2 | D |
+| **6.1.1** | **Verify that** every third‑party model artifact includes a signed provenance record identifying source repository and commit hash. | 1 | D/V |
+| **6.1.2** | **Verify that** models are scanned for malicious layers or Trojan triggers using automated tools before import. | 1 | D/V |
+| **6.1.3** | **Verify that** transfer‑learning fine‑tunes pass adversarial evaluation to detect hidden behaviors. | 2 | D |
 | **6.1.4** | **Verify that** model licenses, export‑control tags, and data‑origin statements are recorded in a ML‑BOM entry. | 2 | V |
 | **6.1.5** | **Verify that** high‑risk models (publicly uploaded weights, unverified creators) remain quarantined until human review and sign‑off. | 3 | D/V |
 
@@ -40,9 +40,9 @@ Pin every dependency to immutable digests and reproduce builds to guarantee iden
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **6.3.1** | **Verify that** all package managers enforce version pinning via lockfiles (requirements.txt, Poetry.lock, conda‑lock). | 1 | D/V |
-| **6.3.2** | **Verify that** immutable digests (SHA‑256, OCI manifests) are used instead of mutable tags in container references. | 1 | D/V |
-| **6.3.3** | **Verify that** reproducible‑build checks compare hashes across CI runs to ensure identical outputs (SLSA Level 3). | 2 | D |
+| **6.3.1** | **Verify that** all package managers enforce version pinning via lockfiles. | 1 | D/V |
+| **6.3.2** | **Verify that** immutable digests are used instead of mutable tags in container references. | 1 | D/V |
+| **6.3.3** | **Verify that** reproducible‑build checks compare hashes across CI runs to ensure identical outputs. | 2 | D |
 | **6.3.4** | **Verify that** build attestations are stored for 18 months for audit traceability. | 2 | V |
 | **6.3.5** | **Verify that** expired or yanked dependencies trigger automated PRs to update or fork pinned versions. | 3 | D |
 
@@ -82,11 +82,9 @@ Detect supply‑chain threats early through CVE feeds, audit‑log analytics, an
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **6.6.1** | **Verify that** CVE feeds and model‑zoo advisories are polled at least daily; critical findings open tickets automatically. | 1 | D/V |
-| **6.6.2** | **Verify that** CI/CD audit logs stream to SIEM detections for anomalous package pulls or tampered build steps. | 1 | V |
-| **6.6.3** | **Verify that** incident response playbooks include rollback procedures for compromised models or libraries. | 2 | D |
-| **6.6.4** | **Verify that** yearly supply‑chain penetration tests simulate malicious dependency injection attacks. | 2 | V |
-| **6.6.5** | **Verify that** threat‑intel enrichment tags ML‑specific indicators (e.g., model‑poisoning IoCs) in alert triage. | 3 | V |
+| **6.6.1** | **Verify that** CI/CD audit logs stream to SIEM detections for anomalous package pulls or tampered build steps. | 1 | V |
+| **6.6.2** | **Verify that** incident response playbooks include rollback procedures for compromised models or libraries. | 2 | D ||
+| **6.6.3** | **Verify that** threat‑intel enrichment tags ML‑specific indicators (e.g., model‑poisoning IoCs) in alert triage. | 3 | V |
 
 ---
 
