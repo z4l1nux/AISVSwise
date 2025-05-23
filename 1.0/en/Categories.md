@@ -45,16 +45,8 @@ This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1
 ---
 
 ## 7. Model Behavior, Output Control & Safety Assurance
-This section provides requirements to ensure model outputs are accurate and safe during runtime, to control and mitigate risks in generated content.
 
-| Focus area | Purpose |
-| --- | --- |
-| **Output format enforcement** | Enforce constraints on response schemas, data types, or token limits to ensure structured and predictable outputs. |
-| **Hallucination detection & mitigation** | Detect low-confidence or fabricated outputs and apply fallback strategies to maintain response reliability. |
-| **Output safety & privacy filtering** | Block harmful content, PII, or confidential data in outputs using pre- and post-generation policy checks. |
-| **Output & action limiting** | Restrict model-initiated actions and response rates through throttling or approval requirements to prevent abuse or overload, and ensure that information between modalities remains consistent and can't be manipulated. |
-| **Output explainability** | Provide transparency in outputs through confidence scores or reasoning traces to enhance user trust. |
-| **Monitoring integration** | Feed output safety and quality metrics into monitoring systems to enable real-time risk detection and response. |
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C07-Model-Behavior.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C07-Model-Behavior.md).  
 
 ---
 
