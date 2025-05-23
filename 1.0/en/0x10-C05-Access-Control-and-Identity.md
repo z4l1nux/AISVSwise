@@ -8,6 +8,8 @@ Effective access control for AI hinges on strong identity proofing, context‑aw
 
 ## C5.1 Identity Proofing & Federation
 
+Establish strong, IdP-backed identities for all humans and services, enforce MFA/step-up for sensitive actions, and align onboarding with NIST 800-63-3 IAL-2 to make sure every principal is who they claim to be.
+
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
 | **5.1.1** | **Verify that** all human users and service principals authenticate through a centralized enterprise IdP (OIDC/SAML) and that identities are mapped 1:1 to tokens (no shared secrets). | 1 | D/V |
@@ -19,6 +21,8 @@ Effective access control for AI hinges on strong identity proofing, context‑aw
 ---
 
 ## C5.2 User & Data Access Mapping
+
+Tie every endpoint, vector index, and dataset to a least-privilege role matrix so principals can perform only the exact CRUD operations their job requires, with changes logged for audit.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
@@ -32,6 +36,8 @@ Effective access control for AI hinges on strong identity proofing, context‑aw
 
 ## C5.3 Attribute‑Based Access Control (ABAC) Service Layer
 
+Off-load policy decisions to an engine like OPA/Cedar, which evaluates dynamic user, resource, and environment attributes at request time and emits tamper-proof decision logs. 
+
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
 | **5.3.1** | **Verify that** policy decisions are externalized to a dedicated engine (e.g., OPA, Cedar) callable over gRPC/REST. | 1 | D/V |
@@ -41,6 +47,10 @@ Effective access control for AI hinges on strong identity proofing, context‑aw
 | **5.3.5** | **Verify that** ABAC cache TTLs do not exceed 5 minutes for high‑sensitivity resources. | 3 | D/V |
 
 ---
+
+## C5.4 Query-Time Policy Evaluation
+
+Enforce row- or vector-level security filters inside the data service itself; failed or slow policy checks must block, not silently bypass, a request.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
@@ -54,6 +64,8 @@ Effective access control for AI hinges on strong identity proofing, context‑aw
 
 ## C5.5 Output Filtering & Redaction
 
+Post-inference hooks strip or transform any text, image, or citation the caller isn’t entitled to see, with deterministic, version-controlled redaction logic for compliance investigations.
+
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
 | **5.5.1** | **Verify that** post‑inference hooks redact disallowed PII or classified strings before returning content to the caller. | 1 | D/V |
@@ -66,6 +78,8 @@ Effective access control for AI hinges on strong identity proofing, context‑aw
 
 ## C5.6 Tenant & Session Isolation
 
+Segregate memory, caches, and network paths per tenant, verify tenant context on every call, and apply default-deny mesh policies to stop cross-customer data bleed in multi-tenant SaaS.
+
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
 | **5.6.1** | **Verify that** memory, embeddings, and cache entries are namespace‑segregated per tenant and cleared on tenant deletion. | 1 | D/V |
@@ -76,6 +90,8 @@ Effective access control for AI hinges on strong identity proofing, context‑aw
 ---
 
 ## C5.7 Agent & Tool Permission Scoping
+
+Give autonomous agents scoped capability tokens that expire with the session; dangerous actions (file write, shell exec) stay disabled unless explicitly re-authorized, and every tool invocation is re-checked by the ABAC layer.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
