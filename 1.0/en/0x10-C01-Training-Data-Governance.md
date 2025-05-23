@@ -12,11 +12,12 @@ Maintain a verifiable inventory of all datasets, accept only trusted sources, an
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **1.1.1** | **Verify that** an up-to-date inventory of every training-data source (origin, licence, collection method) is maintained. | 1 | D/V |
-| **1.1.2** | **Verify that** only datasets vetted for quality and licence compliance are allowed, reducing poisoning risk. | 1 | D/V |
+| **1.1.1** | **Verify that** an up-to-date inventory of every training-data source (origin, steward/owner, licence, collection method, intended use constraints, and processing history) is maintained. | 1 | D/V |
+| **1.1.2** | **Verify that** only datasets vetted for quality, representativeness, ethical sourcing, and licence compliance are allowed, reducing risks of poisoning, embedded bias, and intellectual property infringement. | 1 | D/V |
 | **1.1.3** | **Verify that** data minimisation is enforced so unnecessary or sensitive attributes are excluded. | 1 | D/V |
 | **1.1.4** | **Verify that** all dataset changes are subject to a logged approval workflow. | 2 | D/V |
 | **1.1.5** | **Verify that** labelling/annotation quality is ensured via reviewer cross-checks or consensus. | 2 | D/V |
+| **1.1.6** | **Verify that** "data cards" or "datasheets for datasets" are maintained for significant training datasets, detailing characteristics, motivations, composition, collection processes, preprocessing, and recommended/discouraged uses. | 2 | D/V |
 
 ---
 
@@ -26,11 +27,11 @@ Restrict access, encrypt at rest and in transit, and validate integrity to block
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **1.2.1** | **Verify that** role-based access controls protect storage and pipelines. | 1 | D/V |
-| **1.2.2** | **Verify that** datasets are encrypted in transit and, for sensitive data, at rest. | 2 | D/V |
-| **1.2.3** | **Verify that** checksums or signatures and anomaly detection guard against poisoning. | 2 | D/V |
+| **1.2.1** | **Verify that** access controls protect storage and pipelines. | 1 | D/V |
+| **1.2.2** | **Verify that** datasets are encrypted in transit and, for all sensitive or personally identifiable information (PII), at rest, using industry-standard cryptographic algorithms and key management practices. | 2 | D/V |
+| **1.2.3** | **Verify that** cryptographic hashes or digital signatures are used to ensure data integrity during storage and transfer, and that automated anomaly detection techniques are applied to guard against unauthorized modifications or corruption, including targeted data poisoning attempts. | 2 | D/V |
 | **1.2.4** | **Verify that** dataset versions are tracked to enable rollback. | 3 | D/V |
-| **1.2.5** | **Verify that** obsolete data is securely purged to shrink the attack surface. | 2 | D/V |
+| **1.2.5** | **Verify that** obsolete data is securely purged or anonymized in compliance with data retention policies, regulatory requirements, and to shrink the attack surface. | 2 | D/V |
 
 ---
 
@@ -40,25 +41,27 @@ Detect demographic skews and apply mitigation so the model’s error rates are e
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **1.3.1** | **Verify that** datasets are profiled for representational imbalance across protected attributes. | 1 | D/V |
-| **1.3.2** | **Verify that** biases are mitigated via re-balancing, additional data, or re-weighting. | 2 | D/V |
+| **1.3.1** | **Verify that** datasets are profiled for representational imbalance and potential biases across legally protected attributes (e.g., race, gender, age) and other ethically sensitive characteristics relevant to the model's application domain (e.g., socio-economic status, location). | 1 | D/V |
+| **1.3.2** | **Verify that** that identified biases are mitigated via documented strategies such as re-balancing, targeted data augmentation, algorithmic adjustments (e.g., pre-processing, in-processing, post-processing techniques), or re-weighting, and the impact of mitigation on both fairness and overall model performance is assessed. | 2 | D/V |
 | **1.3.3** | **Verify that** post-training fairness metrics are evaluated and documented. | 2 | D/V |
 | **1.3.4** | **Verify that** a lifecycle bias-management policy assigns owners and review cadence. | 3 | D/V |
 
 ---
 
-## C1.4 Training Data Integrity & Labeling
+## C1.4 Training Data Labeling Quality, Integrity, and Security
 
 Cryptographically protect labels and require dual review for critical classes.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **1.4.1** | **Verify that** hashes or digital signatures cover every data/label artefact. | 1 | D/V |
-| **1.4.2** | **Verify that** labeling interfaces use access controlled and tamper-evident logs. | 2 | D/V |
-| **1.4.3** | **Verify that** safety-critical labels receive mandatory dual review. | 2 | D/V |
-| **1.4.4** | **Verify that** sensitive labels are encrypted at rest and in transit. | 2 | D/V |
-| **1.4.5** | **Verify that** schemas are version-controlled and peer-reviewed. | 2 | D/V |
-| **1.4.6** | **Verify that** outsourced workflows prevent data leakage. | 2 | D |
+| **1.4.1** | **Verify that** labeling/annotation quality is ensured via clear guidelines, reviewer cross-checks, consensus mechanisms (e.g., monitoring inter-annotator agreement), and defined processes for resolving discrepancies.| 2 | D/V |
+| **1.4.2** | **Verify that** cryptographic hashes or digital signatures are applied to label artefacts to ensure their integrity and authenticity. | 2 | D/V |
+| **1.4.3** | **Verify that** labeling interfaces and platforms enforce strong access controls, maintain tamper-evident audit logs of all labeling activities, and protect against unauthorized modifications. | 2 | D/V |
+| **1.4.4** | **Verify that** labels critical to safety, security, or fairness (e.g., identifying toxic content, critical medical findings) receive mandatory independent dual review or equivalent robust verification.| 3 | D/V |
+| **1.4.5** | **Verify that** sensitive information (including PII) inadvertently captured or necessarily present in labels is redacted, pseudonymized, anonymized, or encrypted at rest and in transit, according to data minimization principles.| 2 | D/V |
+| **1.4.6** | **Verify that** labeling guides and instructions are comprehensive, version-controlled, and peer-reviewed. | 2 | D/V |
+| **1.4.7** | **Verify that** data schemas (including for labels) are clearly defined, and version-controlled. | 2 | D/V |
+| **1.8.2** | **Verify that** outsourced or crowdsourced labeling workflows include technical/procedural safeguards to ensure data confidentiality, integrity, label quality, and prevent data leakage. | 2 | D/V |
 
 ---
 
@@ -68,9 +71,9 @@ Combine automated validation, manual spot-checks, and logged remediation to guar
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **1.5.1** | **Verify that** automated tests catch format errors, nulls, and label skews on every ingest. | 1 | D |
+| **1.5.1** | **Verify that** automated tests catch format errors, nulls, and label skews on every ingest or significant transformation. | 1 | D |
 | **1.5.2** | **Verify that** failed datasets are quarantined with audit trails. | 1 | D/V |
-| **1.5.3** | **Verify that** manual spot-checks cover ≥1 % or 1 k samples. | 2 | V |
+| **1.5.3** | **Verify that** manual spot-checks by domain experts cover a statistically significant sample (e.g., ≥1% or 1,000 samples, whichever is greater, or as determined by risk assessment) to identify subtle quality issues not caught by automation. | 2 | V |
 | **1.5.4** | **Verify that** remediation steps are appended to provenance records. | 2 | D/V |
 | **1.5.5** | **Verify that** quality gates block sub-par datasets unless exceptions are approved. | 2 | D/V |
 
@@ -82,11 +85,12 @@ Apply statistical anomaly detection and quarantine workflows to stop adversarial
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **1.6.1** | **Verify that** anomaly detection runs at ingest and on updates. | 2 | D/V |
+| **1.6.1** | **Verify that** anomaly detection techniques (e.g., statistical methods, outlier detection, embedding analysis) are applied to training data at ingest and before major training runs to identify potential poisoning attacks or unintentional data corruption. | 2 | D/V |
 | **1.6.2** | **Verify that** flagged samples trigger manual review before training. | 2 | D/V |
-| **1.6.3** | **Verify that** results feed the model’s security dossier. | 2 | V |
+| **1.6.3** | **Verify that** results feed the model’s security dossier and inform ongoing threat intelligence. | 2 | V |
 | **1.6.4** | **Verify that** detection logic is refreshed with new threat intel. | 3 | D/V |
 | **1.6.5** | **Verify that** online-learning pipelines monitor distribution drift. | 3 | D/V |
+| **1.6.6** | **Verify that** specific defenses against known data poisoning attack types (e.g., label flipping, backdoor trigger insertion, influential instance attacks) are considered and implemented based on the system's risk profile and data sources. | 3 | D/V |
 
 ---
 
@@ -96,46 +100,35 @@ Apply statistical anomaly detection and quarantine workflows to stop adversarial
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **1.7.1** | **Verify that** deletion workflows purge primary and derived data and assess model impact. | 1 | D/V |
-| **1.7.2** | **Verify that** consent is checked before each training run. | 2 | D |
+| **1.7.1** | **Verify that** deletion workflows purge primary and derived data and assess model impact, and that the impact on affected models is assessed and, if necessary, addressed (e.g., through retraining or recalibration). | 1 | D/V |
+| **1.7.2** | **Verify that** mechanisms are in place to track and respect the scope and status of user consent (and withdrawals) for data used in training, and that consent is validated before data is incorporated into new training processes or significant model updates. | 2 | D |
 | **1.7.3** | **Verify that** workflows are tested annually and logged. | 2 | V |
 
 ---
 
-## C1.8 Model Data Labeling
-
-Protect sensitive labels, sign them for integrity, and track annotator agreement to sustain trust.
-
-| # | Description | Level | Role |
-|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **1.8.1** | **Verify that** personal data in labels is redacted or pseudonymised. | 1 | D |
-| **1.8.2** | **Verify that** labels carry HMACs or signatures. | 2 | D |
-| **1.8.3** | **Verify that** labeling guides are version-controlled and annotators trained. | 2 | V |
-| **1.8.4** | **Verify that** inter-annotator agreement is monitored; discrepancies resolved. | 2 | V |
-
----
-
-## C1.9 Supply Chain Security
+## C1.8 Supply Chain Security
 
 Vet external data providers and verify integrity over authenticated, encrypted channels.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **1.9.1** | **Verify that** third-party data suppliers undergo security due diligence. | 2 | D/V |
-| **1.9.2** | **Verify that** external transfers use TLS/auth and integrity checks. | 1 | D |
-| **1.9.3** | **Verify that** high-risk sources receive sandboxed secondary validation. | 2 | D/V |
+| **1.8.1** | **Verify that** third-party data suppliers, including providers of pre-trained models and external datasets, undergo security, privacy, ethical sourcing, and data quality due diligence before their data or models are integrated.| 2 | D/V |
+| **1.8.2** | **Verify that** external transfers use TLS/auth and integrity checks. | 1 | D |
+| **1.8.3** | **Verify that** high-risk data sources (e.g., open-source datasets with unknown provenance, unvetted suppliers) receive enhanced scrutiny, such as sandboxed analysis, extensive quality/bias checks, and targeted poisoning detection, before use in sensitive applications.| 2 | D/V |
+| **1.8.4** | **Verify that** Verify that pre-trained models obtained from third parties are evaluated for embedded biases, potential backdoors, integrity of their architecture, and the provenance of their original training data before fine-tuning or deployment. | 3 | D/V |
 
 ---
 
-## C1.10 Adversarial Sample Detection
+## C1.9 Adversarial Sample Detection
 
-Scan, isolate, and defend against adversarial examples to keep models robust.
+Implement measures during the training phase, such as adversarial training, to enhance model resilience against adversarial examples.t.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **1.10.1** | **Verify that** automated scanners detect known adversarial perturbations. | 2 | D |
-| **1.10.2** | **Verify that** flagged samples are isolated and manually analysed. | 2 | D/V |
-| **1.10.3** | **Verify that** defences such as adversarial training are implemented. | 3 | D |
+| **1.9.1** | **Verify that** appropriate defenses, such as adversarial training (using generated adversarial examples), data augmentation with perturbed inputs, or robust optimization techniques, are implemented and tuned for relevant models based on risk assessment. | 3 | D/V |
+| **1.9.2** | **Verify that** if adversarial training is used, the generation, management, and versioning of adversarial datasets are documented and controlled. | 2 | D/V |
+| **1.9.3** | **Verify that** the impact of adversarial robustness training on model performance (against both clean and adversarial inputs) and fairness metrics is evaluated, documented, and monitored. | 3 | D/V |
+| **1.9.4** | **Verify that** strategies for adversarial training and robustness are periodically reviewed and updated to counter evolving adversarial attack techniques.| 3 | D/V |
 
 ---
 
