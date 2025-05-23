@@ -50,7 +50,7 @@ Off-load policy decisions to an engine like OPA/Cedar, which evaluates dynamic u
 
 ## C5.4 Query-Time Policy Evaluation
 
-Enforce row- or vector-level security filters inside the data service itself; failed or slow policy checks must block, not silently bypass, a request.
+Enforce row or vector-level security filters inside the data service itself; failed or slow policy checks must block, not silently bypass, a request.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
