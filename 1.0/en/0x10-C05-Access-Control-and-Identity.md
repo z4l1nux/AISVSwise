@@ -8,7 +8,7 @@ Effective access control for AI hinges on strong identity proofing, context‑aw
 
 ## C5.1 Identity Proofing & Federation
 
-Establish strong, IdP-backed identities for all humans and services, enforce MFA/step-up for sensitive actions, and align onboarding with NIST 800-63-3 IAL-2 to make sure every principal is who they claim to be.
+Establish strong, IdP-backed identities for all humans and services, enforce MFA/step-up for sensitive actions.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
@@ -26,9 +26,9 @@ Tie every endpoint, vector index, and dataset to a least-privilege role matrix s
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **5.2.1** | **Verify that** every endpoint, vector collection, or embedding index has an owner‑approved RBAC/ABAC matrix binding roles to CRUD verbs. | 1 | D/V |
+| **5.2.1** | **Verify that** every endpoint, vector collection, or embedding index has an strong access controls in place. | 1 | D/V |
 | **5.2.2** | **Verify that** least‑privilege roles are applied by default; service accounts start with read‑only and require approval for write. | 1 | D/V |
-| **5.2.3** | **Verify that** role changes are tied to ticket/workflow IDs and logged immutably for audit. | 2 | V |
+| **5.2.3** | **Verify that** access control changes are tied to ticket/workflow IDs and logged immutably for audit. | 2 | V |
 | **5.2.4** | **Verify that** data sensitivity tags (PII, PHI, export‑controlled) propagate to embeddings and prompt caches for downstream enforcement. | 2 | D |
 | **5.2.5** | **Verify that** real‑time dashboards show effective permissions for any principal/resource pair to aid audit teams. | 3 | V |
 
@@ -36,7 +36,7 @@ Tie every endpoint, vector index, and dataset to a least-privilege role matrix s
 
 ## C5.3 Attribute‑Based Access Control (ABAC) Service Layer
 
-Off-load policy decisions to an engine like OPA/Cedar, which evaluates dynamic user, resource, and environment attributes at request time and emits tamper-proof decision logs. 
+Off-load policy decisions to an ABAC policy engine which evaluates dynamic user, resource, and environment attributes at request time and emits tamper-proof decision logs. 
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
@@ -55,9 +55,9 @@ Enforce row or vector-level security filters inside the data service itself; fai
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
 | **5.4.1** | **Verify that** vector and SQL queries include a security filter (tenant ID, sensitivity label) enforced at the database or service layer, not in application code. | 1 | D/V |
-| **5.4.2** | **Verify that** row‑level security (RLS) or field‑level masking is enabled for vector databases and search indices (e.g., OpenSearch FGAC). | 1 | D/V |
+| **5.4.2** | **Verify that** row‑level security (RLS) or field‑level masking is enabled for vector databases and search indices. | 1 | D/V |
 | **5.4.3** | **Verify that** failed policy evaluations abort the query rather than returning empty results (to prevent confused‑deputy). | 2 | D |
-| **5.4.4** | **Verify that** evaluation latency is monitored; an SLA breach raises alerts, preventing silent policy bypass via timeouts. | 2 | V |
+| **5.4.4** | **Verify that** evaluation latency is monitored to prevent silent policy bypass via timeouts. | 2 | V |
 | **5.4.5** | **Verify that** sensitive prompts or search queries are re‑evaluated upon retry to account for policy changes within user sessions. | 3 | D/V |
 
 ---
