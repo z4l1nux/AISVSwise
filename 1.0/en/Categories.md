@@ -59,19 +59,7 @@ This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1
 
 ## 9. Autonomous Orchestration & Agentic Action Security
 
-This section provides requirements to secure the interactions and operations of autonomous and multi-agent AI systems, preventing unauthorized or harmful autonomous actions.
-
-| Focus area | Purpose | MITRE ATLAS Mapping |
-| --- | --- | --- | 
-| **Agent task-planning & recursion budgets** | Throttle recursive plans and require human checkpoints for privileged actions by limiting the scope, depth, and resource consumption of autonomous planning. This includes implementation of task execution limits, monitoring of resource consumption and sophisticated circuit breakers for runaway processes. | ML09.001 Autonomous System Compromise |
-| **Tool plugin sandboxing** | Isolate tool interactions to prevent unauthorized system access. This includes basic execution isolation for tools, privilege restriction for tool access and comprehensive sandboxing with resource limitations. | ML09.002 Tool Misuse |
-| **Autonomous loop & cost bounding** | Prevent uncontrolled agent-to-agent or recursive operations. This includes loop detection mechanisms, cost monitoring and threshold enforcement and formal verification of agent interaction protocols. | ML09.003 Agent Loop Detection |
-| **Protocol-level misuse protection** | Secure communication channels between agents and systems. This includes validation of inter-agent communications, authentication of agent communications and cryptographic integrity of agent messages. | ML09.004 Agent Communication Hijacking |
-| **Agent identity & tamper-evidence** | Ensure agent actions are attributable and modifications detected. This includes unique identification of agents, logging of agent actions with identity and cryptographic binding of actions to agent identity. | ML09.005 Agent Identity Spoofing |
-| **Multi-agent swarm risk reduction** | Mitigate risks from interacting autonomous systems. This includes isolation between agent domains, coordination protocols with safety constraints and formal modeling of multi-agent interaction safety. | ML09.006 Swarm Manipulation |
-| **User & Tool Authentication/Authorization** | Implement robust access controls for agent operations. This includes authentication for all agent-triggered actions, fine-grained authorization for tool access and continuous validation of agent privileges. | ML09.002 Tool Misuse |
-| **Agent-to-agent communication security** | Secure information exchange between autonomous components. This includes encryption of agent communications, validation of message integrity and origin and formal verification of communication protocols. | ML09.004 Agent Communication Hijacking |
-| **Intent verification & constraint enforcement** | Validate that agent actions align with user intent and system constraints. This includes basic constraint checking before actions, intent confirmation for high-impact actions and formal verification of constraint satisfaction. | ML09.007 Intent Manipulation |
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C09-Orchestration-and-Agentic-Action.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C09-Orchestration-and-Agentic-Action.md).
 
 ---
 
