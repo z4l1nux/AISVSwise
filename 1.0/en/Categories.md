@@ -33,18 +33,7 @@ This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1
 
 ---
 
-## 5. Access Control & Identity for AI Components & Users
-This section provides requirements to enforce context-aware, least-privilege access for users, services, and agents interacting with AI models, data, and outputs during deployment and runtime.
-
-| Focus area | Purpose |
-| --- | --- |
-| **Identity proofing & federation** | Establish and verify principal identity; integrate with enterprise IdP and support progressive trust elevation (MFA, step‑up). |
-| **User & data access mapping** | Bind personas/roles to fine‑grained permissions on endpoints, collections, embeddings, and vector indices. |
-| **Attribute‑Based Access Control (ABAC) service layer** | Externalize policy decisions (e.g., OPA, Cedar) that evaluate dynamic attributes—user, resource tags, environmental context—at query time, independent of application code. |
-| **Query‑time policy evaluation** | Before retrieval, filter search vectors / SQL rows so only objects the caller is entitled to ever leave storage. |
-| **Output filtering & redaction** | After model inference or search, enforce least‑privilege by redacting, transforming, or refusing content so that all generated text, images, embeddings, and citations respect the caller's entitlements. |
-| **Tenant & session isolation** | Segregate memory, embeddings, and cache per tenant; verify session context on every request to prevent cross‑customer data bleed in multi‑tenant SaaS. |
-| **Agent & tool permission scoping** | Constrain autonomous agents, plugins, or tool calls to explicit capability sets (e.g., read‑only S3, no shell access), enforced by the ABAC layer.    
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C05-Access-Control-and-Identity.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C05-Access-Control-and-Identity.md) for this section.  
 
 ---
 
