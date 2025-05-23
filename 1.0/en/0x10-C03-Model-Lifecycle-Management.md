@@ -8,7 +8,7 @@ A secure AI program must treat every model artifact like production code: unique
 
 ## C3.1 Model Versioning & Transparency
 
-Rigorous versioning prevents “shadow” models, clarifies dependency graphs, and underpins downstream attestations. Best-practice toolchains now sign model weights and training metadata so verifiers can detect any bit-level drift.
+Rigorous versioning prevents "shadow" models, clarifies dependency graphs, and underpins downstream attestations. Best-practice toolchains now sign model weights and training metadata so verifiers can detect any bit-level drift.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
@@ -78,7 +78,7 @@ Before promotion, models must prove they still meet accuracy, latency, robustnes
 
 ## C3.6 Documentation & Provenance
 
-Complete changelogs and model cards satisfy auditors and downstream integrators, while cryptographic provenance proves “what ran where.”
+Complete changelogs and model cards satisfy auditors and downstream integrators, while cryptographic provenance proves "what ran where."
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
@@ -92,7 +92,7 @@ Complete changelogs and model cards satisfy auditors and downstream integrators,
 
 ## C3.7 Formal Decommissioning
 
-Retired models may still contain sensitive data or power hidden features; structured retirement prevents zombie artefacts and legal exposure. Cloud providers recommend dependency discovery and secure wipe before sun-setting.
+Retired models may still contain sensitive data or power hidden features; structured retirement prevents zombie artifacts and legal exposure. Cloud providers recommend dependency discovery and secure wipe before sun-setting.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
@@ -117,5 +117,5 @@ Retired models may still contain sensitive data or power hidden features; struct
 * [Adversarial Training to Improve Model Robustness](https://medium.com/%40amit25173/adversarial-training-to-improve-model-robustness-5e285b516713)
 * [What is AI adversarial robustness? – IBM Research](https://research.ibm.com/blog/securing-ai-workflows-with-adversarial-robustness)
 * [Exploring Data Provenance: Ensuring Data Integrity and Authenticity](https://www.astera.com/type/blog/data-provenance/)
-* [MITRE ATLAS™](https://atlas.mitre.org/)
+* [MITRE ATLAS](https://atlas.mitre.org/)
 * [AWS Prescriptive Guidance – Best practices for retiring applications …](https://docs.aws.amazon.com/pdfs/prescriptive-guidance/latest/migration-app-retirement-best-practices/migration-app-retirement-best-practices.pdf)
