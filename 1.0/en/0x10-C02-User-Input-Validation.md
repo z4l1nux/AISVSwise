@@ -8,12 +8,12 @@ Robust user-input validation is a first-line defense against many of the most da
 
 ## C2.1 Prompt-Injection Defense
 
-Prompt-injection tops every major LLM risk list for 2025. Defenses combine static pattern filters, dynamic classifiers and instruction-hierarchy enforcement.
+Prompt-injection is one of the top risks for AI systems. Defenses combine static pattern filters, dynamic classifiers and instruction-hierarchy enforcement.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
 | **2.1.1** | **Verify that** user inputs are screened against a continuously-updated library of known prompt-injection patterns (jailbreak keywords, “ignore previous”, role-play chains, indirect HTML/URL attacks). | 1 |  D/V |
-| **2.1.2** | **Verify that** the system enforces an instruction hierarchy in which system or developer messages override user instructions, even after context window expansion or function-calling hand-offs. | 1 |  D/V |
+| **2.1.2** | **Verify that** the system enforces an instruction hierarchy in which system or developer messages override user instructions, even after context window expansion. | 1 |  D/V |
 | **2.1.3** | **Verify that** adversarial evaluation tests (e.g., red-team “many-shot” prompts) are run before every model or prompt-template release, with success-rate thresholds and automated blockers for regressions. | 2 |  D/V |
 | **2.1.4** | **Verify that** prompts originating from third-party content (web pages, PDFs, e-mails) are sanitized in an isolated parsing context before being concatenated into the main prompt. | 2 | D |
 | **2.1.5** | **Verify that** all prompt-filter rule updates, classifier model versions and block-list changes are version-controlled and auditable. | 3 |  D/V |
@@ -22,14 +22,14 @@ Prompt-injection tops every major LLM risk list for 2025. Defenses combine stati
 
 ## C2.2 Adversarial-Example Resistance
 
-NLP models remain vulnerable to subtle character- or word-level perturbations that humans miss but models misclassify.
+Natural Language Processing (NLP) models remain vulnerable to subtle character or word-level perturbations that humans miss but models misclassify.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
 | **2.2.1** | **Verify that** basic input-normalization steps (Unicode NFC, homoglyph mapping, whitespace trimming) run before tokenization. | 1 | D |
 | **2.2.2** | **Verify that** statistical anomaly detection flags inputs with unusually high edit distance to language norms, excessive repeated tokens, or abnormal embedding distances. | 2 |  D/V |
 | **2.2.3** | **Verify that** the inference pipeline supports optional adversarial-training–hardened model variants or defense layers (e.g., randomization, defensive distillation) for high-risk endpoints. | 2 | D |
-| **2.2.4** | **Verify that** suspected adversarial inputs are quarantined, logged with full payloads (after PII redaction) and routed to a human review SL-A.  | 2 | V |
+| **2.2.4** | **Verify that** suspected adversarial inputs are quarantined, logged with full payloads (after PII redaction).  | 2 | V |
 | **2.2.5** | **Verify that** robustness metrics (success rate of known attack suites) are tracked over time and regressions trigger a release blocker.  | 3 |  D/V |
 
 ---
@@ -43,14 +43,14 @@ Malformed or oversized inputs cause parsing errors, prompt spillage across field
 | **2.3.1** | **Verify that** every API or function-call endpoint defines an explicit input schema (JSON Schema, Protobuf or multimodal equivalent) and that inputs are validated before prompt assembly. | 1 | D |
 | **2.3.2** | **Verify that** inputs exceeding maximum token or byte limits are rejected with a safe error and never silently truncated. | 1 |  D/V |
 | **2.3.3** | **Verify that** type checks (e.g., numeric ranges, enum values, MIME types for images/audio) are enforced server-side, not only in client code. | 2 |  D/V |
-| **2.3.4** | **Verify that** semantic validators (e.g., JSON Schema `$ref` dependencies, regex constraints) run in constant-time to prevent algorithmic DoS. | 2 | D |
+| **2.3.4** | **Verify that** semantic validators (e.g., JSON Schema) run in constant-time to prevent algorithmic DoS. | 2 | D |
 | **2.3.5** | **Verify that** validation failures are logged with redacted payload snippets and unambiguous error codes to aid security triage. | 3 | V |
 
 ---
 
 ## C2.4 Content & Policy Screening
 
-Even syntactically valid prompts may request disallowed content (illicit instructions, hate speech, copyrighted text).  OWASP and Fairly-AI trackers rank real-time policy screening as critical, while Anthropic’s “constitutional classifier” shows 95 % block rates for harmful inputs.
+Even syntactically valid prompts may request disallowed content (illicit instructions, hate speech, copyrighted text).
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
