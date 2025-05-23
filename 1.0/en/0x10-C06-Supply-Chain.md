@@ -26,9 +26,9 @@ Continuously scan ML frameworks and libraries for CVEs and malicious code to kee
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **6.2.1** | **Verify that** CI pipelines run dependency scanners (Grype, OSS‑Index) on AI frameworks and critical libraries. | 1 | D/V |
+| **6.2.1** | **Verify that** CI pipelines run dependency scanners on AI frameworks and critical libraries. | 1 | D/V |
 | **6.2.2** | **Verify that** critical vulnerabilities (CVSS ≥ 7.0) block promotion to production images. | 1 | D/V |
-| **6.2.3** | **Verify that** static code analysis (Bandit, Semgrep) runs on forked or vendored ML libraries. | 2 | D |
+| **6.2.3** | **Verify that** static code analysis runs on forked or vendored ML libraries. | 2 | D |
 | **6.2.4** | **Verify that** framework upgrade proposals include a security impact assessment referencing public CVE feeds. | 2 | V |
 | **6.2.5** | **Verify that** runtime sensors alert on unexpected dynamic library loads that deviate from the signed SBOM. | 3 | V |
 
@@ -43,8 +43,8 @@ Pin every dependency to immutable digests and reproduce builds to guarantee iden
 | **6.3.1** | **Verify that** all package managers enforce version pinning via lockfiles. | 1 | D/V |
 | **6.3.2** | **Verify that** immutable digests are used instead of mutable tags in container references. | 1 | D/V |
 | **6.3.3** | **Verify that** reproducible‑build checks compare hashes across CI runs to ensure identical outputs. | 2 | D |
-| **6.3.4** | **Verify that** build attestations are stored for 18 months for audit traceability. | 2 | V |
-| **6.3.5** | **Verify that** expired or yanked dependencies trigger automated PRs to update or fork pinned versions. | 3 | D |
+| **6.3.4** | **Verify that** build attestations are stored for 18 months for audit traceability. | 2 | V |
+| **6.3.5** | **Verify that** expired dependencies trigger automated PRs to update or fork pinned versions. | 3 | D |
 
 ---
 
@@ -108,7 +108,7 @@ Generate and sign detailed ML‑specific SBOMs (ML‑BOMs) so downstream consume
 * [Supply‑chain Levels for Software Artifacts (SLSA)](https://slsa.dev/)
 * [CycloneDX – Machine Learning Bill of Materials](https://cyclonedx.org/capabilities/mlbom/)
 * [What is Data Poisoning? – SentinelOne](https://www.sentinelone.com/cybersecurity-101/cybersecurity/data-poisoning/)
-* [Transfer Learning Attack – OWASP ML Security Top 10](https://owasp.org/www-project-machine-learning-security-top-10/docs/ML07_2023-Transfer_Learning_Attack)
+* [Transfer Learning Attack – OWASP ML Security Top 10](https://owasp.org/www-project-machine-learning-security-top-10/docs/ML07_2023-Transfer_Learning_Attack)
 * [AI Data Security Best Practices – CISA](https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-142a)
 * [Secure CI/CD Supply Chain – Sumo Logic](https://www.sumologic.com/blog/secure-azure-devops-github-supply-chain-attacks)
 * [AI & Transparency: Protect ML Models – ReversingLabs](https://www.reversinglabs.com/blog/ai-and-transparency-how-ml-model-creators-can-protect-against-supply-chain-attacks)
