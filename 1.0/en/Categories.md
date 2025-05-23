@@ -33,7 +33,9 @@ This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1
 
 ---
 
-This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C05-Access-Control-and-Identity.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C05-Access-Control-and-Identity.md) for this section.  
+## 5. Access Control & Identity for AI Components & Users
+
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C05-Access-Control-and-Identity.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C05-Access-Control-and-Identity.md) for this section.    
 
 ---
 
