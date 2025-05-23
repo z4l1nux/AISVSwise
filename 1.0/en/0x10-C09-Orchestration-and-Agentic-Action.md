@@ -27,7 +27,7 @@ Isolate tool interactions to prevent unauthorized system access or code executio
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **9.2.1** | **Verify that** every tool/plugin executes inside an OS-, container, or WASM-level sandbox with least-privilege file-system, network, and system-call policies. | 1 | D/V |
+| **9.2.1** | **Verify that** every tool/plugin executes inside an OS, container, or WASM-level sandbox with least-privilege file-system, network, and system-call policies. | 1 | D/V |
 | **9.2.2** | **Verify that** sandbox resource quotas (CPU, memory, disk, network egress) and execution timeouts are enforced and logged. | 1 | D/V |
 | **9.2.3** | **Verify that** tool binaries or descriptors are digitally signed; signatures are validated before loading. | 2 | D/V |
 | **9.2.4** | **Verify that** sandbox telemetry streams to a SIEM; anomalies (e.g., attempted outbound connections) raise alerts. | 2 | V |
