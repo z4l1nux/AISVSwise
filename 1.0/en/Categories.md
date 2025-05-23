@@ -42,6 +42,7 @@ This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1
 ## 6. Supply Chain Security for Models, Frameworks & Data
 
 This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C06-Supply-Chain.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C06-Supply-Chain.md).
+
 ---
 
 ## 7. Model Behavior, Output Control & Safety Assurance
