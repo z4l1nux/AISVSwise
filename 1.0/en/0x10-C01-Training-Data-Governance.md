@@ -96,7 +96,7 @@ Apply statistical anomaly detection and quarantine workflows to stop adversarial
 
 ## C1.7 User Data Deletion & Consent Enforcement
 
-*Summary:* Honor deletion and consent-withdrawal requests across datasets, backups, and derived artefacts.
+Honor deletion and consent-withdrawal requests across datasets, backups, and derived artefacts.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
