@@ -35,18 +35,18 @@ This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1
 
 ## 5. Access Control & Identity for AI Components & Users
 
-This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C05-Access-Control-and-Identity.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C05-Access-Control-and-Identity.md).    
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C05-Access-Control-and-Identity.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C05-Access-Control-and-Identity.md).
 
 ---
 
 ## 6. Supply Chain Security for Models, Frameworks & Data
 
-This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C06-Supply-Chain.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C06-Supply-Chain.md).  
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C06-Supply-Chain.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C06-Supply-Chain.md).
 ---
 
 ## 7. Model Behavior, Output Control & Safety Assurance
 
-This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C07-Model-Behavior.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C07-Model-Behavior.md).  
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C07-Model-Behavior.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C07-Model-Behavior.md).
 
 ---
 
@@ -72,7 +72,7 @@ This section provides requirements to secure the interactions and operations of 
 | **Agent task-planning & recursion budgets** | Throttle recursive plans and require human checkpoints for privileged actions by limiting the scope, depth, and resource consumption of autonomous planning. This includes implementation of task execution limits, monitoring of resource consumption and sophisticated circuit breakers for runaway processes. | ML09.001 Autonomous System Compromise |
 | **Tool plugin sandboxing** | Isolate tool interactions to prevent unauthorized system access. This includes basic execution isolation for tools, privilege restriction for tool access and comprehensive sandboxing with resource limitations. | ML09.002 Tool Misuse |
 | **Autonomous loop & cost bounding** | Prevent uncontrolled agent-to-agent or recursive operations. This includes loop detection mechanisms, cost monitoring and threshold enforcement and formal verification of agent interaction protocols. | ML09.003 Agent Loop Detection |
-| **Protocol-level misuse protection** | Secure communication channels between agents and systems. This includes  validation of inter-agent communications, authentication of agent communications and cryptographic integrity of agent messages. | ML09.004 Agent Communication Hijacking |
+| **Protocol-level misuse protection** | Secure communication channels between agents and systems. This includes validation of inter-agent communications, authentication of agent communications and cryptographic integrity of agent messages. | ML09.004 Agent Communication Hijacking |
 | **Agent identity & tamper-evidence** | Ensure agent actions are attributable and modifications detected. This includes unique identification of agents, logging of agent actions with identity and cryptographic binding of actions to agent identity. | ML09.005 Agent Identity Spoofing |
 | **Multi-agent swarm risk reduction** | Mitigate risks from interacting autonomous systems. This includes isolation between agent domains, coordination protocols with safety constraints and formal modeling of multi-agent interaction safety. | ML09.006 Swarm Manipulation |
 | **User & Tool Authentication/Authorization** | Implement robust access controls for agent operations. This includes authentication for all agent-triggered actions, fine-grained authorization for tool access and continuous validation of agent privileges. | ML09.002 Tool Misuse |
@@ -122,7 +122,7 @@ This section provides requirements for delivering real-time and forensic visibil
 | **Performance & behavior telemetry** | Instrument latency, token counts, resource utilization, and success rates including collection of basic operational metrics, threshold alerting on resource utilization and correlation between metrics for advanced pattern detection. | ML06.002 Resource Exhaustion |
 | **Alerting & SIEM integration** | Export enriched events for SOC correlation and incident response including integration with security monitoring systems and custom correlation of rules for AI-specific threats and scenarios (e.g., jailbreak, prompt injection, multi-modality). | ML06.003 Denial of Service |
 | **Secure log storage** | To track and identify any potential security issues, investigations and audits with secure storage of logs, access controls on log data and tamper-evident log storage with cryptographic guarantees. | ML03.004 Data Access |
-| **AI Incident Response Planning & Execution** | Prepare for and respond to AI-specific security incidents.  | ML06.004 System Compromise |
+| **AI Incident Response Planning & Execution** | Prepare for and respond to AI-specific security incidents. | ML06.004 System Compromise |
 
 ---
 
