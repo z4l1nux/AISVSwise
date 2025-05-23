@@ -10,32 +10,32 @@
 
 ## 1. Training Data Governance & Bias Management
 
-This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C1-Training-Data-Governance.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C1-Training-Data-Governance.md) for this section.
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C1-Training-Data-Governance.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C1-Training-Data-Governance.md).
 
 ---
 
 ## 2. User Input Validation
 
-This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C02-User-Input-Validation.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C02-User-Input-Validation.md) for this section.
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C02-User-Input-Validation.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C02-User-Input-Validation.md).
 
 
 ---
 
 ## 3. Model Lifecycle Management & Change Control
 
-This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C03-Model-Lifecycle-Management.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C03-Model-Lifecycle-Management.md) for this section.
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C03-Model-Lifecycle-Management.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C03-Model-Lifecycle-Management.md).
 
 ---
 
 ## 4. Infrastructure, Configuration & Deployment Security
 
-This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C04-Infrastructure.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C04-Infrastructure.md) for this section.
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C04-Infrastructure.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C04-Infrastructure.md).
 
 ---
 
 ## 5. Access Control & Identity for AI Components & Users
 
-This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C05-Access-Control-and-Identity.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C05-Access-Control-and-Identity.md) for this section.    
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C05-Access-Control-and-Identity.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C05-Access-Control-and-Identity.md).    
 
 ---
 
