@@ -15,20 +15,19 @@ This work is licensed under a
 
 The Artificial Intelligence Security Verification Standard (AISVS) focuses on providing developers, architects, and security professionals with a structured checklist to evaluate and verify the security and ethical considerations of AI-driven applications. Modeled after existing OWASP standards (such as the ASVS for web applications), AISVS will define categories of requirements for areas including:
 
-* Training Data Governance & Bias Management
-* User Input Validation
-* Model Lifecycle Management & Change Control
-* Infrastructure, Configuration & Deployment Security
-* Access Control & Identity for AI Components & Users
-* Supply Chain Security for Models, Frameworks & Data
-* Model Behavior, Output Control & Safety Assurance
-* Memory, Embeddings & Vector Database Security
-* Autonomous Orchestration & Agentic Action Security
-* Adversarial Robustness & Attack Resistance
-* Privacy Protection & Personal Data Management
-* Monitoring, Logging & Anomaly Detection
-* Human Oversight, Accountability & Governance
-* Explainability, Interpretability & Transparency
+1. Training Data Governance & Bias Management
+2. User Input Validation
+3. Model Lifecycle Management & Change Control
+4. Infrastructure, Configuration & Deployment Security
+5. Access Control & Identity
+6. Supply Chain Security for Models, Frameworks & Data
+7. Model Behavior, Output Control & Safety Assurance
+8. Memory, Embeddings & Vector Database Security
+9. Autonomous Orchestration & Agentic Action Security
+10. Adversarial Robustness & Attack Resistance
+11. Privacy Protection & Personal Data Management
+12. Monitoring, Logging & Anomaly Detection
+13. Human Oversight and Trust
 
 **Please [log issues](https://github.com/OWASP/ASIVS/issues) if you find any bugs or if you have ideas. We may subsequently ask you to [open a pull request](https://github.com/OWASP/AISVS/pulls) based on the discussion in the issue.**
 
