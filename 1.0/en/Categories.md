@@ -70,16 +70,8 @@ This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1
 ---
 
 ## 11. Privacy Protection & Personal Data Management
-This section provides requirements for upholding individual rights and minimizing the collection, retention, and exposure of personal data at every phase of the AI pipeline.
 
-| Focus area | Purpose |
-| --- | --- |
-| **Anonymization & data minimization** | Strip or hash identifiers; collect only what is strictly necessary. |
-| **Right‑to‑be‑forgotten & deletion enforcement** | Propagate erasure across checkpoints, embeddings, and backups. |
-| **Differential privacy** | Apply noise or clipping during training and query time. |
-| **Purpose limitation & scope‑creep protection** | Detect secondary uses that diverge from original consent. |
-| **Consent management** | Track lawful bases, opt‑in status, and data‑subject agreements. |
-| **Federated learning with privacy controls** | Apply privacy advantages by training models on distributed devices without sharing raw data. |
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C11-Privacy.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C11-Privacy.md).
 
 ---
 
