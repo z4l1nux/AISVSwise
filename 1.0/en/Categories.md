@@ -92,14 +92,5 @@ This section provides requirements for delivering real-time and forensic visibil
 ---
 
 ## 13. Human Oversight and Trust
-This section provides requirements for keeping a human "captain of the ship" with clear lines of responsibility, escalation, and ethical stewardship, including explainability, interpretability, and transparency.
 
-| Focus area | Purpose |
-| --- | --- |
-| **Kill‑switch & override mechanisms** | Provide immediate shutdown or rollback paths for runaway behavior. |
-| **Human‑in‑the‑loop decision checkpoints** | Require approvals when stakes surpass predefined risk thresholds. |
-| **Chain of responsibility & auditability** | Log operator actions and model decisions for postmortem reviews. |
-| **Explainable‑AI techniques (SHAP, LIME, etc.)** | Surface feature importance, counter‑factuals, and local explanations. |
-| **Model cards & usage disclosures** | Maintain model cards for intended use, performance metrics, and ethical considerations. |
-| **Uncertainty quantification** | Propagate confidence scores or entropy measures in responses. |
-| **User‑facing transparency reports** | Provide periodic disclosures on incidents, drift, and data usage. |
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C13-Human-Oversight.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C13-Human-Oversight.md).
