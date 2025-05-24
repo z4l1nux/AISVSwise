@@ -65,16 +65,7 @@ This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1
 
 ## 10. Adversarial Robustness & Attack Resistance
 
-This section provides requirements to enhance models' resilience against various adversarial attacks, including evasion, inference, and extraction attacks.
-
-| Focus area | Purpose | MITRE ATLAS Mapping |
-| --- | --- | --- | 
-| **Model alignment and safety** | Ensure models behave as intended and do not produce harmful outputs. This includes basic alignment testing, guard rails for harmful outputs and a comprehensive alignment verification methodology. | ML05.005 Safety Constraint Bypass |
-| **Adversarial example hardening** | Enhance model resilience against manipulated inputs during inference including implementation of defensive techniques and formal robustness guarantees where applicable. | ML05.001 Model Evasion |
-| **Membership inference mitigation** | Prevent attacks that determine if specific data was used in training. This includes awareness of membership inference risks, implementation of confidence score controls and comprehensive defenses such as differential privacy. | ML03.001 Membership Inference |
-| **Model inversion resistance** | Prevent reconstruction of training data from model behavior. This includes verification of output restrictions to prevent excessive disclosure, other anti-inversion techniques and formal guarantees against inversion attacks. | ML03.002 Model Inversion |
-| **Model extraction defense** | Prevent unauthorized duplication of model functionality. This includes verification of rate limiting on model APIs, detection of systematic querying patterns and watermarking or fingerprinting of model outputs. | ML02.001 Model Theft |
-| **Inference-time poisoned data detection** | Identify and mitigate backdoored or poisoned inputs during model operation. This includes verification of anomaly detection for inputs, filtering of suspicious input patterns and advanced detection for sophisticated poisoned inputs. | ML04.001 Data Poisoning |
+This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C10-Adversarial-Robustness.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C10-Adversarial-Robustness.md).
 
 ---
 
