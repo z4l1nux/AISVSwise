@@ -12,7 +12,7 @@ Organizations may begin at Level 1 and progressively adopt higher levels as secu
 
 ### Definition of the Levels
 
-Each requirement in AISVS v1.0 is assigned to one of the following levels:	
+Each requirement in AISVS v1.0 is assigned to one of the following levels:
 
 #### Level 1 requirements
 
