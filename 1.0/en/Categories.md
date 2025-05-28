@@ -1,10 +1,11 @@
 # OWASP Artificial Intelligence Security Verification Standard (AISVS)
-### This Category list is intended to help the AISVS team plan the structure of the document. It will be deleted before the standard is released.
+
+This Category list is intended to help the AISVS team plan the structure of the document. It will be deleted before the standard is released.
 
 ### Next steps for reviewers
 
 1. **Documentation and GRC** - Are there any documentation, process or GRC subjects than can be moved to [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x91-Appendix-C_Governance_and_Documentation.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x91-Appendix-C_Governance_and_Documentation.md)
-5. **Testability** - Are these categories testable? We want to make sure we have categories and sub-categories that are strictly testable by a seecurity tester or code reviewer.
+2. **Testability** - Are these categories testable? We want to make sure we have categories and sub-categories that are strictly testable by a seecurity tester or code reviewer.
 
 ---
 
@@ -17,7 +18,6 @@ This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1
 ## 2. User Input Validation
 
 This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C02-User-Input-Validation.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C02-User-Input-Validation.md).
-
 
 ---
 
@@ -84,3 +84,4 @@ This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1
 ## 13. Human Oversight and Trust
 
 This section is underway, please see [https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C13-Human-Oversight.md](https://github.com/OWASP/AISVS/blob/main/1.0/en/0x10-C13-Human-Oversight.md).
+
