@@ -24,7 +24,7 @@ Maintain rigorous privacy assurances across the entire AI lifecycle—collection
 | **11.2.1** | **Verify that** data-subject deletion requests propagate to raw datasets, checkpoints, embeddings, logs, and backups within service level agreements of less than 30 days. | 1 | D/V |
 | **11.2.2** | **Verify that** "machine-unlearning" routines physically re-train or approximate removal using certified unlearning algorithms. | 2 | D |
 | **11.2.3** | **Verify that** shadow-model evaluation proves forgotten records influence less than 1% of outputs after unlearning. | 2 | V |
-| **11.2.4** | **Verify that** deletion events are immutably logged and auditable for regulators. | 3 | V 
+| **11.2.4** | **Verify that** deletion events are immutably logged and auditable for regulators. | 3 | V
 
 ---
 

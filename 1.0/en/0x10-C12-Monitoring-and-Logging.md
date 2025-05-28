@@ -15,7 +15,6 @@ This section provides requirements for delivering real-time and forensic visibil
 | **12.1.5** | **Verify that** policy decisions and safety filtering actions are logged with sufficient detail to enable audit and debugging of content moderation systems. | 2   | D/V |
 | **12.1.6** | **Verify that** log integrity is protected through e.g. cryptographic signatures or write-only storage. | 2   | D/V |
 
-
 ---
 
 ## C12.2 Abuse Detection and Alerting
@@ -29,7 +28,6 @@ This section provides requirements for delivering real-time and forensic visibil
 | **12.2.5** | **Verify that** real-time alerting mechanisms notify security teams when potential policy violations or attack attempts are detected. | 2   | D/V |
 | **12.2.6** | **Verify that** custom rules are included to detect AI-specific threat patterns including coordinated jailbreak attempts, prompt injection campaigns, and model extraction attacks. | 2   | D/V |
 | **12.2.7** | **Verify that** automated incident response workflows can isolate compromised models, block malicious users, and escalate critical security events. | 3   | D/V |
-
 
 ---
 
@@ -50,7 +48,6 @@ This section provides requirements for delivering real-time and forensic visibil
 | **12.4.1** | **Verify that** operational metrics including request latency, token consumption, memory usage, and throughput are continuously collected and monitored. | 1   | D/V |
 | **12.4.2** | **Verify that** success and failure rates are tracked with categorization of error types and their root causes. | 1   | D/V |
 | **12.4.3** | **Verify that** resource utilization monitoring includes GPU/CPU usage, memory consumption, and storage requirements with alerting on threshold breaches. | 2   | D/V |
-
 
 ---
 

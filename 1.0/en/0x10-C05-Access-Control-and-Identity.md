@@ -36,7 +36,7 @@ Tie every endpoint, vector index, and dataset to a least-privilege role matrix s
 
 ## C5.3 Attribute‑Based Access Control (ABAC) Service Layer
 
-Off-load policy decisions to an ABAC policy engine which evaluates dynamic user, resource, and environment attributes at request time and emits tamper-proof decision logs. 
+Off-load policy decisions to an ABAC policy engine which evaluates dynamic user, resource, and environment attributes at request time and emits tamper-proof decision logs.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
