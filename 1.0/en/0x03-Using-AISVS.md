@@ -4,7 +4,7 @@ The Artificial Intelligence Security Verification Standard (AISVS) defines secur
 
 The AISVS is intended for anyone developing or evaluating the security of AI applications, including developers, architects, security engineers, and auditors. This chapter introduces the structure and use of the AISVS, including its verification levels and intended use cases.
 
-## Application Security Verification Levels
+## Artificial Intelligence Security Verification Levels
 
 The AISVS defines three ascending levels of security verification. Each level adds depth and complexity, enabling organizations to tailor their security posture to the risk level of their AI systems.
 
