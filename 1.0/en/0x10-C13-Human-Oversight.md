@@ -54,7 +54,6 @@ Surface feature importance, counter-factuals, and local explanations.
 | **13.4.3** | **Verify that** feature importance scores or attribution methods (SHAP, LIME, etc.) are available for critical decisions. | 3 | D/V |
 | **13.4.4** | **Verify that** counterfactual explanations show how inputs could be modified to change outcomes, if applicable to the use case and domain. | 3 | V |
 
-
 ---
 
 ## C13.5 Model Cards & Usage Disclosures
