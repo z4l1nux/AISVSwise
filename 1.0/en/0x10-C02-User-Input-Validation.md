@@ -2,7 +2,7 @@
 
 ## Control Objective
 
-Robust user-input validation is a first-line defense against many of the most damaging attacks on AI systems.  Prompt-injection “jailbreaks” can override system instructions, leak sensitive data, or steer the model toward disallowed behavior.  Research shows that multi-shot jailbreaks exploiting very long context windows remain effective unless dedicated filters and instruction-hierarchies are in place.  Meanwhile, imperceptible adversarial perturbations—such as homoglyph swaps or leetspeak—can silently change a model’s decisions.
+Robust user-input validation is a first-line defense against many of the most damaging attacks on AI systems.  Prompt-injection "jailbreaks" can override system instructions, leak sensitive data, or steer the model toward disallowed behavior.  Research shows that multi-shot jailbreaks exploiting very long context windows remain effective unless dedicated filters and instruction-hierarchies are in place.  Meanwhile, imperceptible adversarial perturbations—such as homoglyph swaps or leetspeak—can silently change a model's decisions.
 
 ---
 
@@ -12,9 +12,9 @@ Prompt-injection is one of the top risks for AI systems. Defenses combine static
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **2.1.1** | **Verify that** user inputs are screened against a continuously-updated library of known prompt-injection patterns (jailbreak keywords, “ignore previous”, role-play chains, indirect HTML/URL attacks). | 1 |  D/V |
+| **2.1.1** | **Verify that** user inputs are screened against a continuously-updated library of known prompt-injection patterns (jailbreak keywords, "ignore previous", role-play chains, indirect HTML/URL attacks). | 1 |  D/V |
 | **2.1.2** | **Verify that** the system enforces an instruction hierarchy in which system or developer messages override user instructions, even after context window expansion. | 1 |  D/V |
-| **2.1.3** | **Verify that** adversarial evaluation tests (e.g., red-team “many-shot” prompts) are run before every model or prompt-template release, with success-rate thresholds and automated blockers for regressions. | 2 |  D/V |
+| **2.1.3** | **Verify that** adversarial evaluation tests (e.g., red-team "many-shot" prompts) are run before every model or prompt-template release, with success-rate thresholds and automated blockers for regressions. | 2 |  D/V |
 | **2.1.4** | **Verify that** prompts originating from third-party content (web pages, PDFs, e-mails) are sanitized in an isolated parsing context before being concatenated into the main prompt. | 2 | D |
 | **2.1.5** | **Verify that** all prompt-filter rule updates, classifier model versions and block-list changes are version-controlled and auditable. | 3 |  D/V |
 
@@ -62,6 +62,44 @@ Even syntactically valid prompts may request disallowed content (illicit instruc
 
 ---
 
+## C2.5 Input Rate Limiting & Abuse Prevention
+
+Prevent abuse, resource exhaustion, and automated attacks by limiting input rates and detecting anomalous usage patterns.
+
+| # | Description | Level | Role |
+|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
+| **2.5.1** | **Verify that** per-user, per-IP, and per-API-key rate limits are enforced for all input endpoints. | 1 | D/V |
+| **2.5.2** | **Verify that** burst and sustained rate limits are tuned to prevent DoS and brute-force attacks. | 2 | D/V |
+| **2.5.3** | **Verify that** anomalous usage patterns (e.g., rapid-fire requests, input flooding) trigger automated blocks or escalations. | 2 | D/V |
+| **2.5.4** | **Verify that** abuse prevention logs are retained and reviewed for emerging attack patterns. | 3 | V |
+
+---
+
+## C2.6 Multi-Modal Input Validation
+
+Ensure robust validation for non-textual inputs (images, audio, files) to prevent injection, evasion, or resource abuse.
+
+| # | Description | Level | Role |
+|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
+| **2.6.1** | **Verify that** all non-text inputs (images, audio, files) are validated for type, size, and format before processing. | 1 | D |
+| **2.6.2** | **Verify that** files are scanned for malware and steganographic payloads before ingestion. | 2 | D/V |
+| **2.6.3** | **Verify that** image/audio inputs are checked for adversarial perturbations or known attack patterns. | 2 | D/V |
+| **2.6.4** | **Verify that** multi-modal input validation failures are logged and trigger alerts for investigation. | 3 | V |
+
+---
+
+## C2.7 Input Provenance & Attribution
+
+Track and attribute the origin of all user inputs to support auditing, abuse tracking, and compliance.
+
+| # | Description | Level | Role |
+|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
+| **2.7.1** | **Verify that** all user inputs are tagged with metadata (user ID, session, source, timestamp, IP address) at ingestion. | 1 | D/V |
+| **2.7.2** | **Verify that** provenance metadata is retained and auditable for all processed inputs. | 2 | D/V |
+| **2.7.3** | **Verify that** anomalous or untrusted input sources are flagged and subject to enhanced scrutiny or blocking. | 2 | D/V |
+
+---
+
 ## References
 
 * [LLM01:2025 Prompt Injection – OWASP Top 10 for LLM & Generative AI Security](https://genai.owasp.org/llmrisk/llm01-prompt-injection/)
@@ -77,4 +115,4 @@ Even syntactically valid prompts may request disallowed content (illicit instruc
 * [How To Ensure LLM Output Adheres to a JSON Schema | Modelmetry](https://modelmetry.com/blog/how-to-ensure-llm-output-adheres-to-a-json-schema)
 * [Easily enforcing valid JSON schema following – API](https://community.openai.com/t/feature-request-function-calling-easily-enforcing-valid-json-schema-following/263515?utm_source)
 * [AI Safety + Cybersecurity R\&D Tracker – Fairly AI](https://www.fairly.ai/blog/ai-cybersecurity-tracker)
-* [Anthropic makes ‘jailbreak’ advance to stop AI models producing harmful results](https://www.ft.com/content/cf11ebd8-aa0b-4ed4-945b-a5d4401d186e)
+* [Anthropic makes 'jailbreak' advance to stop AI models producing harmful results](https://www.ft.com/content/cf11ebd8-aa0b-4ed4-945b-a5d4401d186e)
