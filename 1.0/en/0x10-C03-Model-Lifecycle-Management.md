@@ -18,7 +18,7 @@ Only authorized models with verified integrity reach production environments.
 | **3.1.2** | **Verify that** model integrity is validated at deployment time and signature verification failures prevent model loading. | 1 | D/V |
 | **3.1.3** | **Verify that** model provenance records include authorizing entity identity, training data checksums, validation test results with pass/fail status, and creation timestamp. | 2 | D/V |
 | **3.1.4** | **Verify that** all model artifacts use semantic versioning (MAJOR.MINOR.PATCH) with documented criteria specifying when each version component increments. | 2 | D/V |
-| **3.1.5** | **Verify that** dependency tracking maintains a real-time inventory enabling identification of all consuming systems within 30 minutes of query. | 2 | V |
+| **3.1.5** | **Verify that** dependency tracking maintains a real-time inventory enabling rapid identification of all consuming systems. | 2 | V |
 
 ---
 
@@ -28,10 +28,10 @@ Models must pass defined security and safety validations before deployment.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **3.2.1** | **Verify that** models undergo automated security testing including input validation, output sanitization, and safety evaluations with documented pass/fail thresholds before deployment. | 1 | D/V |
-| **3.2.2** | **Verify that** validation failures automatically block model deployment and require explicit override approval from two authorized personnel with documented business justification. | 1 | D/V |
+| **3.2.1** | **Verify that** models undergo automated security testing including input validation, output sanitization, and safety evaluations with pre-agreed organizational pass/fail thresholds before deployment. | 1 | D/V |
+| **3.2.2** | **Verify that** validation failures automatically block model deployment and require explicit override approval from pre-designated authorized personnel with documented business justification. | 1 | D/V |
 | **3.2.3** | **Verify that** test results are cryptographically signed and immutably linked to the specific model version hash being validated. | 2 | V |
-| **3.2.4** | **Verify that** emergency deployments require documented security risk assessment and approval from security team lead within 4 hours. | 2 | D/V |
+| **3.2.4** | **Verify that** emergency deployments require documented security risk assessment and approval from pre-designated security authority within pre-agreed timeframes. | 2 | D/V |
 
 ---
 
@@ -41,11 +41,11 @@ Model deployments must be controlled, monitored, and reversible.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **3.3.1** | **Verify that** production deployments implement gradual rollout mechanisms (canary deployments starting with <5% traffic, blue-green deployments) with automated rollback triggers based on error rates, latency thresholds, or security alerts. | 1 | D |
-| **3.3.2** | **Verify that** rollback capabilities restore the complete model state (weights, configurations, dependencies) atomically within a defined time window (e.g., <10 minutes). | 1 | D/V |
+| **3.3.1** | **Verify that** production deployments implement gradual rollout mechanisms (canary deployments, blue-green deployments) with automated rollback triggers based on pre-agreed error rates, latency thresholds, or security alert criteria. | 1 | D |
+| **3.3.2** | **Verify that** rollback capabilities restore the complete model state (weights, configurations, dependencies) atomically within pre-defined organizational time windows. | 1 | D/V |
 | **3.3.3** | **Verify that** deployment processes validate cryptographic signatures and compute integrity checksums before model activation, failing deployment on any mismatch. | 2 | D/V |
-| **3.3.4** | **Verify that** emergency model shutdown capabilities can disable model endpoints within 2 minutes via automated circuit breakers or manual kill switches. | 2 | D/V |
-| **3.3.5** | **Verify that** rollback artifacts (previous model versions, configurations, dependencies) are retained for minimum 90 days with immutable storage for incident response. | 2 | V |
+| **3.3.4** | **Verify that** emergency model shutdown capabilities can disable model endpoints within pre-defined response times via automated circuit breakers or manual kill switches. | 2 | D/V |
+| **3.3.5** | **Verify that** rollback artifacts (previous model versions, configurations, dependencies) are retained according to organizational policies with immutable storage for incident response. | 2 | V |
 
 ---
 
@@ -81,10 +81,10 @@ Models must be securely retired when no longer needed or when security issues ar
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **3.6.1** | **Verify that** model retirement processes automatically scan dependency graphs, identify all consuming systems, and provide advance notice (minimum 48 hours for planned retirement) before decommissioning. | 1 | D |
+| **3.6.1** | **Verify that** model retirement processes automatically scan dependency graphs, identify all consuming systems, and provide pre-agreed advance notice periods before decommissioning. | 1 | D |
 | **3.6.2** | **Verify that** retired model artifacts are securely wiped using cryptographic erasure or multi-pass overwriting according to documented data retention policies with verified destruction certificates. | 1 | D/V |
 | **3.6.3** | **Verify that** model retirement events are logged with timestamp and actor identity, and model signatures are revoked to prevent reuse. | 2 | V |
-| **3.6.4** | **Verify that** emergency model retirement can disable model access within 15 minutes through automated kill switches when critical security vulnerabilities are discovered. | 2 | D/V |
+| **3.6.4** | **Verify that** emergency model retirement can disable model access within pre-established emergency response timeframes through automated kill switches when critical security vulnerabilities are discovered. | 2 | D/V |
 
 ---
 
