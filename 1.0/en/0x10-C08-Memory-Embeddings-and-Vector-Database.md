@@ -74,20 +74,6 @@ Cross-tenant leakage remains a top RAG risk: improperly filtered similarity quer
 
 ---
 
-## C8.6 Cross-Model Shared Resource Security
-
-Protect shared embedding spaces and vector stores when used by multiple AI models.
-
-| # | Description | Level | Role |
-|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **8.6.1** | **Verify that** shared embedding spaces implement access controls preventing unauthorized cross-model data access. | 2 | D/V |
-| **8.6.2** | **Verify that** shared vector databases isolate data between different model contexts using namespace or tenant separation. | 2 | D/V |
-| **8.6.3** | **Verify that** shared caches and memory stores implement proper isolation to prevent information leakage between models. | 2 | D/V |
-| **8.6.4** | **Verify that** access to shared resources is logged and monitored for unauthorized cross-model access attempts. | 2 | V |
-| **8.6.5** | **Verify that** shared resource cleanup procedures ensure complete data removal when models are decommissioned. | 3 | D/V |
-
----
-
 ## References
 
 * [Vector database security: Pinecone – IronCore Labs](https://ironcorelabs.com/vectordbs/pinecone-security/)
