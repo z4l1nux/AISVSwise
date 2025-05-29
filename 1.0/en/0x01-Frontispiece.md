@@ -21,13 +21,14 @@ For any reuse or distribution, you must clearly communicate the license terms of
 |-------------------------|-----------------------------|
 | **Jim Manico**          | **Aras “Russ” Memisyazici** |
 
-## Working Group  
 
-*To be announced. If you would like to contribute, please open an issue or pull request in the AISVS repository.*
+## Contributors and Reviewers  
 
-## Other Contributors and Reviewers  
-
-*To be announced. If you would like to contribute, please open an issue or pull request in the AISVS repository.*
+|                                    |                             |
+|------------------------------------|-----------------------------|
+| https://github.com/ottosulin       | https://github.com/mbhatt1  |
+| https://github.com/vineethsai      | https://github.com/cciprofm |
+| https://github.com/deepakrpandey12 |
 
 ---
 
