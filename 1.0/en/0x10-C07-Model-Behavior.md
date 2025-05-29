@@ -88,6 +88,33 @@ Real-time observability closes the loop between development and production.
 
 ---
 
+## C7.7 Output Sanitization & Post-Processing
+
+Ensure model outputs are sanitized and safe before reaching downstream systems or users.
+
+| # | Description | Level | Role |
+|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
+| **7.7.1** | **Verify that** all model outputs are scanned for PII and automatically redacted or masked before transmission. | 1 | D/V |
+| **7.7.2** | **Verify that** toxic, harmful, or inappropriate content is detected and filtered from outputs using content classification models. | 1 | D/V |
+| **7.7.3** | **Verify that** output format normalization prevents injection attacks in downstream systems (SQL, XSS, command injection). | 2 | D/V |
+| **7.7.4** | **Verify that** sanitization failures are logged and trigger alerts for manual review and system protection. | 2 | V |
+| **7.7.5** | **Verify that** sanitization rules are configurable per use case and regularly updated based on emerging threats. | 3 | D/V |
+
+---
+
+## C7.8 Model Response Attribution & Forensics
+
+Track and attribute model outputs to support auditing, compliance, and incident investigation.
+
+| # | Description | Level | Role |
+|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
+| **7.8.1** | **Verify that** all model outputs are tagged with metadata (model version, timestamp, input hash, session ID) for traceability. | 1 | D/V |
+| **7.8.2** | **Verify that** decision audit trails link outputs to specific model parameters, prompts, and context used during inference. | 2 | D/V |
+| **7.8.3** | **Verify that** response provenance data is retained and auditable for compliance and forensic analysis. | 2 | V |
+| **7.8.4** | **Verify that** attribution metadata is protected from tampering and includes integrity verification mechanisms. | 3 | D/V |
+
+---
+
 ## References
 
 * [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)

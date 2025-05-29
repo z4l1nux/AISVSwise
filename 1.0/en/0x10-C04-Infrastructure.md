@@ -81,6 +81,20 @@ Continuous scanning and rapid patching shrink the remediation gap for emerging C
 
 ---
 
+## C4.7 AI Resource Monitoring
+
+Monitor AI-specific infrastructure resources and detect anomalies in AI workload performance.
+
+| # | Description | Level | Role |
+|:--------:|--------------------------------------------------------------------------------------------|:---:|:---:|
+| **4.7.1** | **Verify that** GPU utilization, memory usage, and compute performance are continuously monitored with alerting thresholds. | 1 | D/V |
+| **4.7.2** | **Verify that** model serving latency, throughput, and error rates are tracked and correlated with infrastructure metrics. | 1 | D/V |
+| **4.7.3** | **Verify that** resource exhaustion detection prevents denial of service and triggers automatic scaling or load balancing. | 2 | D/V |
+| **4.7.4** | **Verify that** cost monitoring tracks AI service usage and alerts on budget threshold breaches or anomalous spending patterns. | 2 | V |
+| **4.7.5** | **Verify that** infrastructure performance metrics are integrated with model performance monitoring for holistic analysis. | 3 | V |
+
+---
+
 ## References
 
 * [Configure a Security Context for a Pod or Container – Kubernetes Docs](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
