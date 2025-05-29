@@ -90,16 +90,44 @@ Complete changelogs and model cards satisfy auditors and downstream integrators,
 
 ---
 
-## C3.7 Formal Decommissioning
+## C3.7 Model Dependency Management
+
+Secure management of dependencies and relationships between models in multi-model systems.
+
+| # | Description | Level | Role |
+|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
+| **3.7.1** | **Verify that** model dependencies are documented and maintained in a dependency graph or registry. | 1 | D/V |
+| **3.7.2** | **Verify that** changes to one model trigger security impact assessments for dependent models. | 2 | D/V |
+| **3.7.3** | **Verify that** model dependency chains are analyzed for potential security vulnerabilities and attack paths. | 2 | V |
+| **3.7.4** | **Verify that** circular dependencies between models are detected and prevented or properly secured. | 2 | D/V |
+| **3.7.5** | **Verify that** model dependency updates include security validation and rollback capabilities. | 3 | D/V |
+
+---
+
+## C3.8 Model Version API Security
+
+Secure management and access to different model versions through APIs and service endpoints.
+
+| # | Description | Level | Role |
+|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
+| **3.8.1** | **Verify that** API endpoints clearly identify which model version is being accessed and return version information in responses. | 1 | D/V |
+| **3.8.2** | **Verify that** deprecated model versions return appropriate warnings and have clearly communicated sunset dates. | 2 | D/V |
+| **3.8.3** | **Verify that** model version switching requires appropriate authorization and all version changes are logged with user context. | 2 | D/V |
+| **3.8.4** | **Verify that** unauthorized attempts to access restricted model versions are blocked and trigger security alerts. | 2 | V |
+| **3.8.5** | **Verify that** model version metadata is protected from unauthorized modification and tampering. | 3 | D/V |
+
+---
+
+## C3.9 Formal Decommissioning
 
 Retired models may still contain sensitive data or power hidden features; structured retirement prevents zombie artifacts and legal exposure.
 
 | # | Description | Level | Role |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **3.7.1** | **Verify that** a retirement request triggers a dependency scan to identify downstream services and queues.| 1 | D |
-| **3.7.2** | **Verify that** model binaries, datasets, and feature logs are securely erased or archived per retention policy. | 1 | D/V |
-| **3.7.3** | **Verify that** revoked model signatures are published to a public CRL (certificate-revocation list) to block re-use. | 2 | V |
-| **3.7.4** | **Verify that** decommission events update inventory dashboards and notify owners of dependent systems. | 2 | D |
+| **3.9.1** | **Verify that** a retirement request triggers a dependency scan to identify downstream services and queues.| 1 | D |
+| **3.9.2** | **Verify that** model binaries, datasets, and feature logs are securely erased or archived per retention policy. | 1 | D/V |
+| **3.9.3** | **Verify that** revoked model signatures are published to a public CRL (certificate-revocation list) to block re-use. | 2 | V |
+| **3.9.4** | **Verify that** decommission events update inventory dashboards and notify owners of dependent systems. | 2 | D |
 
 ---
 
