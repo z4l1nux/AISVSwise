@@ -61,6 +61,20 @@ This section provides requirements for delivering real-time and forensic visibil
 
 ---
 
+## C12.5 AI Performance Degradation Detection
+
+Monitor and detect degradation in AI model performance and quality over time.
+
+| # | Description | Level | Role |
+|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
+| **12.5.1** | **Verify that** model accuracy, precision, recall, and F1 scores are continuously monitored and compared against baseline thresholds. | 1 | D/V |
+| **12.5.2** | **Verify that** data drift detection monitors input distribution changes that may impact model performance. | 1 | D/V |
+| **12.5.3** | **Verify that** concept drift detection identifies changes in the relationship between inputs and expected outputs. | 2 | D/V |
+| **12.5.4** | **Verify that** performance degradation triggers automated alerts and initiates model retraining or replacement workflows. | 2 | D/V |
+| **12.5.5** | **Verify that** degradation root cause analysis correlates performance drops with data changes, infrastructure issues, or external factors. | 3 | V |
+
+---
+
 ## References
 
 * [NIST AI Risk Management Framework 1.0 - Manage 4.1 and 4.3](https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf)
