@@ -85,20 +85,6 @@ Identify and neutralize backdoored or poisoned inputs.
 
 ---
 
-## C10.7 Real-time Attack Detection & Response
-
-Detect and respond to adversarial attacks during live inference operations.
-
-| # | Description | Level | Role |
-|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **10.7.1** | **Verify that** real-time adversarial input detection monitors for prompt injection, jailbreak attempts, and evasion patterns. | 1 | D/V |
-| **10.7.2** | **Verify that** coordinated attack detection identifies patterns across multiple requests, users, or time windows. | 2 | D/V |
-| **10.7.3** | **Verify that** model extraction attempts are detected through query pattern analysis and statistical anomaly detection. | 2 | D/V |
-| **10.7.4** | **Verify that** attack detection triggers automated protective measures (rate limiting, request blocking, model switching). | 2 | D/V |
-| **10.7.5** | **Verify that** detected attacks are logged with full context and integrated with incident response workflows. | 3 | V |
-
----
-
 ### References
 
 * [MITRE ATLAS adversary tactics for ML](https://atlas.mitre.org/)
