@@ -17,14 +17,12 @@ For any reuse or distribution, you must clearly communicate the license terms of
 
 ## Project Leads  
 
-|                         |                             |
 |-------------------------|-----------------------------|
 | **Jim Manico**          | **Aras “Russ” Memisyazici** |
 
 
 ## Contributors and Reviewers  
 
-|                                    |                             |
 |------------------------------------|-----------------------------|
 | https://github.com/ottosulin       | https://github.com/mbhatt1  |
 | https://github.com/vineethsai      | https://github.com/cciprofm |
