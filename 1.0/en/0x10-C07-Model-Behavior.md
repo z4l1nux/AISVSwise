@@ -100,8 +100,6 @@ Ensure that AI systems do not generate illegal, harmful, or unauthorized media c
 | **7.7.4** | **Verify that** all generated media is cryptographically signed, watermarked, or embedded with tamper-resistant provenance metadata for downstream traceability.                  | 3     | D/V  |
 | **7.7.5** | **Verify that** bypass attempts (e.g., prompt obfuscation, slang, adversarial phrasing) are detected, logged, and rate-limited; repeated abuse is surfaced to monitoring systems. | 3     | V    |
 
-
-
 ## References
 
 * [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
