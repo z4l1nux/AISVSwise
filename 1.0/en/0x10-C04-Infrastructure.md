@@ -28,9 +28,8 @@ Supply‑chain attacks increasingly target CI services. Reproducible builds, IaC
 |:--------:|--------------------------------------------------------------------------------------------|:---:|:---:|
 | **4.2.1** | **Verify that** Infrastructure‑as‑Code is scanned on every pull request using a static analyzer such as tfsec or Checkov. | 1 | D/V |
 | **4.2.2** | **Verify that** container and model builds are reproducible and produce provenance meeting **SLSA Level 3** or higher. | 1 | D/V |
-| **4.2.3** | **Verify that** Infrastructure‑as‑Code and associated deploy permissions are not accessible from the environment where an AI system is running. | 1 | D |
-| **4.2.4** | **Verify that** each container image embeds an SBOM and is signed with Sigstore Cosign before pushing to any registry. | 2 | D/V |
-| **4.2.5** | **Verify that** pipeline secrets reside in a dedicated secrets backend and are injected as short‑lived tokens. | 2 | D/V |
+| **4.2.3** | **Verify that** each container image embeds an SBOM and is signed with Sigstore Cosign before pushing to any registry. | 2 | D/V |
+| **4.2.4** | **Verify that** pipeline secrets reside in a dedicated secrets backend and are injected as short‑lived tokens. | 2 | D/V |
 
 ---
 
@@ -52,11 +51,10 @@ Compromised API keys remain a top breach vector. Hardware‑backed storage and r
 
 | # | Description | Level | Role |
 |:--------:|--------------------------------------------------------------------------------------------|:---:|:---:|
-| **4.4.1** | **Verify that** all secrets are automatically rotated on a regular interval, per organizational policy. | 1 | D/V |
+| **4.4.1** | **Verify that** all secrets are rotated at least every 90 days or immediately upon personnel change. | 1 | D/V |
 | **4.4.2** | **Verify that** encryption keys are stored in TPM, HSM, or cloud KMS with automatic rotation and audit logging enabled. | 1 | D/V |
-| **4.4.3** | **Verify that** all secrets are automatically rotated on immediately upon personnel change. | 2 | D/V |
-| **4.4.4** | **Verify that** container images and start‑up scripts audit environment variables for sensitive data and block builds on leakage. | 2 | D |
-| **4.4.5** | **Verify that** SSH access to production nodes requires MFA and is disabled for service accounts. | 2 | V |
+| **4.4.3** | **Verify that** container images and start‑up scripts audit environment variables for sensitive data and block builds on leakage. | 2 | D |
+| **4.4.4** | **Verify that** SSH access to production nodes requires MFA and is disabled for service accounts. | 2 | V |
 
 ---
 
@@ -66,7 +64,7 @@ Third‑party or fine‑tuned models can embed malicious payloads. Sandboxing en
 
 | # | Description | Level | Role |
 |:--------:|--------------------------------------------------------------------------------------------|:---:|:---:|
-| **4.5.1** | **Verify that** new or external models are evaluated inside an isolated sandbox with no outbound network until development and testing completes. | 1 | D/V |
+| **4.5.1** | **Verify that** new or external models are evaluated inside an isolated sandbox with no outbound network until vetting completes. | 1 | D/V |
 | **4.5.2** | **Verify that** adversarial evaluation is executed in the sandbox and blocks promotion on regression. | 2 | D/V |
 
 ---
