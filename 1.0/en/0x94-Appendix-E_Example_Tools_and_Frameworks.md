@@ -17,9 +17,9 @@ Tooling used for data analytics, governance, and bias management.
 
 ---
 
-## AE.2 Training Data Governance & Bias Management
+## AE.2 User Input Validation
 
-Tooling used for data analytics, governance, and bias management.
+Tooling to handle and validated user inputs.
 
 | # | Description | Section |
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|
