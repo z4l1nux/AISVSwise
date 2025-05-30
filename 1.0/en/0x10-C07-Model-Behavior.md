@@ -44,6 +44,7 @@ Policy filters and red-team coverage protect users and confidential data.
 | **7.3.3** | **Verify that** confidentiality tags (e.g., trade secrets) propagate across modalities to prevent leakage in text, images, or code. | 2 | D |
 | **7.3.4** | **Verify that** filter bypass attempts or high-risk classifications require secondary approval or user re-authentication. | 3 | D/V |
 | **7.3.5** | **Verify that** filtering thresholds reflect legal jurisdictions and user age/role context. | 3 | D/V |
+  | **7.3.6** | **Verify that** filtering thresholds reflect legal jurisdictions and user age/role context. | 3 | D/V |
 
 ---
 
@@ -87,6 +88,20 @@ Real-time observability closes the loop between development and production.
 | **7.6.5** | **Verify that** monitoring pipelines are penetration-tested and access-controlled to avoid leakage of sensitive logs. | 3 | V |
 
 ---
+
+## 7.7 Generative Media Safeguards
+
+Ensure that AI systems do not generate illegal, harmful, or unauthorized media content by enforcing policy constraints, output validation, and traceability.
+
+| # | Description | Level | Role |
+| :-------: | -------------------------------------------------------------------------------------------------------------------------------------------- | :---: | :--: |
+| **7.7.1** | **Verify that** system prompts and user instructions explicitly prohibit the generation of illegal, harmful, or non-consensual deepfake media (e.g., image, video, audio).        | 1     | D/V  |
+| **7.7.2** | **Verify that** prompts are filtered for attempts to generate impersonations, sexually explicit deepfakes, or media depicting real individuals without consent.                   | 2     | D/V  |
+| **7.7.3** | **Verify that** the system uses perceptual hashing, watermark detection, or fingerprinting to prevent unauthorized reproduction of copyrighted media.                             | 2     | V    |
+| **7.7.4** | **Verify that** all generated media is cryptographically signed, watermarked, or embedded with tamper-resistant provenance metadata for downstream traceability.                  | 3     | D/V  |
+| **7.7.5** | **Verify that** bypass attempts (e.g., prompt obfuscation, slang, adversarial phrasing) are detected, logged, and rate-limited; repeated abuse is surfaced to monitoring systems. | 3     | V    |
+
+
 
 ## References
 
