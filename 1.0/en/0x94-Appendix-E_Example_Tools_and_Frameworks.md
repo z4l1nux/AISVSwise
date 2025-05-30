@@ -10,10 +10,10 @@ This chapter provides examples for tooling and frameworks which can support the 
 
 Tooling used for data analytics, governance, and bias management.
 
-| # | Description | Level | Role |
-|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **AE.1.1** | **Data Inventory Tooling:** Data inventory management tooling like... |
-| **AE.1.2** | **Encryption-In-Transit** Use TLS for HTTPS-based applications, with tools like openSSL and python's `ssl` library.  |
+| # | Description | Section |
+|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|
+| **AE.1.1** | **Data Inventory Tooling:** Data inventory management tooling like... | 1.1 |
+| **AE.1.2** | **Encryption-In-Transit** Use TLS for HTTPS-based applications, with tools like openSSL and python's `ssl` library.  | 1.2 |
 
 ---
 
@@ -21,8 +21,8 @@ Tooling used for data analytics, governance, and bias management.
 
 Tooling used for data analytics, governance, and bias management.
 
-| # | Description | Level | Role |
-|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
-| **AE.2.1** | **Prompt Injection Defense Tooling:** Use guardrail tooling like NVIDIA's NeMo or Guardrails AI. |
+| # | Description | Section |
+|:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|
+| **AE.2.1** | **Prompt Injection Defense Tooling:** Use guardrail tooling like NVIDIA's NeMo or Guardrails AI. | 2.1 |
 
 ---
