@@ -14,7 +14,7 @@ Strict schemas, constrained decoding, and downstream validation stop malformed o
 |:--------:|---------------------------------------------------------------------------------------------------------------------|:---:|:---:|
 | **7.1.1** | **Verify that** response schemas (e.g., JSON Schema) are supplied in the system prompt and every output is automatically validated; non-conforming outputs trigger repair or rejection. | 1 | D/V |
 | **7.1.2** | **Verify that** constrained decoding (stop tokens, regex, max-tokens) is enabled to prevent overflow or prompt-injection side-channels. | 1 | D/V |
-| **7.1.3** | **Verify that** downstream components treat outputs as untrusted and parse with allow-list deserializers to block code execution or SQL injection. | 2 | D/V |
+| **7.1.3** | **Verify that** downstream components treat outputs as untrusted and validate them against schemas or injection-safe de-serializers. | 2 | D/V |
 | **7.1.4** | **Verify that** improper-output events are logged, rate-limited, and surfaced to monitoring. | 3 | V |
 
 ---
@@ -42,8 +42,7 @@ Policy filters and red-team coverage protect users and confidential data.
 | **7.3.1** | **Verify that** pre and post-generation classifiers block hate, harassment, self-harm, extremist, and sexually explicit content aligned to policy. | 1 | D/V |
 | **7.3.2** | **Verify that** PII/PCI detection and automatic redaction run on every response; violations raise a privacy incident. | 1 | D/V |
 | **7.3.3** | **Verify that** confidentiality tags (e.g., trade secrets) propagate across modalities to prevent leakage in text, images, or code. | 2 | D |
-| **7.3.4** | **Verify that** filter bypass attempts or high-risk classifications require secondary approval or user re-authentication. | 3 | D/V |
-| **7.3.5** | **Verify that** filtering thresholds reflect legal jurisdictions and user age/role context. | 3 | D/V |
+| **7.3.4** | **Verify that** filtering thresholds reflect legal jurisdictions and user age/role context. | 3 | D/V |
 
 ---
 
@@ -67,9 +66,9 @@ Transparent signals improve user trust and internal debugging.
 
 | # | Description | Level | Role |
 | :-------: | ------------------------------------------------------------------------------------------------------------------------------ | :---: | :--: |
-| **7.5.1** | **Verify that** the system captures token-level log-probs or attention maps and stores them for authorized inspection. | 1 | D |
-| **7.5.2** | **Verify that** user-facing confidence scores or brief reasoning summaries are exposed when risk assessment deems appropriate. | 2 | D/V |
-| **7.5.3** | **Verify that** generated explanations avoid revealing sensitive system prompts or proprietary data. | 2 | D/V |
+| **7.5.1** | **Verify that** user-facing confidence scores or brief reasoning summaries are exposed when risk assessment deems appropriate. | 2 | D/V |
+| **7.5.2** | **Verify that** generated explanations avoid revealing sensitive system prompts or proprietary data. | 2 | D/V |
+| **7.5.3** | **Verify that** the system captures token-level log-probabilities or attention maps and stores them for authorized inspection. | 3 | D |
 | **7.5.4** | **Verify that** explainability artefacts are version-controlled alongside model releases for auditability. | 3 | V |
 
 ---
