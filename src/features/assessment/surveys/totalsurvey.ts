@@ -1,0 +1,34 @@
+import c01JSON from "./surveypages/c01";
+import c02JSON from "./surveypages/c02";
+import c03JSON from "./surveypages/c03";
+import c04JSON from "./surveypages/c04";
+import c05JSON from "./surveypages/c05";
+import c06JSON from "./surveypages/c06";
+import c07JSON from "./surveypages/c07";
+import c08JSON from "./surveypages/c08";
+import c09JSON from "./surveypages/c09";
+import c10JSON from "./surveypages/c10";
+import c11JSON from "./surveypages/c11";
+import c12JSON from "./surveypages/c12";
+import c13JSON from "./surveypages/c13";
+import c14JSON from "./surveypages/c14";
+import { translateSurvey } from "./translations-pt";
+
+var tosend: any = { pages: [], questionStartIndex: "1" };
+tosend.pages.push(c01JSON());
+tosend.pages.push(c02JSON());
+tosend.pages.push(c03JSON());
+tosend.pages.push(c04JSON());
+tosend.pages.push(c05JSON());
+tosend.pages.push(c06JSON());
+tosend.pages.push(c07JSON());
+tosend.pages.push(c08JSON());
+tosend.pages.push(c09JSON());
+tosend.pages.push(c10JSON());
+tosend.pages.push(c11JSON());
+tosend.pages.push(c12JSON());
+tosend.pages.push(c13JSON());
+tosend.pages.push(c14JSON());
+
+const Json = (locale = 'en') => translateSurvey(tosend, locale);
+export default Json;

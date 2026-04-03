@@ -1,0 +1,67 @@
+{
+  "name": "aisvs-app",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3600",
+    "build": "next build",
+    "start": "next start -p 3600",
+    "lint": "eslint .",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "@progress/kendo-drawing": "^1.20.0",
+    "@progress/kendo-licensing": "^1.3.5",
+    "@progress/kendo-react-pdf": "^12.1.0",
+    "chart.js": "^4.4.7",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
+    "html-to-image": "^1.11.13",
+    "jspdf": "^4.2.1",
+    "lodash": "^4.17.21",
+    "lucide-react": "^0.577.0",
+    "next": "^16.2.1",
+    "next-intl": "^4.3.12",
+    "react": "^18.3.1",
+    "react-chartjs-2": "^5.3.0",
+    "react-dom": "^18.3.1",
+    "react-dropzone": "^14.3.5",
+    "react-to-print": "^3.0.4",
+    "sharp": "^0.34.4",
+    "survey-core": "^1.12.16",
+    "survey-react-ui": "^1.12.16",
+    "tailwind-merge": "^3.5.0"
+  },
+  "overrides": {
+    "glob": "^11.0.0",
+    "next-intl": {
+      "next": "$next"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "@babel/preset-react": "^7.28.5",
+    "@tailwindcss/postcss": "^4.2.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@types/react-gauge-chart": "^0.4.3",
+    "autoprefixer": "^10.4.27",
+    "babel-jest": "^30.3.0",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.1",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "postcss": "^8.5.8",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^10.4.0",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^5.7.2"
+  }
+}

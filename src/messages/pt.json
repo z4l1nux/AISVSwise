@@ -1,0 +1,309 @@
+{
+  "nav": {
+    "home": "Início",
+    "assessment": "Avaliação",
+    "results": "Resultados",
+    "about": "Sobre",
+    "ai": "IA"
+  },
+  "home": {
+    "title": "AISVS",
+    "subtitle": "Ferramenta OWASP de Verificação de Segurança em IA",
+    "description": "A ferramenta AISVS oferece uma interface no navegador para avaliar a postura de segurança de IA da sua organização em 14 controles. Com esta ferramenta, você pode:",
+    "features": {
+      "feature1": "Avaliar práticas de segurança de IA em 14 controles",
+      "feature2": "Visualizar a maturidade de segurança com gráficos dinâmicos",
+      "feature3": "Comparar resultados ao longo do tempo e obter análise por IA",
+      "feature1Desc": "Avalie práticas de segurança de IA desde dados de treino até governança de modelos.",
+      "feature2Desc": "Gere gráficos de radar e barras mostrando sua postura nos 14 controles do AISVS.",
+      "feature3Desc": "Os resultados ficam armazenados localmente em JSON — privados e nunca enviados a servidores."
+    },
+    "startAssessment": "Iniciar Avaliação",
+    "viewResults": "Ver Resultados",
+    "privacy": "As respostas da avaliação podem ser salvas no computador local do usuário, em um arquivo de texto formatado em JSON. As respostas são mantidas apenas no sistema local e não são compartilhadas com nenhum outro sistema ou pessoa.",
+    "aboutSamm": "Sobre o AISVS",
+    "sammDescription": "O OWASP Artificial Intelligence Security Verification Standard (AISVS) é um framework aberto para verificar a segurança de sistemas de IA — incluindo LLMs, agentes, pipelines RAG e infraestrutura de modelos.",
+    "sammPurpose": "O AISVS foi criado para ajudar organizações a:",
+    "purposes": {
+      "purpose1": "Avaliar as práticas atuais de segurança de IA em relação a padrões do setor;",
+      "purpose2": "Construir um programa estruturado de garantia de segurança de IA;",
+      "purpose3": "Demonstrar melhorias mensuráveis ao longo do tempo; e",
+      "purpose4": "Definir e medir atividades de segurança em todo o ciclo de vida da IA."
+    },
+    "sammFlexibility": "O AISVS é flexível o suficiente para ser usado por organizações de todos os tamanhos, para um único produto de IA ou em todo um portfólio de IA.",
+    "badge": "Padrão OWASP de Verificação de Segurança em IA"
+  },
+  "assessment": {
+    "title": "Avaliação AISVS",
+    "loadPrevious": "Deseja carregar resultados anteriores?",
+    "loadDescription": "Se você tem um arquivo de resultados incompletos, faça o upload aqui e o questionário será preenchido automaticamente.",
+    "loadResults": "Carregar Resultados",
+    "clear": "Limpar",
+    "saveResponses": "Salvar Respostas",
+    "nextPage": "Próxima Página",
+    "nextPractice": "Próximo Controle",
+    "previousPractice": "Controle Anterior",
+    "complete": "Concluir",
+    "clearConfirm": "Isso irá apagar todas as respostas. Deseja continuar?",
+    "domains": {
+      "governance": "Governança",
+      "design": "Design",
+      "implementation": "Implementação",
+      "verification": "Verificação",
+      "operations": "Operações",
+      "details": "Detalhes"
+    },
+    "controls": {
+      "c01": "C1 Dados de Treino",
+      "c02": "C2 Validação de Entrada",
+      "c03": "C3 Ciclo de Vida do Modelo",
+      "c04": "C4 Infraestrutura",
+      "c05": "C5 Controle de Acesso",
+      "c06": "C6 Cadeia de Fornecimento",
+      "c07": "C7 Comportamento do Modelo",
+      "c08": "C8 Memória e Vetores",
+      "c09": "C9 Ações Autônomas",
+      "c10": "C10 Segurança MCP",
+      "c11": "C11 Robustez Adversarial",
+      "c12": "C12 Privacidade",
+      "c13": "C13 Monitoramento",
+      "c14": "C14 Supervisão Humana",
+      "details": "Detalhes"
+    }
+  },
+  "results": {
+    "title": "Resultados da Avaliação AISVS",
+    "completionText": "Obrigado por completar o questionário",
+    "mustComplete": "Você deve primeiro completar o questionário para ver os resultados",
+    "overallScore": "Sua pontuação geral é:",
+    "previousScore": "Sua pontuação anterior foi:",
+    "refresh": "Atualizar Gráficos",
+    "totals": "Totais",
+    "responseCount": "Contagem de respostas por valor",
+    "businessFunctions": "Funções de Negócio",
+    "maturityByBusiness": "Pontuação por Controle AISVS",
+    "maturityByBusinessRadar": "Radar — Controles AISVS",
+    "maturityByBusinessBar": "Barras — Controles AISVS",
+    "practices": "Práticas",
+    "maturityByPractice": "Pontuação por Sub-Controle",
+    "maturityByPracticeRadar": "Radar — Sub-Controles",
+    "maturityByPracticeBar": "Barras — Sub-Controles",
+    "totalsSection": "Totais",
+    "saveJson": "Deseja salvar seus resultados em JSON?",
+    "saveFile": "Salvar arquivo",
+    "loadPrevious": "Deseja carregar seus resultados anteriores para comparar?",
+    "exportPdf": "Deseja imprimir ou salvar os gráficos como PDF?",
+    "exportGraphs": "Exportar gráficos",
+    "exportGenerating": "Gerando PDF…",
+    "exportError": "Falha ao gerar o PDF. Tente novamente.",
+    "projectName": "Nome do Projeto",
+    "projectDescription": "Descrição do Projeto",
+    "companyName": "Nome da Empresa",
+    "scoreInitial": "Controle raramente ou nunca implementado.",
+    "scoreManaged": "Implementação ad-hoc, sem consistência.",
+    "scoreDefined": "Processos definidos, aplicados de forma consistente.",
+    "scoreOptimized": "Otimizado, medido e em melhoria contínua.",
+    "practiceBreakdown": "Detalhamento por Controle",
+    "businessFunction": "Controle",
+    "practice": "Sub-Controle",
+    "score": "Pontuação",
+    "maturityLevel": "Nível de Maturidade",
+    "maturityBands": {
+      "initial": "Inicial",
+      "managed": "Gerenciado",
+      "defined": "Definido",
+      "optimized": "Otimizado"
+    },
+    "levelCompliance": "Conformidade por Nível de Verificação",
+    "levelDesc": "% de requisitos respondidos ‘Sim, para a maioria’ ou ‘Sim, para todos’",
+    "l1Label": "N1 — Fundamental",
+    "l1Desc": "Controles essenciais para qualquer aplicação de IA",
+    "l2Label": "N2 — Padrão",
+    "l2Desc": "Meta para sistemas de IA em produção",
+    "l3Label": "N3 — Avançado",
+    "l3Desc": "Infraestrutura crítica e sistemas regulados",
+    "controlHeatmap": "Mapa de Cobertura por Controle",
+    "heatmapDesc": "% de conformidade por controle AISVS por nível de verificação",
+    "controlCol": "Controle",
+    "overallPct": "Geral",
+    "naLabel": "N/A",
+    "controlCompliance": "Pontuação por Controle AISVS",
+    "subControlBreakdown": "Detalhamento por Sub-Controle",
+    "compliancePct": "Conformidade %"
+  },
+  "charts": {
+    "currentAssessment": "Avaliação Atual",
+    "previousAssessment": "Avaliação Anterior",
+    "previousDataset": "Conjunto de Dados Anterior",
+    "scoreForEach": "Pontuação por Controle AISVS",
+    "practiceScore": "Pontuação por Sub-Controle",
+    "responseLabels": {
+      "no": "Não",
+      "yesForSome": "Sim, para alguns",
+      "yesForMost": "Sim, para a maioria",
+      "yesForAll": "Sim, para todos"
+    },
+    "maturityLabels": {
+      "bad": "Ruim",
+      "lessThanIdeal": "Abaixo do ideal",
+      "okay": "Razoável",
+      "good": "Bom"
+    },
+    "businessFunctions": {
+      "Control 1": "C1 Dados de Treino",
+      "Control 2": "C2 Validação de Entrada",
+      "Control 3": "C3 Ciclo de Vida",
+      "Control 4": "C4 Infraestrutura",
+      "Control 5": "C5 Controle de Acesso",
+      "Control 6": "C6 Cadeia de Fornec.",
+      "Control 7": "C7 Comportamento",
+      "Control 8": "C8 Memória e Vetores",
+      "Control 9": "C9 Ações Autônomas",
+      "Control 10": "C10 MCP",
+      "Control 11": "C11 Adversarial",
+      "Control 12": "C12 Privacidade",
+      "Control 13": "C13 Monitoramento",
+      "Control 14": "C14 Supervisão Humana"
+    },
+    "practices": {
+      "Strategy and Metrics": "Estratégia e Métricas",
+      "Policy and Compliance": "Política e Conformidade",
+      "Education and Guidance": "Educação e Orientação",
+      "Threat Assessment": "Avaliação de Ameaças",
+      "Security Requirements": "Requisitos de Segurança",
+      "Security Architecture": "Arquitetura de Segurança",
+      "Secure Build": "Construção Segura",
+      "Secure Deployment": "Implantação Segura",
+      "Defect Management": "Gerenciamento de Defeitos",
+      "Architecture Assessment": "Avaliação de Arquitetura",
+      "Requirements Testing": "Testes Orientados a Requisitos",
+      "Security Testing": "Testes de Segurança",
+      "Incident Management": "Gerenciamento de Incidentes",
+      "Environment Management": "Gerenciamento de Ambiente",
+      "Operations Management": "Gerenciamento Operacional"
+    }
+  },
+  "upload": {
+    "dropzone": "Arraste e solte arquivos aqui, ou clique para selecionar",
+    "errorFormat": "O(s) arquivo(s) enviado(s) não estão no formato JSON. Use apenas arquivos JSON gerados por esta ferramenta"
+  },
+  "notFound": {
+    "title": "404 - Ops!",
+    "subtitle": "Esta página não foi encontrada",
+    "redirect": "Voltando para a"
+  },
+  "footer": {
+    "copyright": "© 2026 AISVS - OWASP Foundation",
+    "madeWith": "Feito com ❤️ pela Comunidade OWASP"
+  },
+  "buttons": {
+    "next": "Próximo",
+    "previous": "Anterior",
+    "save": "Salvar",
+    "load": "Carregar",
+    "export": "Exportar",
+    "print": "Imprimir",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar"
+  },
+  "errors": {
+    "loadError": "Erro ao carregar arquivo",
+    "saveError": "Erro ao salvar arquivo",
+    "genericError": "Ocorreu um erro"
+  },
+  "practices": {
+    "governance": {
+      "strategy": "Estratégia e Métricas",
+      "policy": "Política e Conformidade",
+      "education": "Educação e Orientação"
+    },
+    "design": {
+      "threat": "Avaliação de Ameaças",
+      "security": "Requisitos de Segurança",
+      "architecture": "Arquitetura de Segurança"
+    },
+    "implementation": {
+      "build": "Construção Segura",
+      "deployment": "Implantação Segura",
+      "defect": "Gerenciamento de Defeitos"
+    },
+    "verification": {
+      "architecture": "Avaliação de Arquitetura",
+      "requirements": "Testes Orientados a Requisitos",
+      "security": "Testes de Segurança"
+    },
+    "operations": {
+      "incident": "Gerenciamento de Incidentes",
+      "environment": "Gerenciamento de Ambiente",
+      "operational": "Gerenciamento Operacional"
+    }
+  },
+  "llm": {
+    "settingsTitle": "Configurações de Análise por IA",
+    "provider": "Provedor",
+    "apiKey": "Chave de API",
+    "apiKeyPlaceholder": "Digite sua chave de API",
+    "apiKeyNote": "Sua chave é criptografada com AES-GCM e armazenada apenas neste dispositivo.",
+    "model": "Modelo",
+    "ollamaUrl": "URL do Ollama",
+    "autoAnalysis": "Análise Automática",
+    "autoAnalysisDesc": "Gerar análise de IA automaticamente ao visualizar resultados.",
+    "save": "Salvar Configurações",
+    "saving": "Salvando…",
+    "clear": "Limpar",
+    "settingsSaved": "Configurações salvas!",
+    "settingsCleared": "Configurações removidas.",
+    "settingsError": "Erro ao salvar configurações.",
+    "analysisTitle": "Análise por IA",
+    "analyzePrompt": "Clique abaixo para obter uma análise detalhada por IA dos seus resultados AISVS com sugestões de melhoria.",
+    "analyze": "Analisar Resultados",
+    "reanalyze": "Re-analisar",
+    "analyzing": "Analisando seus resultados...",
+    "notConfigured": "Configure um provedor de IA nas configurações para habilitar a análise.",
+    "decryptError": "Não foi possível descriptografar a chave. Por favor, insira-a novamente nas configurações.",
+    "genericError": "Ocorreu um erro durante a análise.",
+    "configureButton": "Configurar IA",
+    "comparisonNote": "A análise inclui comparação com sua avaliação AISVS anterior.",
+    "providerChanged": "novo provider ativo — re-analise para atualizar",
+    "pageTitle": "Configurações de Análise por IA",
+    "pageSubtitle": "Conecte um provedor de LLM para obter análise detalhada e sugestões de melhoria para seus resultados AISVS.",
+    "pageDescription": "Configure seu provedor de LLM para análise por IA da avaliação AISVS.",
+    "fetchModels": "Buscar Modelos",
+    "fetchingModels": "Carregando…",
+    "modelFetchFirst": "— insira a chave e busque os modelos —",
+    "noModelsFound": "Nenhum modelo encontrado para este provedor.",
+    "modelsLoaded": "modelos disponíveis",
+    "apiKeySaved": "Chave de API salva (clique para substituir)",
+    "infoSecurityTitle": "Suas chaves ficam locais",
+    "infoSecurityBody": "As chaves de API são criptografadas com AES-GCM e armazenadas apenas neste dispositivo. Nunca são enviadas para os servidores do AISVSwise.",
+    "infoProvidersTitle": "4 provedores suportados",
+    "infoProvidersBody": "Anthropic (Claude), OpenAI (GPT), Google Gemini e Ollama para inferência totalmente local.",
+    "infoPersistTitle": "Análise salva com o relatório",
+    "infoPersistBody": "A análise gerada é embutida no arquivo JSON do relatório e reaparece ao importar o relatório para comparação."
+  },
+  "a11y": {
+    "logoAlt": "Logo AISVSwise",
+    "owaspLogoAlt": "Logo OWASP",
+    "selectLanguage": "Selecionar idioma",
+    "toggleAutoAnalysis": "Alternar análise automática",
+    "collapse": "Recolher",
+    "expand": "Expandir",
+    "uploadSuccess": "Upload realizado com sucesso",
+    "dragAndDrop": "Arraste e solte o arquivo"
+  },
+  "providers": {
+    "anthropic": "Anthropic (Claude)",
+    "openai": "OpenAI (GPT)",
+    "gemini": "Google Gemini",
+    "ollama": "Ollama (local)"
+  },
+  "meta": {
+    "homeTitle": "AISVS | Início",
+    "assessmentTitle": "AISVS | Avaliação",
+    "resultsTitle": "AISVS | Resultados",
+    "aboutTitle": "AISVS | Sobre",
+    "aiTitle": "AISVS | Configurações de IA",
+    "description": "Ferramenta OWASP AISVS - Avalie a postura de segurança de IA da sua organização em 14 controles",
+    "keywords": "owasp, aisvs, segurança de ia, llm, avaliação, padrão de verificação, inteligência artificial"
+  }
+}

@@ -1,0 +1,19 @@
+
+services:
+    nextjs:
+        container_name: AISVSwise-app
+        build:
+            context: .
+            dockerfile: docker/Dockerfile
+        restart: unless-stopped
+        networks:
+            - samm-network
+        ports:
+            - "127.0.0.1:3600:3600"
+        environment:
+            - NODE_ENV=production
+            - PORT=3600
+
+networks:
+    samm-network:
+        driver: bridge
