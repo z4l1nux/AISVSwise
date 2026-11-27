@@ -1,4 +1,4 @@
-// Traduções AISVS para Português (Brasil)
+// AISVS translations for Brazilian Portuguese
 
 /** Choice text translations (used in all survey questions) */
 const choiceTranslations: Record<string, string> = {
