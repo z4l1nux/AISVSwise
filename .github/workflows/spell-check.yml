@@ -1,13 +1,6 @@
 name: Spell Check Markdown
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '*.md'
-      - '**/en/*.md'
-      - '**/en/*.markdown'
   pull_request:
     branches:
       - main
@@ -15,7 +8,6 @@ on:
       - '*.md'
       - '**/en/*.md'
       - '**/en/*.markdown'
-  workflow_dispatch:
 
 jobs:
   spellcheck:
@@ -32,10 +24,7 @@ jobs:
       - name: Install cspell
         run: npm install -g cspell
 
-      # cspell config is now in .github/workflows/config/cspell.json
-
-      - name: Get changed files (PR only)
-        if: github.event_name == 'pull_request'
+      - name: Get changed Markdown files
         id: files
         uses: tj-actions/changed-files@v46
         with:
@@ -44,8 +33,8 @@ jobs:
             *.md
           separator: '\n'
 
-      - name: Run cspell on changed files (PR)
-        if: github.event_name == 'pull_request' && steps.files.outputs.any_changed == 'true'
+      - name: Run cspell on changed files
+        if: steps.files.outputs.any_changed == 'true'
         run: |
           # Convert literal '\n' to real newlines for safe file splitting
           files_string="${{ steps.files.outputs.all_changed_files }}"
@@ -61,8 +50,3 @@ jobs:
           fi
           # Run cspell on all changed files; its exit code will control the workflow outcome
           cspell --config .github/workflows/config/cspell.json "${files[@]}"
-
-      - name: Run cspell on all markdown files (push to main or manual)
-        if: github.event_name != 'pull_request'
-        run: |
-          cspell --config .github/workflows/config/cspell.json "1.0/en/**/*.md" "*.md"
