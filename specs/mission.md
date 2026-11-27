@@ -1,22 +1,22 @@
-# Missão
+# Mission
 
-## O que fazemos
+## What we do
 
-AISVSwise é uma aplicação web open source para avaliar a maturidade de segurança
-de sistemas de IA usando os 14 controles e 97 subcontroles do OWASP AISVS.
-Também oferece análise de lacunas, metas, planos de ação e recomendações
-assistidas por provedores de IA configurados pelo usuário.
+AISVSwise is an open-source web application for assessing the security maturity
+of AI systems against the 14 controls and 97 subcontrols in the OWASP AISVS. It
+also provides gap analysis, targets, action plans, and recommendations assisted
+by AI providers configured by the user.
 
-## Público-alvo
+## Audience
 
-- Equipes que desenvolvem, operam ou avaliam sistemas de IA.
-- Profissionais de segurança, risco e governança que precisam acompanhar
-  controles AISVS e remediações.
+- Teams that build, operate, or assess AI systems.
+- Security, risk, and governance professionals who need to track AISVS controls
+  and remediation work.
 
-## O que significa sucesso
+## What success looks like
 
-- Uma equipe consegue completar, retomar e exportar uma avaliação.
-- Resultados, metas e planos tornam lacunas e próximos passos compreensíveis.
-- As informações de avaliação permanecem no navegador, salvo quando o usuário
-  escolhe explicitamente usar análise de IA com um provedor externo.
-- A aplicação mantém suporte equivalente em inglês e português.
+- A team can complete, resume, and export an assessment.
+- Results, targets, and plans make gaps and next steps easy to understand.
+- Assessment data stays in the browser unless the user explicitly chooses AI
+  analysis with an external provider.
+- The application provides equivalent support in English and Portuguese.

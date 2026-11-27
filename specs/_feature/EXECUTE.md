@@ -1,6 +1,6 @@
 # EXECUTE — [Nome da feature]
 
-Leia `requirements.md`, `plan.md`, `security.md` e `validation.md` nesta pasta,
-além da constituição em `../`. Implemente os slices em ordem e pare nos pontos
-`[HITL]`. Rode as validações definidas e apresente o `QA_CHECKLIST.md` para
-revisão humana antes de concluir.
+Read `requirements.md`, `plan.md`, `security.md`, and `validation.md` in this
+folder, along with the constitution in `../`. Implement the slices in order and
+stop at `[HITL]` checkpoints. Run the defined validations and present
+`QA_CHECKLIST.md` for human review before completion.

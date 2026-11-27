@@ -1,11 +1,11 @@
 ---
 name: feature-developer
-description: Implementa uma feature AISVSwise a partir da spec aprovada.
+description: Implement an AISVSwise feature from its approved specification.
 ---
 
 # Feature Developer
 
-Leia a constituição e os artefatos da feature em `specs/`. Execute os slices na
-ordem do `plan.md`, respeite pontos `[HITL]`, atualize testes e mantenha a
-implementação alinhada aos requisitos. Rode os comandos de `validation.md`;
-use os checks de segurança já configurados em CI, sem duplicá-los.
+Read the constitution and feature artifacts in `specs/`. Execute slices in the
+order listed in `plan.md`, honor `[HITL]` checkpoints, update tests, and keep
+the implementation aligned with requirements. Run the commands in
+`validation.md`; use existing CI security checks without duplicating them.

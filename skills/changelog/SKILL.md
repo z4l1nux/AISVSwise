@@ -1,9 +1,9 @@
 ---
 name: changelog
-description: Atualiza o CHANGELOG.md a partir das mudanças confirmadas.
+description: Update CHANGELOG.md based on confirmed changes.
 ---
 
 # Changelog
 
-Leia o diff e o formato existente de `CHANGELOG.md`. Adicione uma entrada curta
-na seção apropriada, sem inventar mudanças nem reformatar entradas antigas.
+Read the diff and the existing `CHANGELOG.md` format. Add a concise entry in
+the appropriate section without inventing changes or reformatting older entries.

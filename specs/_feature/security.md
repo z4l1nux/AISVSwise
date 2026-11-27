@@ -1,20 +1,20 @@
-# Segurança — [Nome da feature]
+# Security — [Feature name]
 
-## Fronteiras e entry points
+## Boundaries and entry points
 
-- [UI, arquivo importado, estado do navegador, rota API ou provedor externo]
+- [UI, imported file, browser state, API route, or external provider]
 
-## Riscos
+## Risks
 
-- [ ] Entrada inválida ou adulterada
-- [ ] XSS, injeção ou conteúdo LLM não confiável
-- [ ] Exposição de dados locais ou chave de API
-- [ ] Requisição externa, abuso ou erro do provedor
-- [ ] Regressão de privacidade, localização ou autorização
+- [ ] Invalid or tampered input
+- [ ] XSS, injection, or untrusted LLM content
+- [ ] Exposure of local data or API keys
+- [ ] External request, abuse, or provider error
+- [ ] Privacy, localization, or authorization regression
 
-## Requisitos de segurança
+## Security requirements
 
-- [ ] Validar dados na fronteira e tratar falhas explicitamente.
-- [ ] Sanitizar conteúdo antes de renderizar.
-- [ ] Não persistir ou transmitir dados além do escopo descrito em `requirements.md`.
-- [ ] Verificar os checks de segurança existentes no PR; não adicionar scanners duplicados.
+- [ ] Validate data at boundaries and handle failures explicitly.
+- [ ] Sanitize content before rendering.
+- [ ] Do not persist or transmit data beyond the scope in `requirements.md`.
+- [ ] Confirm the existing security checks on the PR; do not add duplicate scanners.

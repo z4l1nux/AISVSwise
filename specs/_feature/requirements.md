@@ -1,31 +1,31 @@
-# Requisitos — [Nome da feature]
+# Requirements — [Feature name]
 
-## Escopo
+## Scope
 
-### Incluído
+### In scope
 
-- [Comportamento incluído]
+- [Included behavior]
 
-### Fora de escopo
+### Out of scope
 
-- [Comportamento explicitamente excluído]
+- [Explicitly excluded behavior]
 
-## Requisitos funcionais
+## Functional requirements
 
-- [ ] [Requisito verificável]
+- [ ] [Verifiable requirement]
 
-## Dados e decisões
+## Data and decisions
 
-- Dados afetados: [sessão, armazenamento local, importação/exportação ou nenhum]
-- Decisões: [decisões que afetam compatibilidade ou privacidade]
+- Affected data: [session, local storage, import/export, or none]
+- Decisions: [decisions affecting compatibility or privacy]
 
-## Requisitos não funcionais
+## Non-functional requirements
 
-- Segurança e privacidade: [como a feature preserva `specs/principles.md`]
-- Acessibilidade e localização: [impacto em teclado, leitor de tela e EN/PT]
+- Security and privacy: [how the feature preserves `specs/principles.md`]
+- Accessibility and localization: [impact on keyboard, screen readers, and EN/PT]
 
 ## Failure modes
 
-- **Falha:** [Entrada, armazenamento ou provedor indisponível]
-    - **Comportamento esperado:** [Erro claro sem perda silenciosa]
-    - **Recuperação:** [Ação possível para o usuário]
+- **Failure:** [Input, storage, or provider unavailable]
+    - **Expected behavior:** [Clear error without silent data loss]
+    - **Recovery:** [Action available to the user]

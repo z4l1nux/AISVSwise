@@ -1,13 +1,12 @@
-# Validação — [Nome da feature]
+# Validation — [Feature name]
 
 ## Definition of Done
 
 - [ ] Typecheck: `npm run typecheck`
-- [ ] Testes: `npm test -- --runInBand`
+- [ ] Tests: `npm test -- --runInBand`
 - [ ] Build: `npm run build`
-- [ ] Markdown lint e spellcheck passam quando a documentação aplicável mudar.
-- [ ] Os checks existentes de Semgrep, Vet e TruffleHog passam no PR.
-- [ ] `QA_CHECKLIST.md` revisado por uma pessoa para mudanças de UI ou fluxo.
+- [ ] Markdown lint and spellcheck pass when applicable documentation changes.
+- [ ] Existing Semgrep, Vet, and TruffleHog checks pass on the PR.
+- [ ] A person reviews `QA_CHECKLIST.md` for UI or flow changes.
 
-Não execute nem crie workflows paralelos para substituir os checks de segurança
-já existentes.
+Do not run or create parallel workflows to replace the existing security checks.

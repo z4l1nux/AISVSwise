@@ -1,23 +1,22 @@
-# Segurança — Adoção do SDSD
+# Security — SDSD Adoption
 
-## Fronteiras e entry points
+## Boundaries and entry points
 
-- Instruções para agentes e contribuidores (`AGENTS.md`, `CONTRIBUTING.md`).
-- Documentação e specs utilizadas para planejar features.
-- Workflows GitHub Actions e pre-commit local.
+- Agent and contributor instructions (`AGENTS.md`, `CONTRIBUTING.md`).
+- Documentation and specs used for feature planning.
+- GitHub Actions workflows and local pre-commit configuration.
 
-## Riscos
+## Risks
 
-- [x] Scanners de segurança duplicados ou gates divergentes.
-- [x] Instruções genéricas contradizerem o modelo local-first ou os fluxos de IA.
-- [x] Texto de PR ou spec declarar validações não realizadas.
-- [ ] Exposição de dados locais ou chaves de API — nenhuma mudança de aplicação.
+- [x] Duplicate security scanners or divergent gates.
+- [x] Generic instructions contradicting the local-first model or AI flows.
+- [x] PR or spec text claiming validation that was not performed.
+- [ ] Exposure of local data or API keys — no application changes are in scope.
 
-## Requisitos de segurança
+## Security requirements
 
-- Reutilizar os checks existentes de Semgrep, Vet e TruffleHog.
-- Restringir pre-commit a higiene de arquivos, sem adicionar scanners.
-- Descrever corretamente o envio opcional a provedores de IA e o armazenamento
-  local.
-- Identificar os testes de documentação e declarar explicitamente validações
-  não executadas.
+- Reuse the existing Semgrep, Vet, and TruffleHog checks.
+- Limit pre-commit to file hygiene; do not add scanners.
+- Accurately describe optional data sharing with AI providers and local
+  storage.
+- Identify documentation tests and explicitly state any validation not run.

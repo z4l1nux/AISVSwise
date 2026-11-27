@@ -1,18 +1,18 @@
-# Plano — Adoção do SDSD
+# Plan — SDSD Adoption
 
-## Slice 1: Constituição e templates [AFK]
+## Slice 1: Constitution and templates [AFK]
 
-1. Documentar missão, princípios, stack, roadmap, estado e ADRs.
-2. Adicionar templates de feature e skills alinhados aos comandos reais.
-3. Atualizar `AGENTS.md`, guia de contribuição e changelog.
+1. Document the mission, principles, stack, roadmap, state, and ADRs.
+2. Add feature templates and skills aligned with actual project commands.
+3. Update `AGENTS.md`, the contribution guide, and changelog.
 
-## Slice 2: Governança de PR e checks de documentação [AFK]
+## Slice 2: PR governance and documentation checks [AFK]
 
-1. Adicionar pre-commit apenas para higiene e um template de PR SDSD.
-2. Incluir a documentação do SDSD nos workflows existentes de Markdown e CSpell.
-3. Confirmar que nenhum scanner ou workflow SAST/SCA/secrets foi duplicado.
+1. Add pre-commit hooks for file hygiene only and an SDSD pull request template.
+2. Include SDSD documentation in the existing Markdown and CSpell workflows.
+3. Confirm that no scanner or SAST/SCA/secrets workflow was duplicated.
 
-## Slice 3: Revisão [HITL]
+## Slice 3: Review [HITL]
 
-1. Revisar a constituição do produto e os limites de privacidade.
-2. Confirmar que o PR documenta validações e limitações reais.
+1. Review the product constitution and privacy boundaries.
+2. Confirm that the PR documents actual validation and limitations.

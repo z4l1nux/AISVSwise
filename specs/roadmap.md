@@ -1,15 +1,15 @@
 # Roadmap
 
-## Base implementada
+## Implemented foundation
 
-- [x] Avaliação dos 14 controles e 97 subcontroles AISVS.
-- [x] Resultados, comparação, exportação, metas e planos de ação.
-- [x] Interface em inglês e português e análise opcional por provedores de IA.
-- [x] Checks de PR para Semgrep, Vet, TruffleHog, typecheck e documentação.
+- [x] Assessment across all 14 AISVS controls and 97 subcontrols.
+- [x] Results, comparison, export, targets, and action plans.
+- [x] English and Portuguese interface and optional AI-provider analysis.
+- [x] PR checks for Semgrep, Vet, TruffleHog, typecheck, and documentation.
 
-## Próximos passos aprovados
+## Approved next steps
 
-- [ ] Restaurar `npm run lint` declarando/configurando `eslint-plugin-prettier`
-      ou removendo a referência incompatível.
-- [ ] Priorizar novas funcionalidades por meio de specs datadas; ainda não há
-      outras entregas de produto aprovadas neste roadmap.
+- [ ] Restore `npm run lint` by declaring/configuring `eslint-plugin-prettier`
+      or removing the incompatible reference.
+- [ ] Prioritize new features through dated specs; no other product deliverables
+      have been approved for this roadmap yet.
