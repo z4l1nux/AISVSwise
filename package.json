@@ -36,7 +36,8 @@
     "tailwind-merge": "^3.5.0"
   },
   "overrides": {
-    "glob": "^11.0.0",
+    "glob": "^14.0.2",
+    "minimatch@>=7.0.0": "^11.0.1",
     "next-intl": {
       "next": "$next"
     }
