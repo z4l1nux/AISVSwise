@@ -212,9 +212,18 @@ AISVSwise/
 └── public/                     # Static assets
 ```
 
+## 🧭 Spec-Driven Secure Development
+
+AISVSwise uses a spec-first contribution workflow. Read
+[CONTRIBUTING.md](CONTRIBUTING.md) and the project
+[specifications](specs/README.md) before planning non-trivial product changes.
+The existing Semgrep, Vet, and TruffleHog checks remain the security gates; SDSD
+does not add duplicate scanner workflows.
+
 ## 🤝 Contributing
 
-We welcome contributions! Please follow these steps:
+We welcome contributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for the SDSD
+workflow, specification scale, validation commands, and pull request guidance.
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)

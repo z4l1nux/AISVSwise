@@ -1,0 +1,8 @@
+# Use para regras determinísticas; remova para CRUD sem regra de negócio.
+cases:
+  - name: caso feliz
+    input: {}
+    expected: {}
+  - name: entrada inválida
+    input: {}
+    expected_error: "[mensagem ou código]"
