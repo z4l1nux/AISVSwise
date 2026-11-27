@@ -1,6 +1,6 @@
-# EXECUTE — Adoção do SDSD
+# EXECUTE — SDSD Adoption
 
-Este trabalho configura o Spec-Driven Secure Development neste repositório.
-Leia os documentos de `../` e os artefatos desta pasta. Preserve os workflows
-de Semgrep, Vet e TruffleHog existentes; não adicione scanners equivalentes.
-Valide a documentação e apresente o resultado no PR.
+This work configures Spec-Driven Secure Development in this repository. Read
+the documents in `../` and the artifacts in this folder. Preserve the existing
+Semgrep, Vet, and TruffleHog workflows; do not add equivalent scanners. Validate
+the documentation and report the results in the PR.

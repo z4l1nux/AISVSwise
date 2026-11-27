@@ -1,19 +1,19 @@
-# Estado do SDSD
+# SDSD State
 
-## Foco atual
+## Current focus
 
-Adotar o fluxo SDSD no AISVSwise sem duplicar os checks de segurança já
-existentes.
+Adopt the SDSD workflow in AISVSwise without duplicating existing security
+checks.
 
-## Decisões
+## Decisions
 
-- `specs/` registra a constituição e as specs de funcionalidades do produto.
-- Semgrep, Vet e TruffleHog continuam sendo executados pelos workflows atuais.
-- O pre-commit local contém apenas verificações básicas de higiene.
-- O repositório não tem uma fila de novas funcionalidades aprovada; o roadmap
-  registra o trabalho de lint já identificado.
+- `specs/` records the product constitution and feature specifications.
+- Semgrep, Vet, and TruffleHog continue to run through their existing workflows.
+- Local pre-commit contains basic file-hygiene checks only.
+- No new feature backlog has been approved; the roadmap records the known lint
+  follow-up.
 
-## Próximo passo
+## Next step
 
-Para a próxima mudança não trivial de produto, criar uma pasta datada a partir
-de `specs/_feature/` antes de implementar.
+For the next non-trivial product change, create a dated folder from
+`specs/_feature/` before implementation.

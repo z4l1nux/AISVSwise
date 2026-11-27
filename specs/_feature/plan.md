@@ -1,9 +1,9 @@
-# Plano — [Nome da feature]
+# Plan — [Feature name]
 
-## Slice 1: [entrega vertical] [AFK]
+## Slice 1: [vertical deliverable] [AFK]
 
-1. [Implementação e teste]
+1. [Implementation and test]
 
-## Slice 2: [decisão ou revisão] [HITL]
+## Slice 2: [decision or review] [HITL]
 
-1. [Validação humana necessária]
+1. [Required human validation]

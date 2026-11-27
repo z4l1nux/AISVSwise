@@ -1,11 +1,11 @@
 ---
 name: feature-spec
-description: Cria ou revisa uma especificação de feature para AISVSwise.
+description: Create or review an AISVSwise feature specification.
 ---
 
 # Feature Spec
 
-Leia `specs/mission.md`, `principles.md`, `tech-stack.md` e `roadmap.md`. Para
-trabalho não trivial, esclareça os requisitos antes de criar arquivos. Copie os
-stubs de `specs/_feature/` para `specs/YYYY-MM-DD-nome/` e preencha escopo,
-failure modes, riscos, testes e validação antes de implementar.
+Read `specs/mission.md`, `principles.md`, `tech-stack.md`, and `roadmap.md`.
+For non-trivial work, clarify requirements before creating files. Copy the
+templates from `specs/_feature/` to `specs/YYYY-MM-DD-name/` and fill in scope,
+failure modes, risks, tests, and validation before implementation.

@@ -1,16 +1,16 @@
-# Especificações do AISVSwise
+# AISVSwise Specifications
 
-Este diretório é a fonte de verdade para propósito, princípios, stack,
-prioridades, decisões e especificações de funcionalidades do AISVSwise.
+This directory is the source of truth for the AISVSwise purpose, principles,
+stack, priorities, decisions, and feature specifications.
 
-- `mission.md`: propósito do produto e resultados esperados.
-- `principles.md`: restrições de segurança, privacidade, qualidade e UX.
-- `tech-stack.md`: tecnologias, comandos de validação e checks existentes.
-- `roadmap.md`: estado atual e prioridades aprovadas.
-- `STATE.md`: foco de trabalho e próximo passo entre sessões.
-- `adr/`: decisões arquiteturais irreversíveis.
-- `_feature/`: stubs para especificar novas funcionalidades.
+- `mission.md`: product purpose and expected outcomes.
+- `principles.md`: security, privacy, quality, and UX constraints.
+- `tech-stack.md`: technologies, validation commands, and existing checks.
+- `roadmap.md`: current state and approved priorities.
+- `STATE.md`: work focus and next step across sessions.
+- `adr/`: irreversible architectural decisions.
+- `_feature/`: templates for specifying new features.
 
-Para mudanças de comportamento, siga o fluxo descrito em
-[`../CONTRIBUTING.md`](../CONTRIBUTING.md). Não replique workflows de SAST,
-SCA ou secrets: eles já existem em `.github/workflows/`.
+For behavior changes, follow the workflow in
+[`../CONTRIBUTING.md`](../CONTRIBUTING.md). Do not duplicate SAST, SCA, or
+secrets workflows; they already exist in `.github/workflows/`.

@@ -1,5 +1,5 @@
-# Use somente para funcionalidades de IA, LLM ou RAG.
+# Use only for AI, LLM, or RAG features.
 evals:
-  - name: resposta relevante
-    input: "[entrada]"
-    rubric: "[critério de avaliação]"
+  - name: relevant response
+    input: "[input]"
+    rubric: "[evaluation criterion]"

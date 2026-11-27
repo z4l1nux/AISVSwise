@@ -1,39 +1,39 @@
-# Stack e validação
+# Stack and validation
 
-## Aplicação
+## Application
 
-| Camada | Escolha |
+| Layer | Choice |
 | --- | --- |
-| Linguagem | TypeScript 5.7 |
+| Language | TypeScript 5.7 |
 | Framework | Next.js 16, Pages Router |
 | UI | React 18, Tailwind CSS 4 |
-| Internacionalização | next-intl 4; mensagens em `src/messages/` |
-| Persistência | `sessionStorage` para sessão de avaliação; `localStorage` para metas, planos e configurações locais |
-| Backend | Sem banco de dados ou contas; rotas API Next.js encaminham chamadas selecionadas a provedores de IA |
-| Node.js / npm | Node.js 20.9+ e npm 10+ |
+| Internationalization | next-intl 4; messages in `src/messages/` |
+| Persistence | `sessionStorage` for the active assessment; `localStorage` for targets, plans, and local settings |
+| Backend | No database or user accounts; Next.js API routes proxy selected requests to AI providers |
+| Node.js / npm | Node.js 20.9+ and npm 10+ |
 
-## Comandos
+## Commands
 
-| Objetivo | Comando |
+| Purpose | Command |
 | --- | --- |
-| Instalar dependências | `npm ci` |
-| Desenvolvimento | `npm run dev` |
-| Testes | `npm test -- --runInBand` |
+| Install dependencies | `npm ci` |
+| Development | `npm run dev` |
+| Tests | `npm test -- --runInBand` |
 | Typecheck | `npm run typecheck` |
-| Build de produção | `npm run build` |
-| Lint | `npm run lint` (atualmente bloqueado pela dependência ausente `eslint-plugin-prettier`) |
+| Production build | `npm run build` |
+| Lint | `npm run lint` (currently blocked because `eslint-plugin-prettier` is missing) |
 
-## Checks de segurança existentes
+## Existing security checks
 
-Use os checks já configurados; não adicione workflows equivalentes:
+Use the existing checks; do not add equivalent workflows:
 
-| Categoria | Ferramenta e configuração |
+| Category | Tool and configuration |
 | --- | --- |
 | SAST | Semgrep — `.github/workflows/semgrep.yml` |
-| SCA | Vet — `.github/workflows/vet.yml`, policy em `.github/policies/vet-policy.yml` |
+| SCA | Vet — `.github/workflows/vet.yml`, policy in `.github/policies/vet-policy.yml` |
 | Secrets | TruffleHog — `.github/workflows/trufflehog.yml` |
 | Typecheck | `.github/workflows/typecheck.yml` |
-| Markdown | `.github/workflows/markdown_linter.yml` e `.github/workflows/spell-check.yml` |
+| Markdown | `.github/workflows/markdown_linter.yml` and `.github/workflows/spell-check.yml` |
 
-Os workflows automáticos rodam em pull requests para `main`. A configuração
-local de pre-commit cobre apenas higiene de arquivos e não duplica scanners.
+The existing workflows run on pull requests to `main`. Local pre-commit
+configuration covers file hygiene only and does not duplicate scanners.

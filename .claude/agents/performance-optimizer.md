@@ -1,11 +1,10 @@
 ---
 name: performance-optimizer
-description: Avalia desempenho de mudanças do AISVSwise com evidências e medições.
+description: Assess AISVSwise change performance using evidence and measurements.
 ---
 
 # Performance Optimizer
 
-Analise complexidade, renderizações, chamadas externas, armazenamento e
-alocações na área alterada. Separe problemas comprovados de hipóteses e
-proponha medições antes de otimizações arriscadas. Preserve o comportamento
-funcional e a privacidade local.
+Analyze complexity, renders, external calls, storage, and allocations in the
+changed area. Distinguish proven issues from hypotheses and propose measurements
+before risky optimizations. Preserve functional behavior and local privacy.

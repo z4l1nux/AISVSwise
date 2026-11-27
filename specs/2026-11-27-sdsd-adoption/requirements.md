@@ -1,49 +1,56 @@
-# Requisitos — Adoção do SDSD
+# Requirements — SDSD Adoption
 
-## Escopo
+## Scope
 
-### Incluído
+### In scope
 
-- Registrar missão, princípios, stack e roadmap reais do AISVSwise em `specs/`.
-- Fornecer stubs reutilizáveis de feature, skills e perfis de agentes.
-- Documentar o fluxo de contribuição, validação, PR e decisões arquiteturais.
-- Cobrir a documentação SDSD pelos checks de Markdown e ortografia existentes.
-- Preservar Semgrep, Vet e TruffleHog sem duplicar SAST, SCA ou secrets checks.
+- Record the actual AISVSwise mission, principles, stack, and roadmap in `specs/`.
+- Provide reusable feature templates, skills, and agent profiles.
+- Document contribution, validation, pull request, and architecture-decision
+  workflows.
+- Include SDSD documentation in the existing Markdown and spelling checks.
+- Preserve Semgrep, Vet, and TruffleHog without duplicating SAST, SCA, or
+  secrets checks.
 
-### Fora de escopo
+### Out of scope
 
-- Alterar comportamento ou interface da aplicação.
-- Adicionar novos scanners, workflows de segurança ou ferramentas de produto.
-- Introduzir um framework de documentação ou mudar os dados locais da aplicação.
+- Changing application behavior or UI.
+- Adding scanners, security workflows, or product tools.
+- Introducing a documentation framework or changing local application data.
 
-## Requisitos funcionais
+## Functional requirements
 
-- [x] Contribuidores encontram constituição, escala e validação apropriadas ao projeto.
-- [x] Mudanças não triviais podem ser especificadas com os templates versionados.
-- [x] Specs e documentos SDSD são cobertos pelos workflows existentes de docs.
-- [x] Os checks de segurança atuais permanecem a única implementação de SAST, SCA e secrets.
+- [x] Contributors can find the project constitution, workflow scale, and
+      project-appropriate validation.
+- [x] Non-trivial changes can be specified using versioned templates.
+- [x] Specs and SDSD documents are covered by the existing documentation
+      workflows.
+- [x] Existing security checks remain the only SAST, SCA, and secrets
+      implementations.
 
-## Decisões
+## Decisions
 
-- `AGENTS.md` é a fonte de instruções do projeto e preserva o bloco gerenciado
-  pelo Next.js.
-- `specs/` descreve o produto; `specs/_feature/` contém os stubs copiáveis.
-- O pre-commit local limita-se a higiene de arquivos. Os scanners continuam nos
-  workflows de PR já existentes.
-- `npm run lint` é documentado como bloqueado pela dependência
-  `eslint-plugin-prettier` ausente; corrigir essa configuração é follow-up, não
-  parte da adoção do SDSD.
+- `AGENTS.md` is the project's instruction source and preserves the
+  Next.js-managed block.
+- `specs/` describes the product; `specs/_feature/` contains copyable
+  templates.
+- Local pre-commit is limited to file hygiene. Scanners remain in the existing
+  PR workflows.
+- `npm run lint` is documented as blocked because `eslint-plugin-prettier` is
+  missing; fixing that configuration is follow-up work, not part of this SDSD
+  adoption.
 
-## Requisitos não funcionais
+## Non-functional requirements
 
-- Preservar tratamento local-first de avaliações e fluxos explícitos de IA.
-- Manter orientações EN/PT consistentes; esta adoção não altera mensagens da UI.
-- Manter validação determinística e sem dependência de um serviço externo novo.
+- Preserve local-first assessment handling and explicit AI flows.
+- Keep English and Portuguese guidance consistent; this adoption does not
+  change UI messages.
+- Keep validation deterministic and independent of new external services.
 
 ## Failure modes
 
-| Falha | Comportamento esperado | Recuperação |
+| Failure | Expected behavior | Recovery |
 | --- | --- | --- |
-| Documentação nova não coberta pelos filtros de CI | Markdown lint e spellcheck devem incluir `specs/`, `skills/`, `.claude/` e `.github/` | Atualizar os filtros mantendo um workflow por check |
-| Orientações conflitarem com o produto | Corrigir a constituição e as instruções antes de orientar novas features | Validar contra código e checks atuais |
-| Scanners duplicados forem introduzidos | Não aprovar a duplicação | Reutilizar os workflows Semgrep, Vet e TruffleHog atuais |
+| New documentation is not covered by CI filters | Markdown lint and spellcheck should include `specs/`, `skills/`, `.claude/`, and `.github/` | Update the filters while keeping one workflow per check |
+| Guidance conflicts with the product | Correct the constitution and instructions before guiding new features | Validate against the code and current checks |
+| Duplicate scanners are introduced | Do not approve the duplication | Reuse the existing Semgrep, Vet, and TruffleHog workflows |

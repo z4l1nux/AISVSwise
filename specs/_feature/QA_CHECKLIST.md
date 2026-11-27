@@ -1,7 +1,7 @@
-# Checklist de QA — [Nome da feature]
+# QA Checklist — [Feature name]
 
-- [ ] Fluxo principal e estados de carregamento, erro e sucesso verificados.
-- [ ] Entradas inválidas, dados existentes e casos extremos verificados.
-- [ ] Teclado, responsividade e acessibilidade verificados para mudanças de UI.
-- [ ] Inglês e português mantêm paridade quando há texto visível.
-- [ ] Fluxos existentes de avaliação, resultados, metas e planos não regrediram.
+- [ ] Main flow and loading, error, and success states verified.
+- [ ] Invalid inputs, existing data, and edge cases verified.
+- [ ] Keyboard, responsiveness, and accessibility verified for UI changes.
+- [ ] English and Portuguese remain in parity where user-visible text changes.
+- [ ] Existing assessment, results, targets, and plans flows have no regressions.

@@ -1,9 +1,9 @@
 # Architecture Decision Records
 
-Registre aqui decisões arquiteturais irreversíveis e exceções aprovadas aos
-princípios do AISVSwise.
+Record irreversible architectural decisions and approved exceptions to the
+AISVSwise principles here.
 
-Use nomes sequenciais, por exemplo `0001-local-first-data.md`. Cada ADR deve
-registrar contexto, decisão, alternativas consideradas, consequências e status.
-Não edite ADRs aceitos para apagar o histórico; registre uma nova decisão que
-os substitua.
+Use sequential names, for example `0001-local-first-data.md`. Each ADR should
+record context, decision, alternatives considered, consequences, and status.
+Do not edit accepted ADRs to erase history; record a new decision that
+supersedes them.

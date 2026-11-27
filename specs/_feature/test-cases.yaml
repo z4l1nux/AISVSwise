@@ -1,8 +1,8 @@
-# Use para regras determinísticas; remova para CRUD sem regra de negócio.
+# Use for deterministic rules; remove for CRUD without business logic.
 cases:
-  - name: caso feliz
+  - name: happy path
     input: {}
     expected: {}
-  - name: entrada inválida
+  - name: invalid input
     input: {}
-    expected_error: "[mensagem ou código]"
+    expected_error: "[message or code]"
