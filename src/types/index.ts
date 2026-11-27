@@ -40,6 +40,7 @@ export interface ScorePayload {
   bfScores: number[];
   practiceNames: string[];
   practiceScores: number[];
+  practiceCompleted?: boolean[];
   responseCount: Record<string, number>;
   company: string;
   project: string;

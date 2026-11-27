@@ -113,6 +113,8 @@ describe('assessmentCalculator', () => {
       const calc = new assessmentCalculator(buildAnswerValues(0.5))
       calc.computeResults()
       expect(calc.practiceScores).toHaveLength(TOTAL_PANELS)
+      expect(calc.practiceCompleted).toHaveLength(TOTAL_PANELS)
+      expect(calc.practiceCompleted.every(Boolean)).toBe(true)
     })
 
     it('produces exactly 14 business function scores (one per AISVS control)', () => {
@@ -147,6 +149,7 @@ describe('assessmentCalculator', () => {
       calc.computeResults()
       const total = Object.values(calc.responseCount).reduce((a, b) => a + b, 0)
       expect(total).toBe(0)
+      expect(calc.practiceCompleted.every(completed => !completed)).toBe(true)
     })
   })
 })

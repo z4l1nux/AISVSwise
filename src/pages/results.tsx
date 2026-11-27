@@ -12,6 +12,7 @@ import {
 import Link from 'next/link';
 import { Bot } from 'lucide-react';
 import LLMAnalysis from '../features/ai-analysis/LLMAnalysis';
+import GapAnalysisSection from '../features/maturity/GapAnalysisSection';
 import { loadLLMSettings } from '../features/ai-analysis/LLMSettings';
 import { exportReportToPdf } from '../lib/exportPdf';
 import Bargraph from '../features/assessment/graphs/bargraph';
@@ -297,6 +298,7 @@ const Results = () => {
                     bfScores:       testCalc.businessFunctionScores,
                     practiceNames:  testCalc.practiceNames,
                     practiceScores: testCalc.practiceScores,
+                    practiceCompleted: testCalc.practiceCompleted,
                     responseCount:  testCalc.responseCount,
                     company:        dataENV[0]['Company Name'] || '',
                     project:        dataENV[0]['Project name'] || '',
@@ -323,6 +325,7 @@ const Results = () => {
                     bfScores:       testCalc.businessFunctionScores,
                     practiceNames:  testCalc.practiceNames,
                     practiceScores: testCalc.practiceScores,
+                    practiceCompleted: testCalc.practiceCompleted,
                     responseCount:  testCalc.responseCount,
                     company: '', project: '',
                 });
@@ -522,6 +525,8 @@ const Results = () => {
                         <Bar data={practiceBarGraph.metaData} options={practiceBarGraph.layout_props} className="practiceBar" />
                     </SectionCard>
                 )}
+
+                {display && scorePayload && <GapAnalysisSection scorePayload={scorePayload} />}
 
                 {/* ── AI Analysis ── */}
                 {display && scorePayload && (
