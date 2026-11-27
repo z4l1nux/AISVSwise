@@ -58,6 +58,7 @@ export default class assessmentCalculator {
   practiceNames: string[];
   businessFunctionScores: number[];
   practiceScores: number[];
+  practiceCompleted: boolean[];
   levelCompliance: { L1: LevelStat; L2: LevelStat; L3: LevelStat };
   controlData: ControlLevelData[];
 
@@ -69,6 +70,7 @@ export default class assessmentCalculator {
     this.practiceNames = [];
     this.businessFunctionScores = [];
     this.practiceScores = [];
+    this.practiceCompleted = [];
     this.levelCompliance = {
       L1: { total: 0, met: 0, pct: 0 },
       L2: { total: 0, met: 0, pct: 0 },
@@ -154,7 +156,10 @@ export default class assessmentCalculator {
         const levels  = practices[practice].levels;
         const question_values = Array.from(answers.values()) as (number | null)[];
 
-        if (this.isPracticeCompleted(question_values) && question_values.length > 0) {
+        const completed = this.isPracticeCompleted(question_values) && question_values.length > 0;
+        this.practiceCompleted.push(completed);
+
+        if (completed) {
           this.sortResponseCount(question_values);
           const vals = question_values as number[];
 

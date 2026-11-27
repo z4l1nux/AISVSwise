@@ -129,8 +129,19 @@ AISVSwise supports multiple languages via **next-intl v4**.
   - 🕸️ Radar Charts — Multi-dimensional view across all 14 controls
   - 📋 Practice Breakdown Table — Color-coded maturity levels (Initial / Managed / Defined / Optimized)
 - **Comparison Mode** — Compare current vs. previous assessments
+- **Target Gap Analysis** — Compare completed sub-control scores with local targets, including per-control averages and the largest shortfalls
 - **Export Options** — Download results as JSON or PDF
 - **AI Analysis** — Detailed insights and improvement roadmap via LLM
+
+### Targets Page (`/targets`)
+- Set maturity goals from 0 to 3 in quarter-point steps for each AISVS sub-control
+- Add optional rationale notes, apply presets, and review target coverage by control
+- Targets are stored in this browser and reused across assessment sessions; they are not included in exported assessment JSON
+
+### Action Plans Page (`/action-plans`)
+- Create remediation tasks linked to an AISVS sub-control, with owner, due date, status, priority, and description
+- Filter tasks and highlight overdue plans
+- Plans are stored locally on this device and are not synchronized between users or devices
 
 ### AI Settings Page (`/ai`)
 - **Provider Selection** — Anthropic, OpenAI, Gemini, or Ollama (fully local)
@@ -144,8 +155,10 @@ AISVSwise supports multiple languages via **next-intl v4**.
 2. **Complete Questions** — Answer verification questions across all 14 AISVS controls
 3. **Save Progress** — Use "Save Responses" to back up your work at any time
 4. **View Results** — Navigate to `/results` to see charts and your maturity score
-5. **AI Analysis** — Configure a provider at `/ai`, then click "Analyze Results"
-6. **Compare** — Upload a previous JSON report to visualize improvements over time
+5. **Set Targets** — Define desired maturity levels at `/targets`; incomplete sub-controls are excluded from gap calculations
+6. **Track Improvements** — Create and manage remediation work at `/action-plans`
+7. **AI Analysis** — Configure a provider at `/ai`, then click "Analyze Results"
+8. **Compare** — Upload a previous JSON report to visualize improvements over time
 
 ## 🏗️ Project Structure
 
@@ -156,6 +169,8 @@ AISVSwise/
 │   │   ├── index.tsx           # Home page
 │   │   ├── assessment.tsx      # Assessment survey
 │   │   ├── results.tsx         # Results dashboard
+│   │   ├── targets.tsx         # Maturity targets
+│   │   ├── action-plans.tsx    # Remediation action plans
 │   │   ├── ai.tsx              # AI settings
 │   │   ├── about.tsx           # About AISVS
 │   │   └── api/                # API proxy routes (LLM)
