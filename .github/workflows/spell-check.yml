@@ -8,6 +8,10 @@ on:
       - '*.md'
       - '**/en/*.md'
       - '**/en/*.markdown'
+      - 'specs/**/*.md'
+      - 'skills/**/*.md'
+      - '.claude/**/*.md'
+      - '.github/**/*.md'
 
 jobs:
   spellcheck:
@@ -21,8 +25,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install cspell
-        run: npm install -g cspell
+      - name: Install dependencies
+        run: npm ci
 
       - name: Get changed Markdown files
         id: files
@@ -31,6 +35,10 @@ jobs:
           files: |
             1.0/en/**/*.md
             *.md
+            specs/**/*.md
+            skills/**/*.md
+            .claude/**/*.md
+            .github/**/*.md
           separator: '\n'
 
       - name: Run cspell on changed files
@@ -49,4 +57,4 @@ jobs:
             exit 0
           fi
           # Run cspell on all changed files; its exit code will control the workflow outcome
-          cspell --config .github/workflows/config/cspell.json "${files[@]}"
+          npx cspell --config .github/workflows/config/cspell.json "${files[@]}"

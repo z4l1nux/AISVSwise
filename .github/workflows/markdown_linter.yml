@@ -27,6 +27,13 @@ jobs:
         with:
           files: |
             README.md
+            AGENTS.md
+            CONTRIBUTING.md
+            CHANGELOG.md
+            specs/**/*.md
+            skills/**/*.md
+            .claude/**/*.md
+            .github/**/*.md
             1.0/en/**/*.md
 
       - name: Run markdownlint on changed files
