@@ -125,3 +125,4 @@ pipx
 claude
 subcontroles
 semgrep
+subcontrols
